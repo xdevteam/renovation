@@ -1,0 +1,35 @@
+.tab_margin_top{
+    margin-top: 30px;
+}
+
+.cabinet-form-input {
+	width: 100%;
+	padding: 5px;
+	border: 1px solid #eaeaea;
+	border-radius: 4px;
+}
+
+.required {
+	color: #f00;
+}
+
+.dashed, .dashed:hover {
+	text-decoration: none;
+}
+
+.dashed > span {
+	border-bottom: 1px dashed #2578e9;
+}
+
+.dashed > span:hover {
+	border-bottom: 0;
+}
+
+.setPrice .add-prod-name {
+	width: 25%;
+	margin-right: 15px;
+}
+
+.setPrice .separator {
+	margin-right: 10px;
+}

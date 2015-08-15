@@ -1,0 +1,160 @@
+/* <= 1600 */
+
+@media (max-width: 1700px) {
+	.carousel-description {
+		bottom: 30%;
+	}
+}
+
+/* <= 1500 */
+
+@media (max-width: 1500px) {
+	#main-carousel {
+		height: 580px;
+	}
+	#blur-overlay {
+		height: 514px;
+	}
+}
+
+/* <= 1400 */
+
+@media (max-width: 1400px) {
+	.carousel-description h1{
+		font-size: 3.2em;
+	}
+	.carousel-description p{
+		font-size: 1.2em;
+	}
+	#main-carousel {
+		height: 560px;
+	}
+	#blur-overlay {
+		height: 494px;
+	}
+	#cabinet-navigation #main-nav > li {
+		margin: 0 20px;
+	}
+}
+
+/* <= 1300 */
+
+@media (max-width: 1300px) {
+	#main-carousel {
+		height: 500px;
+	}
+	#blur-overlay {
+		height: 434px;
+	}
+	#searching {
+		left: 10%;
+		right: 10%;
+		height: 90px;
+	}
+	.search-input,
+	#searching .search-block-button .btn-text	{
+		line-height: 60px;
+		height: 60px;
+	}
+	.search-input {
+		font-size: 1.3em;
+	}
+	#searching .search-block-button .btn-text {
+		font-size: 1.2em;
+	}
+	#searching .search-block-button {
+		height: 60px;
+	}
+	.carousel-contr {
+		top: 260px;
+	}
+	.search-inner {
+		padding: 28px 10px 0;
+	}
+	#cabinet-navigation #main-nav > li {
+		margin: 0 15px;
+	}
+	#main-nav > li > a {
+		font: normal normal 600 13px / 18px "Open Sans", Helvetica, Arial, Verdana, sans-serif;
+	}
+	.hover-over-btns > a > div {
+		width: 60px;
+		height: 60px;
+	}
+	.hover-over-btns a > div > i {
+		line-height: 60px;
+	}
+}
+
+/* <= 1200 */
+
+@media (max-width: 1200px) {
+	#main-carousel {
+		height: 450px;
+	}
+	#blur-overlay {
+		height: 384px;
+	}
+	.tabs-buttons li a {
+		font-size: 1.6em;
+	}
+	.carousel-contr {
+		top: 210px;
+	}
+}
+
+/* <= 1150 */
+
+@media (max-width: 1150px) {
+	#cabinet-navigation {
+		padding: 15px 0;
+	}
+	#cabinet-navigation #main-nav > li {
+		margin: 0 10px;
+	}
+	.hover-over-btns > a > div {
+		width: 50px;
+		height: 50px;
+	}
+	.hover-over-btns a > div > i {
+		line-height: 50px;
+	}
+}
+
+/* <= 1100 */
+
+@media (max-width: 1100px) {
+	#main-carousel {
+		height: 410px;
+	}
+	#blur-overlay {
+		height: 344px;
+	}
+	.tabs-buttons li a {
+		font-size: 1.4em;
+	}
+	.tabs-buttons li {
+		padding: 15px 10px;
+	}
+	.tabs-content-category-list li a {
+		font-size: .9em;
+	}
+	.carousel-contr {
+		top: 150px;
+	}
+	.carousel-description h1{
+		font-size: 3em;
+	}
+	.carousel-description p{
+		font-size: 1em;
+	}
+}
+
+/* <= 1050 */
+
+@media (max-width: 1050px) {
+	#main-nav > li > a {
+		font: normal normal 600 12px / 18px "Open Sans", Helvetica, Arial, Verdana, sans-serif;
+	}
+}
+
