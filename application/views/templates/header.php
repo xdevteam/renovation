@@ -36,11 +36,22 @@
         <section id="page">              
 
                 <header class="custom_header">
+                    <div class="topblock">
+                        
+                        <div class="topbl1">
+                            
+                            <div class="genname">МАГАЗИН СТРОИТЕЛЬНЫХ МАТЕРИАЛОВ</div>
+                            <span class="tel1">8 (47396) 5-33-44</span>
+                            <span class="tel2">8 (47396) 5-33-44</span>
+                        </div>
+                        <div class="topbl2"></div>
+                        
+                    </div>
                      <!-- Navbar  -->
                      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
                         <div class="container">
-                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <ul class="nav navbar-nav navbar-right main-nav">
+                            <div class="collapse navbar-collapse text-center" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav main-nav ">
                                 <?
                                 $i=1;
                                 foreach ($menu as $item){
