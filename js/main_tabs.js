@@ -3,9 +3,9 @@ $(function() {
 // 	/* Tabs */
 	
 	
-	$('.product-cat li').click(function(ev) {
+	$('.product-cat cat-parent').click(function(ev) {
 		ev.preventDefault();
-		$('.product-cat li').addClass('active');
+		$('.product-cat cat-parent').addClass('active');
 		var val = $( this ).attr('data-ajax');
 		$('#category_content').animate({
     							opacity: 0    
