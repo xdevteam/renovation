@@ -1,54 +1,5 @@
 <!-- Page title -->
-<div class="page-title">
-    <div class="wf-wrap">
-        <div class="wf-table">
-            <div class="wf-td hgroup">
-                <h1>
-                    <?php
-                    if (!empty($subcat_name))
-                        echo $subcat_name;
-                    else
-                        echo 'Все категории';
-                    ?>
-                </h1>
-            </div>
-            <div class="wf-td">
-                <ul class="breadcrumbs text-normal">
-                    <li>
-                        <a href="<?= base_url(); ?>default">Главная</a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url(); ?>subcategories/<?php
-                        if (!empty($cat_name['0']['link']))
-                            echo $cat_name['0']['link'];
-                        ?>">
-                               <?php
-                               if (!empty($cat_name['0']['name']))
-                                   echo $cat_name['0']['name'];
-                               else
-                                   echo 'Все категории';
-                               ?>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url(); ?>products/<?php
-                        if (!empty($link))
-                            echo $link;
-                        ?>">
-                               <?php
-                               if (!empty($subcat_name))
-                                   echo $subcat_name;
-                               else
-                                   echo 'Все товары';
-                               ?>                            
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
 
-    </div>
-</div>
 <!-- Page title -->
 <!-- Main Content -->
 <div id="main" class="cat-main">

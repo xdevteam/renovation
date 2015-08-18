@@ -1,6 +1,6 @@
 <!-- Page title -->
 
-<div class="page-title">
+<div class="page-title" style="display:none;">
     <div class="wf-wrap">
         <?php
         foreach ($product as $item) {

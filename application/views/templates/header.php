@@ -35,23 +35,23 @@
     <body>        
         <section id="page">              
 
-                <header class="custom_header">
-                    <div class="topblock">
+                <header class="custom_header col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="topblock col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         
-                        <div class="topbl1">
+                        <div class="topbl1 col-lg-8 col-md-8 col-sm-8 col-xs-8 pull-left">
                             
-                            <div class="genname">МАГАЗИН СТРОИТЕЛЬНЫХ МАТЕРИАЛОВ</div>
-                            <span class="tel1">8 (47396) 5-33-44</span>
-                            <span class="tel2">8 (47396) 5-33-44</span>
+                            <div class="genname col-lg-12 col-md-12 col-sm-10 col-xs-10 pull-right">МАГАЗИН СТРОИТЕЛЬНЫХ МАТЕРИАЛОВ</div>
+                            <span class="tel1 col-lg-6 col-md-6 col-sm-6 col-xs-12">8 (47396) 5-33-44</span>
+                            <span class="tel2 col-lg-6 col-md-6 col-sm-6 col-xs-12">8 (47396) 5-33-44</span>
                         </div>
-                        <div class="topbl2"></div>
+                        <!-- <div class="topbl2 col-lg-4 col-md-4 col-sm-4 col-xs-4"></div> -->
                         
                     </div>
                      <!-- Navbar  -->
-                     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                     <!-- <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
                         <div class="container">
                             <div class="collapse navbar-collapse text-center" id="bs-example-navbar-collapse-1">
-                            <ul class="nav navbar-nav main-nav ">
+                            <ul class="nav navbar-nav main-nav "> -->
                                 <?
                                 $i=1;
                                 foreach ($menu as $item){
@@ -62,20 +62,22 @@
                                 }
                                 $i++;                                 
                                 ?>
-                                <li class="drop">
-                                    <a <?= $active ?>  href="<?= base_url() ?><?= $item['link'] ?>"><?= $item['name'] ?></a>
-                                    <!--
-                                    <ul class="dropdown">
+                                <!-- <li class="drop"> -->
+                                    <!-- <a <?= $active ?>  href="<?= base_url() ?><?= $item['link'] ?>"><?= $item['name'] ?></a>  -->
+                                    
+                                    <!-- <ul class="dropdown">
                                             <li><a href="<?= base_url() ?>">Home Default</a></li>
-                                    </ul>
-                                    -->
-                                </li>
+                                    </ul> -->
+                                    
+                                <!-- </li> -->
                                 <? } ?>
                          
-                            </ul>
-                        </div><!-- /.navbar-collapse -->
-                     </div><!-- /.container -->
-                    </nav>
+                       <!--      </ul>
+                        </div>
+                        .navbar-collapse
+                     </div>
+                     .container
+                    </nav> -->
                 <!-- Navbar End -->
              </header>
              

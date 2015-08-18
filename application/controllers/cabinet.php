@@ -20,6 +20,7 @@ class Cabinet extends CI_Controller {
         $this->load->model('user_model');
         $this->load->model('product_m');
         $session = $this->session->userdata('user');
+        $this->data['menu'] = $this->main_m->get_menu_item();
         $this->data['slider'] = $this->main_m->get_slider_item();
         if (!empty($session)) {
             $this->data['user'] = @$this->session->userdata('user');

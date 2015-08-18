@@ -17,41 +17,41 @@ class Main_m extends CI_Model {
         parent::__construct();
     }
 
-    function get_menu_front($num) {
-        if (isset($num)) {
-//        $main = $this->db->where('status', 'enable')->where('access', '3')->where('type', 'r')->get('menu');
-            $main = $this->db->query('SELECT * FROM menu WHERE type="r" AND  access!=' . $num . ' AND status="enable"');
-            foreach ($main->result_array() as $row) {
-                $arr1[$row['name']] = [$row['id']];
-                $arr1[$row['name']][] = $row['main_link'];
-                $level1 = $this->db->where('status', 'enable')->where('p_id', $row['id'])->get('menu');
-                foreach ($level1->result_array() as $r) {
-                    $arr1[$row['name']][$row['id']][$r['link']] = [$r['name']];
-                    $level2 = $this->db->where('status', 'enable')->where('p_id2', $r['id'])->get('menu');
-                    foreach ($level2->result_array() as $p) {
-                        $arr1[$row['name']][$row['id']][$r['link']][$r['name']][$p['link']] = $p['name'];
-                    }
-                }
-            }
-            return $arr1;
-        }
-    }
+//    function get_menu_front($num) {
+//        if (isset($num)) {
+////        $main = $this->db->where('status', 'enable')->where('access', '3')->where('type', 'r')->get('menu');
+//            $main = $this->db->query('SELECT * FROM menu WHERE type="r" AND  access!=' . $num . ' AND status="enable"');
+//            foreach ($main->result_array() as $row) {
+//                $arr1[$row['name']] = [$row['id']];
+//                $arr1[$row['name']][] = $row['main_link'];
+//                $level1 = $this->db->where('status', 'enable')->where('p_id', $row['id'])->get('menu');
+//                foreach ($level1->result_array() as $r) {
+//                    $arr1[$row['name']][$row['id']][$r['link']] = [$r['name']];
+//                    $level2 = $this->db->where('status', 'enable')->where('p_id2', $r['id'])->get('menu');
+//                    foreach ($level2->result_array() as $p) {
+//                        $arr1[$row['name']][$row['id']][$r['link']][$r['name']][$p['link']] = $p['name'];
+//                    }
+//                }
+//            }
+//            return $arr1;
+//        }
+//    }
 
-    function get_menu() {
-        $main = $this->db->where('status', 'enable')->where('type', 'r')->get('menu');
-        foreach ($main->result_array() as $row) {
-            $arr1[$row['name']] = [$row['id']];
-            $level1 = $this->db->where('status', 'enable')->where('p_id', $row['id'])->get('menu');
-            foreach ($level1->result_array() as $r) {
-                $arr1[$row['name']][$row['id']][$r['link']] = [$r['name']];
-                $level2 = $this->db->where('status', 'enable')->where('p_id2', $r['id'])->get('menu');
-                foreach ($level2->result_array() as $p) {
-                    $arr1[$row['name']][$row['id']][$r['link']][$r['name']][$p['link']] = $p['name'];
-                }
-            }
-        }
-        return $arr1;
-    }
+//    function get_menu() {
+//        $main = $this->db->where('status', 'enable')->where('type', 'r')->get('menu');
+//        foreach ($main->result_array() as $row) {
+//            $arr1[$row['name']] = [$row['id']];
+//            $level1 = $this->db->where('status', 'enable')->where('p_id', $row['id'])->get('menu');
+//            foreach ($level1->result_array() as $r) {
+//                $arr1[$row['name']][$row['id']][$r['link']] = [$r['name']];
+//                $level2 = $this->db->where('status', 'enable')->where('p_id2', $r['id'])->get('menu');
+//                foreach ($level2->result_array() as $p) {
+//                    $arr1[$row['name']][$row['id']][$r['link']][$r['name']][$p['link']] = $p['name'];
+//                }
+//            }
+//        }
+//        return $arr1;
+//    }
     function get_menu_item(){
         $main = $this->db->where('status', 'enable')->get('menu');
         return $main->result_array();

@@ -1,39 +1,4 @@
-<div class="page-title">
-    <div class="wf-wrap">
-        <div class="wf-table">
-            <div class="wf-td hgroup">
-                <h1>
-                    <?php
-                    if (!empty($category))
-                        echo $category;
-                    else
-                        echo 'Все Категории';
-                    ?>
-                </h1>
-            </div>
-            <div class="wf-td">
-                <ul class="breadcrumbs text-normal">
-                    <li>
-                        <a href="<?= base_url(); ?>default">Главная</a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url(); ?>subcategories/<?php
-                        if (!empty($link))
-                            echo $link;
-                        ?>">
-                               <?php
-                               if (!empty($category))
-                                   echo $category;
-                               else
-                                   echo 'Все Категории';
-                               ?>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 <!-- Page title -->
 

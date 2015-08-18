@@ -3,9 +3,9 @@ $(function() {
 // 	/* Tabs */
 	
 	
-	$('.product-cat cat-parent').click(function(ev) {
+	$('ul .cat-item').click(function(ev) {
 		ev.preventDefault();
-		$('.product-cat cat-parent').addClass('active');
+		$('ul .cat-item').addClass('active');
 		var val = $( this ).attr('data-ajax');
 		$('#category_content').animate({
     							opacity: 0    
@@ -27,6 +27,11 @@ $(function() {
             });  
  		});		
 	});
+	$('.children li').click(function(ev) {
+		var link=$(this).find("a").attr("href");
+		console.log("link", link);
+		window.location.href=link;
+	})
 });
 	
 

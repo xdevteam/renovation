@@ -230,7 +230,7 @@
             <div class="tp-bannertimer"></div>
         </div>
     </div>
-    <div id="blur-overlay" class="normal-overlay"></div>
+    <!-- <div id="blur-overlay" class="normal-overlay"></div> -->
 </section>
 
 

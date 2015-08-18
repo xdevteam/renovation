@@ -3,7 +3,7 @@
 <!-- Main Content -->
 
 <div id="main">
-    <div class="main-gradient"></div>
+    
 
     <div class="container wf-wrap">
         <div class="row">
@@ -15,7 +15,7 @@
                 <div class="tabs-content clearfix">
 
                     <!-- Categories List -->
-                    <div class="col-sm-2 col-md-2 col-lg-2 tabs-category-container">
+                    <div class="col-sm-2 col-md-2 col-lg-2 col-xs-4 tabs-category-container">
                         <section class="widget-product-categories">
                             <h3 class="widget-title">Категории</h3>
                             <ul class="product-cat">                        
@@ -54,7 +54,7 @@
 
 
                     <!-- Home tab Grid -->
-                    <div class="col-sm-7 col-md-7 col-lg-7 clearfix tabs-content-grid home-tab-grid">
+                    <div class="col-sm-7 col-md-7 col-lg-7 col-xs-8 clearfix tabs-content-grid home-tab-grid">
                         <div id="category_content">
                         <?php //foreach ($subcategory_img as $item) {
                             ?>
@@ -85,7 +85,7 @@
                         <aside id="sidebar" class="sidebar"> 
                             <div class="sidebar-content"> 
 
-                        <section class="widget-top-rated" id="most-popular">
+                        <section class="widget-top-rated hidden-xs" id="most-popular">
                             <h3 class="widget-title">Выбор по торговой марке</h3>
                                 <?php if(!empty($popular)){ ?>
                             <span id="car_next" class="carou-fred-sel-ctrl">
