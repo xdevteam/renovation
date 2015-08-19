@@ -1093,8 +1093,8 @@ p .form-submit {
 
 .tabs-content-grid {
     position: relative;
-    padding-left: 25px;
-    padding-right: 0;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 .tabs-grid-item {
@@ -2275,10 +2275,10 @@ section .add-review input[type="submit"]:hover {
 }
 
 .widget-top-rated .widget-cart-list li img {
-    width: 100px;
+    width: 85px;
     float: left;
     height: auto;
-    margin: 5px 20px 5px 0;
+    margin: 10px 40px 10px 40px;
     max-width: 100%;
     border: 0;
 }
@@ -2960,7 +2960,8 @@ a.button-one {
     {
        padding: 0; 
     }
-    .custom_header{    
+    .custom_header{ 
+    position: relative;   
         height: 72px;
         background: url('../images/header_1655.jpg') no-repeat ;    
         -moz-background-size: 100%; /* Firefox 3.6+ */
@@ -3008,7 +3009,8 @@ a.button-one {
     {
        padding: 0; 
     }
-    .custom_header{    
+    .custom_header{ 
+    position: relative;      
         height: 102px;
         background: url('../images/header_1655.jpg') no-repeat ;    
         -moz-background-size: 100%; /* Firefox 3.6+ */
@@ -3057,7 +3059,8 @@ a.button-one {
     {
        padding: 0; 
     }
-    .custom_header{    
+    .custom_header{  
+    position: relative;     
         height: 130px;
         background: url('../images/header_1655.jpg') no-repeat ;    
         -moz-background-size: 100%; /* Firefox 3.6+ */
@@ -3076,6 +3079,7 @@ a.button-one {
  }
 @media screen and (min-width:767px) {
     .custom_header{
+        position: relative;   
     /*width: 100%;*/
     height: 200px;
     background: url('../images/header_1655.jpg') no-repeat ;
@@ -3114,7 +3118,8 @@ a.button-one {
 }
 
 @media screen and (min-width:900px) {
-       .custom_header{   
+       .custom_header{  
+       position: relative;    
     height: 200px;
     background: url('../images/header_1655.jpg') no-repeat ;
      -moz-background-size: 100%; /* Firefox 3.6+ */
@@ -3152,6 +3157,7 @@ a.button-one {
 }
 @media screen and (min-width:1024px) {
        .custom_header{   
+        position: relative;   
     height: 260px;
     background: url('../images/header_1655.jpg') no-repeat ;
      -moz-background-size: 100%; /* Firefox 3.6+ */
@@ -3189,6 +3195,7 @@ a.button-one {
 }
 @media screen and (min-width:1200px) {
        .custom_header{   
+        position: relative;   
     height: 302px;
     background: url('../images/header_1655.jpg') no-repeat ;
      -moz-background-size: 100%; /* Firefox 3.6+ */
@@ -3225,7 +3232,8 @@ a.button-one {
     }
 }
 @media screen and (min-width:1400px) {
-       .custom_header{   
+       .custom_header{ 
+       position: relative;     
     height: 302px;
     background: url('../images/header_1655.jpg') no-repeat ;
      -moz-background-size: 100%; /* Firefox 3.6+ */
@@ -3347,8 +3355,49 @@ header .navbar-nav > li:nth-child(9) {
     width: 150px;
 }
 .cart_button{
-   
+    bordrer:none;
+    box-sizing:border-box;
+    background: #B8B8B8!important;
+    margin: 0 20%;
+    padding: 2%;
+    /*width: 60%;*/
     position: relative;
-    z-index: 1070;
-    top: 60%;
+    z-index: 1050;
+    top: 8%;
+}
+.cart_info{
+   /*top: 50%; */
+}
+.cart_button i,
+.cart_button span{
+    color: #fff;
+}
+#cart-amount{
+    font-size: 30px!important;
+}
+.cart-overlay{
+    padding: 0!important;
+    margin-top: 35%;
+}
+
+.cart-icons{
+    top: 10%;
+    left: 37%;
+    background: url('./../images/cart-icon.png');
+    background-size: contain;
+    height: 200px;
+    position: absolute;
+}
+.brands_col{
+    background-color: 
+    padding: 0;
+}
+#brands{
+    width: 100%;
+}
+#most-popular h3{
+    text-align: center;
+}
+#page{
+    background-color: rgba(136, 136, 136, 0.2);
 }

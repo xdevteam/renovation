@@ -45,7 +45,18 @@
                             <span class="tel2 col-lg-6 col-md-6 col-sm-6 col-xs-12">8 (47396) 5-33-44</span>
                         </div>
                         <div class="topbl2 text-center col-lg-4 col-md-4 col-sm-4 col-xs-3">
-                            <button class="btn  btn-default cart_button">Оформить заказ</button>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cart_info">
+                                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 cart-overlay">
+                                    <span class="num badge pull-right" id="cart-amount">0</span>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 cart-icons">
+                                    <!-- <img src="<?=base_url()?>images/cart-icon.png" alt="cart-icon" title="car-icon" width='170'> -->
+                                </div>
+                            </div>
+                            <a href="#" class="submit btn btn-default cart_button col-lg-7 col-md-7 col-sm-6 col-xs-6" data-toggle="modal" data-target="#modalCart" id="topBarCartLink">                                 
+                                <i class="fa fa-shopping-cart"></i>
+                                <span class="top-bar-icon-text">Оформить Заказ</span>                                                                                         
+                            </a>
                         </div>
                         
                     </div>
