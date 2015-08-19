@@ -15,7 +15,7 @@
                 <div class="tabs-content clearfix">
 
                     <!-- Categories List -->
-                    <div class="col-sm-2 col-md-2 col-lg-2 col-xs-4 tabs-category-container">
+                    <div class="col-sm-2 col-md-2 col-lg-2 col-xs-3 tabs-category-container">
                         <section class="widget-product-categories">
                             <h3 class="widget-title">Категории</h3>
                             <ul class="product-cat">                        
@@ -25,7 +25,7 @@
                                         ?>                        
                                         <li class="cat-item cat-parent" data-ajax="<?= $k ?>">
                                             <a href="<?= base_url(); ?>subcategories/<?= $k ?>"><?= $cat ?></a>
-                                            <span class="count">(<?= count($v) ?>)</span>
+                                            <span class="count hidden-xs">(<?= count($v) ?>)</span>
                                             <ul class="children">      
                                                 <?php
                                                 if (!empty($v)) {
@@ -34,7 +34,7 @@
                                                             ?>      
                                                             <li>
                                                                 <a href="<?= base_url(); ?>products/<?= $key ?>"><?= $kl ?></a>
-                                                                <span class="count">(<?= $zn ?>)</span>
+                                                                <span class="count hidden-xs">(<?= $zn ?>)</span>
                                                             </li> 
                                                             <?php
                                                         }
@@ -54,7 +54,7 @@
 
 
                     <!-- Home tab Grid -->
-                    <div class="col-sm-7 col-md-7 col-lg-7 col-xs-8 clearfix tabs-content-grid home-tab-grid">
+                    <div class="col-sm-7 col-md-7 col-lg-7 col-xs-9 clearfix tabs-content-grid home-tab-grid">
                         <div id="category_content">
                         <?php //foreach ($subcategory_img as $item) {
                             ?>

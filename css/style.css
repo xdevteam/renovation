@@ -134,8 +134,8 @@ body.no-bg {
 .wf-wrap {
     width: 1250px;
     max-width: 100%;
-    padding-left: 44px;
-	padding-right: 44px;
+    padding-left: 24px;
+	padding-right: 24px;
     margin: 0 auto;
     box-sizing: border-box;
     position: relative;
@@ -2893,11 +2893,11 @@ a.button-one {
 .slider1{
     /*margin-top: -125px;*/
 }
-.navbar-fixed-top{
+/*.navbar-fixed-top{
     position: relative;
     bottom: 0;
 /*    top: 280px;*/
-}
+}*/
 
 .topblock {
     /*margin: 0 auto;*/
@@ -2931,12 +2931,12 @@ a.button-one {
 }
 @media screen and (min-width: 320px){
     .genname {        
-        padding: 0px 0px;
+        padding: 0px 9px;
         font-size: 9px;
         margin-top: 5%;
         color: #42404a;
-        margin-bottom: 15%;
-        text-align: center;
+        margin-bottom: 10%;
+        text-align: left;
         line-height: 1;
     }
     .tel1
@@ -2961,7 +2961,7 @@ a.button-one {
        padding: 0; 
     }
     .custom_header{    
-        height: 92px;
+        height: 72px;
         background: url('../images/header_1655.jpg') no-repeat ;    
         -moz-background-size: 100%; /* Firefox 3.6+ */
         -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
@@ -2970,22 +2970,28 @@ a.button-one {
     }
     .topbl2{
 
-    height: 150px;
-
+    height:65px;
         background: url('../images/shar.png') 90% 26% no-repeat;
-        
+        background-size: contain;
         background-position: center;
     }
- }
+    .widget-title{
+        font-size: 16px;
+    }
+    .widget-product-categories .product-cat .cat-item a,
+    .widget-product-categories .product-cat .cat-item span{
+        font-size: 12px;
+    }
+}
 @media screen and (min-width: 450px){
     .genname {
         padding: 0px 12px;
-        font-size: 13px;
-        margin-top: 11px;
-        color: #42404a;
-        margin-bottom: 10%;
-        text-align: center;
-        line-height: 1;
+    font-size: 13px;
+    margin-top: 8px;
+    color: #42404a;
+    margin-bottom: 12%;
+    text-align: left;
+    line-height: 1;
     }
     .tel1,
     .tel2
@@ -3012,11 +3018,18 @@ a.button-one {
     }
     .topbl2{
 
-    height: 150px;
+    height: 100px;
 
         background: url('../images/shar.png') 90% 26% no-repeat;
-        
+        background-size: contain;
         background-position: center;
+    }
+    .widget-title{
+        font-size: 24px;
+    }
+    .widget-product-categories .product-cat .cat-item a,
+    .widget-product-categories .product-cat .cat-item span{
+        font-size: 14px;
     }
  }
 @media screen and (min-width:600px){
@@ -3054,10 +3067,10 @@ a.button-one {
     }
     .topbl2{
 
-    height: 150px;
+    height: 120px;
 
         background: url('../images/shar.png') 90% 26% no-repeat;
-        
+        background-size: contain;
         background-position: center;
     }
  }
@@ -3092,10 +3105,10 @@ a.button-one {
     }  
     .topbl2{
 
-    height: 280px;
+    height: 180px;
 
         background: url('../images/shar.png') 90% 26% no-repeat;
-        
+        background-size: contain;
         background-position: center;
     }
 }
@@ -3130,10 +3143,10 @@ a.button-one {
     }
     .topbl2{
 
-    height: 280px;
+    height: 190px;
 
         background: url('../images/shar.png') 90% 26% no-repeat;
-        
+        background-size: contain;
         background-position: center;
     }
 }
@@ -3253,19 +3266,41 @@ body .container {
     width: 1200px;
     
 }
-
-body .navbar .container {
+body .navbar .container-fluid {
+    max-height: 50px;
     background: url('../images/menu.jpg') no-repeat;
+    background-size: cover;
+    position: relative;
+    bottom: 50px;
 }
 
 body .navbar {
-    background-color: #FFF;
-    border-color:  #FFF;
+    background-color: none;
+    border-color:  none;
     text-align: center;
     font-size: 14px;
 }
-header .navbar-default .navbar-nav > li > a {
+body nav ul > li > a {
     color: #FFF;
+}
+body nav ul{
+    width: 100%;
+}
+body nav ul li{    
+    width: 14.27%
+}
+body nav ul li a{
+font-size: 12px;
+padding: 15px 2px!important;
+font-weight: bold; 
+}
+body nav ul li a:hover{ 
+    color: #fff;
+    font-weight: bolder;   
+    background: #DC5913!important;
+}
+.navbar div{
+    padding: 0;
 }
 header .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     color: #FFF;
