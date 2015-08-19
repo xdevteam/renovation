@@ -3287,7 +3287,7 @@ body nav ul{
     width: 100%;
 }
 body nav ul li{    
-    width: 14.27%
+    width: 12.5%
 }
 body nav ul li a{
 font-size: 12px;
@@ -3346,4 +3346,9 @@ header .navbar-nav > li:nth-child(9) {
     background: none;
     width: 150px;
 }
-
+.cart_button{
+   
+    position: relative;
+    z-index: 1070;
+    top: 60%;
+}

@@ -44,7 +44,9 @@
                             <span class="tel1 col-lg-6 col-md-6 col-sm-6 col-xs-12">8 (47396) 5-33-44</span>
                             <span class="tel2 col-lg-6 col-md-6 col-sm-6 col-xs-12">8 (47396) 5-33-44</span>
                         </div>
-                        <div class="topbl2 col-lg-4 col-md-4 col-sm-4 col-xs-3"></div>
+                        <div class="topbl2 text-center col-lg-4 col-md-4 col-sm-4 col-xs-3">
+                            <button class="btn  btn-default cart_button">Оформить заказ</button>
+                        </div>
                         
                     </div>
                      
