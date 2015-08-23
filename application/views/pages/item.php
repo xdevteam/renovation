@@ -51,7 +51,9 @@
                         <img src="<?= $item['image_path'] ?>" alt="" width="700" height="850" id="mainImage">
                     </a>
                     <div class="thumbnails clearfix">    
-                     <?php if(!empty (unserialize($item['min_img']))){ ?>                     
+                     <?php 
+                     $min_images=unserialize($item['min_img']);
+                     if(!empty ($min_images)){ ?>                     
                         <?php foreach (unserialize($item['min_img'])as $img) { ?>
                         <div class="col-md-4 col-sm-4">
                                                       
