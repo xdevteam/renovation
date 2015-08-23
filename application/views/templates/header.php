@@ -11,7 +11,8 @@
         <link href="<?= base_url(); ?>../../../css/font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="<?= base_url(); ?>../../../css/load_animation.css" rel="stylesheet" type="text/css"/>
         <link href="<?= base_url(); ?>../../../css/jquery_scrollbar.css" rel="stylesheet" type="text/css"/>
-
+        <link href="<?= base_url(); ?>../../../css/newtyle.css" rel="stylesheet" type="text/css"/>
+        
         <link rel="stylesheet" href="<?= base_url(); ?>../../../css/perfect-scrollbar.css">
         <link rel="stylesheet" href="<?= base_url(); ?>../../../css/jquery.fancybox.css">
         <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>

@@ -1,0 +1,43 @@
+
+.footgs {
+    background-color: #000;
+    height: 45px;
+    color: #fff;
+}
+
+#footer .footgs{
+   color: #9d9ca2!important; 
+   text-align: center;
+   padding-top: 5px!important;
+}
+
+.foota1 {
+    color: #fff!important;
+}
+
+#footer .widget-title {
+   color: #fff!important; 
+}
+#footer .color-primary {
+    color: #fff!important;
+}
+
+#footer a {
+    color: #fff!important;
+    
+}
+#footer a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.pricen {
+    color: #fff!important; 
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.pricen img {
+    margin-right: 5px;
+}

@@ -97,7 +97,8 @@ class Admin extends CI_Controller {
      */
 
     function admin_pages($page = 'index') {
-        if (!empty($this->session->userdata('admin'))) {
+        $session=$this->session->userdata('admin');
+        if (!empty($session)) {
             if (!file_exists(APPPATH . '/views/admin/' . $page . '.php')) {
                 show_404();
             } else {
