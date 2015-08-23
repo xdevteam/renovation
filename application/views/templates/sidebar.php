@@ -1,7 +1,7 @@
 <!-- Sidebar -->
 
 
-<aside id="sidebar" class="sidebar"> 
+<aside id="sidebar" class="sidebar hidden-xs hidden-sm"> 
     <div class="sidebar-content">
 
         <!--

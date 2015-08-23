@@ -38,7 +38,7 @@
     <div id="main" class="cat-main">
         <div class="container wf-wrap clearfix">
 
-            <div id="content" class="content clearfix">
+            <div id="content" class=" clearfix col-lg-8 col-md-8 col-sm-12 col-xs-12">
 
                 <!-- Main Product Image -->
 
@@ -46,14 +46,17 @@
                     <a href="<?= base_url(); ?><?= $item['image_path'] ?>" class="fancy" data-fancybox-group="gallery">
                         <img src="<?= $item['image_path'] ?>" alt="" width="700" height="850" id="mainImage">
                     </a>
-                    <div class="thumbnails clearfix">                        
+                    <div class="thumbnails clearfix">    
+                     <?php if(!empty (unserialize($item['min_img']))){ ?>                     
                         <?php foreach (unserialize($item['min_img'])as $img) { ?>
-                        <div class="col-md-4 col-sm-4">                            
+                        <div class="col-md-4 col-sm-4">
+                                                      
                             <a href="<?= base_url(); ?><?= $img ?>" class="fancy" data-fancybox-group="gallery">
                                 <img src="<?= $img ?>" alt="" width="400" height="400">
                             </a>
+
                         </div>
-                               
+                         <?php }?>      
                         <?php } ?>
                         <? if(!empty($item['min_img1'])) {?>
                         <div class="col-md-4 col-sm-4">                            
@@ -205,44 +208,7 @@
 
 
             <!-- Company's Others Goods -->
-            <?php if (!empty($other)) { ?>
-                <div class="marketing-carousel" id="others">
-                    <h3>Другие товары компании</h3>
-
-                    <ul class="carou-fred-sel clearfix">
-                        <?php foreach ($other as $oth_item) {
-                            ?>
-                            <li>
-                                <div class="carousel-img">
-                                    <a href="<?= base_url(); ?>products/item/<?= $oth_item['id'] ?>-<?= $oth_item['trans'] ?>" title="<?= $oth_item['name'] ?>">
-                                        <img src="<?= $oth_item['image_path'] ?>" alt="<?= $oth_item['name'] ?>">
-                                    </a>
-                                </div>
-                                <div class="carousel-info">
-                                    <a href="<?= base_url(); ?>products/item/<?= $oth_item['id'] ?>-<?= $oth_item['trans'] ?>" title="<?= $oth_item['name'] ?>">
-                                        <span class="product-title"><?= $oth_item['name'] ?></span>
-                                        <span class="amount"><?= $oth_item['price'] ?> <?= $oth_item['currency'] ?></span>
-                                    </a>
-                                </div>
-                            </li>
-                        <?php } ?>
-
-                    </ul>
-
-                    <span href="#" id="other_next" class="marketing-ctrl next">
-                        <i class="fa fa-chevron-right"></i>
-                    </span>
-
-                    <span href="#" id="other_prev" class="marketing-ctrl prev">
-                        <i class="fa fa-chevron-left"></i>
-                    </span>
-                </div>
-            <?php } else { ?>
-                <div class="marketing-carousel" id="not_found">
-                    <h3>Другие товары компании</h3> 
-                    <span class="product">Других товаров не найдено</span>                                        
-                </div>
-            <?php } ?>
+            
 
             <!--  Similar Goods -->
 

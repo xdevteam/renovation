@@ -10,13 +10,13 @@
                                         <ul class="widget-cart-list carou-fred-sel" id="brands">
                                             <?php foreach($partner as $item) {?>
                                                 <li>
-                                                    <a href="<?= base_url(); ?>products/item/<?=$item['link']?>" title="<?=$item['name']?>"> 
+                                                    <a href="<?=$item['link']?>" class="link_brand" title="<?=$item['name']?>"> 
                                                         <img src="<?=$item['logo']?>" alt="<?=$item['name']?>">
                                                         <!-- <span class="product-title"><?=$item['name']?></span> -->
                                                     </a>                                    
                                                 </li>
                                                 <li>
-                                                    <a href="<?= base_url(); ?>products/item/<?=$item['link']?>" title="<?=$item['name']?>"> 
+                                                    <a href="<?=$item['link']?>" class="link_brand" title="<?=$item['name']?>"> 
                                                         <img src="<?=$item['logo']?>" alt="<?=$item['name']?>">
                                                         <!-- <span class="product-title"><?=$item['name']?></span> -->
                                                     </a>                                   

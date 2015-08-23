@@ -70,7 +70,8 @@
 		
 		$('.caroufredsel_wrapper').css({
 			'marginBottom': '0',
-			'height': '600px'
+			'minHeight': '340px',
+			'maxHeight': '1000px'
 		});
 		
 	})();	

@@ -5,7 +5,7 @@
         <div class="wf-container-footer">
             <div class="wf-container clearfix">
 
-                <section class="widget col-sm-3" id="footer-contact-us-widget">
+                <section class="widget col-sm-3 col-xs-6" id="footer-contact-us-widget">
                     <div class="widget-title">НАШИ КОНТАКТЫ</div>
                     <ul class="contact-info">
                         <li>
@@ -67,7 +67,7 @@
                     </div>
                 </section>               
 
-                <section class="widget col-sm-3" id="footer-our-services-widget">                   
+                <section class="widget col-sm-3 col-xs-6" id="footer-our-services-widget">                   
                     <div class="widget-title">НАШИ ПРЕДЛОЖЕНИЯ</div>
 
                     <?php if (!empty($popular)) { ?>
@@ -103,7 +103,7 @@
                     <?php } ?>
                 </section>
 
-                <section class="widget col-sm-3" id="footer-featured-posts-widget">
+                <section class="widget col-sm-3 hidden-xs" id="footer-featured-posts-widget">
                     <div class="widget-title">ПОПУЛЯРНЫЕ ТОВАРЫ</div>
                     <br>
                     <?php if (!empty($popular)) { ?>
@@ -135,7 +135,7 @@
                         </ul>
                     <?php } ?>
                 </section>
-                <section class="widget col-sm-3" >
+                <section class="widget col-sm-3 col-xs-12" >
                     <div class="widget-title">ПОИСК</div>
                     <br>
                     <div class="widget-product-search">                       

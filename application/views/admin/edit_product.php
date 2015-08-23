@@ -31,7 +31,7 @@
                     <label>Название</label>
                     <input class='form-control' value="<?= $prod[0]['name'] ?>" name='name' type='text'/>
                     <input class='form-control' value="<?= $prod[0]['id'] ?>" name='id' type='hidden'/>
-                    <label>Подкатегория товара</label>
+                    <label>Подкатегория товара</label>                    
                     <select class='form-control' name='subcat_id' id="prod_subcat">
                         <?php
                         foreach ($all_subcat as $item) {
@@ -44,7 +44,7 @@
                         ?>
                         <?php
                         foreach ($all_subcat as $item) {
-                            if ($item['id'] != $prod[0]['id']) {
+                            if ($item['id'] != $prod[0]['subcat_id']) {
                                 ?>
                                 <option value="<?= $item['id'] ?>"><?= $item['name'] ?></option>
                                 <?php
@@ -56,6 +56,28 @@
                         <label>Размер</label>
                         <div class="">                   
                             <input type="text" id="size" name="size" value="<?= $prod[0]['size'] ?>" class="form-control">
+                        </div>
+                    </div>
+                     <div class="">
+                        <label>Минимальный заказ</label>
+                        <div class="">                   
+                            <input type="text" id="size" name="prod_quantity" value="<?= $prod[0]['prod_quantity'] ?>" class="form-control">
+                        </div>
+                    </div>
+                    <div class="">
+                        <label>Цена</label>
+                        <div class="">                   
+                            <input type="text" id="size" name="price" value="<?= $prod[0]['price'] ?>" class="form-control">
+                        </div>
+                    </div>
+                    <div class="">
+                        <label>Валюта</label>
+                        <div class="">                   
+                            <select type="text" id="size" name="currency" value="<?= $prod[0]['currency'] ?>" class="form-control">
+                                <option value="Грн.">Грн.</option>
+                                <option value="Руб.">Руб.</option>
+                                <option value="USD">USD</option>                                
+                            </select>
                         </div>
                     </div>
                     <div class="">
