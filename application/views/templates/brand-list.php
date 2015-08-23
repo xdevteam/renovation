@@ -1,4 +1,4 @@
-<div class="col-sm-2 col-md-2 col-lg-2 hidden-xs brands_col">          
+<div class="hidden-sm col-md-2 col-lg-2 hidden-xs brands_col">          
                         <!-- <aside id="sidebar" class="sidebar">  -->
                             <div class="sidebar-content">
                                 <section class="widget-top-rated hidden-xs" id="most-popular">

@@ -1,6 +1,6 @@
 <!-- Page title -->
 
-<div class="page-title" >
+<div class="page-title col-lg-12 col-md-12 col-sm-12 col-xs-12" >
     <div class="wf-wrap">
         <?php
         foreach ($product as $item) {
@@ -9,7 +9,7 @@
                 <div class="wf-td hgroup">
                     <h2 class="product_name_item"><?=$item['name']?></h2>
                 </div>
-                <div class="wf-td">
+                <div class="wf-td hidden-xs hidden-sm">
                     <ul class="breadcrumbs text-normal">
                         <li>
                             <a href="<?= base_url(); ?>default">Главная</a>
@@ -42,15 +42,15 @@
     <div id="main" class="cat-main">
         <div class="container wf-wrap clearfix">
              <?php include_once'application/views/templates/category-sidebar.php'; ?>       
-            <div id="content" class=" clearfix col-lg-8 col-md-8 col-sm-12 col-xs-12">
+            <div id="content" class=" clearfix product_info col-lg-8 col-md-8 col-sm-8 col-xs-8">
 
                 <!-- Main Product Image -->
 
-                <div class="images">
+                <div class="images col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <a href="<?= base_url(); ?><?= $item['image_path'] ?>" class="fancy" data-fancybox-group="gallery">
                         <img src="<?= $item['image_path'] ?>" alt="" width="700" height="850" id="mainImage">
                     </a>
-                    <div class="thumbnails clearfix">    
+                    <div class="thumbnails clearfix hidden-xs hidden-sm">    
                      <?php 
                      $min_images=unserialize($item['min_img']);
                      if(!empty ($min_images)){ ?>                     
@@ -64,33 +64,13 @@
                         </div>
                          <?php }?>      
                         <?php } ?>
-                        <? if(!empty($item['min_img1'])) {?>
-                        <div class="col-md-4 col-sm-4">                            
-                            <a href="<?= base_url(); ?><?= $item['min_img1'] ?>" class="fancy" data-fancybox-group="gallery">
-                                <img src="<?= $item['min_img1'] ?>" alt="" width="400" height="400">
-                            </a>
-                        </div>
-                        <? }
-                        if(!empty($item['min_img2'])) { ?>
-                        <div class="col-md-4 col-sm-4">
-                            <a href="<?= base_url(); ?><?= $item['min_img2'] ?>" class="fancy" data-fancybox-group="gallery"> 
-                                <img src="<?= $item['min_img2'] ?>" alt="" width="400" height="400">
-                            </a>
-                        </div>
-                        <? }
-                        if(!empty($item['min_img3'])){ ?>
-                        <div class="col-md-4 col-sm-4">
-                            <a href="<?= base_url(); ?><?= $item['min_img3'] ?>" class="fancy" data-fancybox-group="gallery">
-                                <img src="<?= $item['min_img3'] ?>" alt="" width="400" height="400">
-                            </a>
-                        </div>
-                        <? } ?>
+                        
                     </div>
                 </div>
 
                 <!-- Summary -->
 
-                <div class="summary">
+                <div class="summary col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <p class="item_price">
                         <span class="price"><?= $item['price'] ?></span>
                         <span class="currency"><?= $item['currency'] ?></span>
@@ -106,23 +86,18 @@
                     <div class="quantity_ clearfix">
                         <input type="number" step="1" min="1" value="1" title="Change quantity" size="4">
                         <div class="add2cart buy-it" data-toggle="modal" data-target="#modalCart" id="<?= $item['id'] ?>">Купить</div>
-                    </div>
-
-                    
-
+                    </div> 
                     <div class="seller_info">                        
                         <span class="company" style="display: none;">
                             Компания:
                             <a href="<?= base_url('view_company'); ?>/<?= $user_data['id'] ?>" class="company_value"><?= $user_data['company'] ?></a>
-                        </span>                        
-                                               
+                        </span>                
                     </div>
-
                 </div>
             <?php } ?>
             <!-- Product Tabs -->
 
-            <div class="product-tabs">
+            <div class="product-tabs hidden-sm hidden-xs">
                 <ul class="tabs clearfix">
                     <li class="description_tab active">
                         <a href="#">Описание</a>
@@ -137,7 +112,7 @@
                 </section>
 
                 <section id="add_info_panel" style="display: none;">
-                    <h2>Дополнительная информация</h2>
+                   
                     <table class="project-charasteristics table table-responsive table-striped table-bordered">
                                 <tbody>
                                     <?php $param = unserialize($item['parametr']) ?>
@@ -186,11 +161,84 @@
                             </table>
                 </section>
             </div>
+        </div>
+       <?php include_once'application/views/templates/brand-list.php'; ?>     
+    </div>
+</div>
+ <?php
+        foreach ($product as $item) {
+            ?>  
+<div class="product-tabs hidden-lg hidden-md" style="padding: 0 15px;">
+    
+                <ul class="tabs clearfix">
+                    <li class="description_tab active description_tab_mini">
+                        <a >Описание</a>
+                    </li>
+                    <li class="add_info_tab add_info_tab_mini">
+                        <a >Дополнительная информация</a>
+                    </li>
+                </ul>
 
+                <section id="description_tab_mini">
+                    <p> <?= nl2br($item['description']) ?></p>
+                </section>
 
-            <!-- Company's Others Goods -->
+                <section id="reviews_tab" style="display: none;">
+                    
+                    <table class="project-charasteristics table table-responsive table-striped table-bordered">
+                                <tbody>
+                                    <?php $param = unserialize($item['parametr']) ?>
+                                    <tr>
+                                        <td>Тип вентилятора</td>
+                                        <td><?= $param[0] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Размер</td>
+                                        <td><?= $param[1] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Продуктивность</td>
+                                        <td><?= $param[2] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Потребляемая мощность</td>
+                                        <td><?= $param[3] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Класс защиты</td>
+                                        <td><?= $param[4] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Управление</td>
+                                        <td><?= $param[5] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Фильтр</td>
+                                        <td><?= $param[6] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Освещение</td>
+                                        <td><?= $param[7] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Вес</td>
+                                        <td><?= $param[8] ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Уровень шума</td>
+                                        <td><?= $param[9] ?></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                </section>
+           
+            </div>
+            <?php } ?>
+<div class="hidden-xs hidden-sm">
+<!-- Company's Others Goods -->
             <?php if (!empty($popular)) { ?>
-                <div class="marketing-carousel" id="others">
+                <div class="marketing-carousel " id="others">
                     <h3>Хиты продаж</h3>
 
                     <ul class="carou-fred-sel clearfix">
@@ -267,14 +315,9 @@
                 <?php
             }
             ?>
-           
-        </div>
-       <?php include_once'application/views/templates/brand-list.php'; ?>     
-    </div>
+
+
+
 </div>
-
-
-
-
 
 <!-- Main Content End -->

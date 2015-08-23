@@ -1,4 +1,4 @@
-<div class="col-sm-2 col-md-2 col-lg-2 col-xs-3 tabs-category-container">
+<div class="col-sm-4 col-md-2 col-lg-2 col-xs-4 tabs-category-container">
                         <section class="widget-product-categories">
                             <h3 class="widget-title">Категории</h3>
                             <ul class="product-cat">                        
