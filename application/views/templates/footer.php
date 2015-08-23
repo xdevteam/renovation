@@ -4,11 +4,11 @@
     <div class="wf-wrap">
         <div class="wf-container-footer">
             <div class="wf-container clearfix">
-                <section class="widget col-sm-6 col-xs-12" >
-                    <img src="http://cms.loc/images/footbab.png" style="left: 80%;
-    top:-70px;" alt="" title="Logo" class="hidden-xs hidden-sm">
+                <section class="widget hidden-sm hidden-xs col-md-6 col-lg-6" >
+                    <img src="http://cms.loc/images/footbab.png" style=" margin-top: -115px;
+    margin-left: -90px; margin-bottom: -38px;" alt="" title="Logo" >
                 </section>
-                <section class="widget col-sm-2 col-xs-12" >
+                <section class="widget col-sm-4 col-xs-6 col-md-2 text-right" >
                     <ul>
                         <li>
                             <a href="http://cms.loc/">Главная</a>  
@@ -36,7 +36,7 @@
                         </li>
                     </ul>
                 </section>
-                <section class="widget col-sm-2 col-xs-6 foota1" id="footer-contact-us-widget">
+                <section class="widget col-sm-4 col-lg-2 col-md-2  col-xs-6 foota1" id="footer-contact-us-widget">
                     <div class="widget-title">НАШИ КОНТАКТЫ</div>
                     <ul class="contact-info">
                         <li>
@@ -98,8 +98,8 @@
                     </div>
                 </section>               
 
-                <section class="widget col-sm-2 col-xs-12" >
-                    <ul class="widget hidden-sm pull-left">
+                <section class="widget col-lg-2 col-sm-4 col-xs-12 col-md-2 " >
+                    <ul class="widget  hidden-xs pull-left">
                         <li>
                             <a>Открыть корзину</a> 
                         </li>
@@ -118,7 +118,7 @@
                             </span>
                         </form>                            
                     </div>
-                    <div class="widget hidden-sm pricen pull-left"><img src="http://cms.loc/images/icc.png">Скачать прайс</div>
+                    <div class="widget  hidden-xs pricen pull-left"><img src="http://cms.loc/images/icc.png">Скачать прайс</div>
                 </section>
                 
             </div>

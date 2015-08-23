@@ -41,3 +41,62 @@
 .pricen img {
     margin-right: 5px;
 }
+
+#car_prev {
+    background-color: #95959d;
+    padding: 0px!important;
+}
+
+#car_next {
+    background-color: #95959d;
+    padding: 0px!important;
+}
+
+.widget-product-categories h4{
+    background-color: #df5c26;
+        background-color: #df5c26;
+    padding-top: 6px;
+    padding-bottom: 5px;
+    /* padding: 10px; */
+    color: #fff;
+    padding-left: 3px;
+    font-size: 15px!important;
+    border-top-right-radius: 5px;
+        margin-top: 0px!important;
+        margin-bottom:  3px!important;
+}
+
+.widget-product-categories h4 img {
+    margin-right: 5px;
+}
+
+.widget-product-categories .cat-item {
+    background-color: #f4d5b9;
+    
+}
+
+.widget-product-categories .cat-item img {
+    margin-left: 5px;
+    margin-top: -2px;
+}
+
+
+
+.widget-product-categories .children {
+    border-top: 2px solid #fff;
+    
+}
+
+.widget-product-categories .product-cat .cat-item .children {
+    margin: 0px!important;
+    padding: 0px!important;
+}
+
+.widget-product-categories .children li {
+    border-top: 2px solid #fff;
+    text-align: center;
+}
+
+.widget-product-categories .product-cat .cat-item {
+    margin: 2px!important;
+}
