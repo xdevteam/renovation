@@ -1,4 +1,4 @@
-<div class="col-sm-2 col-md-2 col-lg-2 col-xs-3 tabs-category-container">
+<div class="col-sm-4 col-md-2 col-lg-2 col-xs-4 tabs-category-container">
                         <section class="widget-product-categories">
                             <h4 class="widget-title"><img src="http://cms.loc/images/dom.png">Каталог продукции</h4>
                             <ul class="product-cat">                        
