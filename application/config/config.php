@@ -20,7 +20,7 @@ if (!defined('BASEPATH'))
  
  
 
-$config['base_url'] = 'http://xdevit.16mb.com/';
+$config['base_url'] = 'http://cms.loc/';
 
 /*
   |--------------------------------------------------------------------------

@@ -1,13 +1,13 @@
 <!-- Page title -->
 
-<div class="page-title" style="display:none;">
+<div class="page-title" >
     <div class="wf-wrap">
         <?php
         foreach ($product as $item) {
             ?>            
             <div class="wf-table">
                 <div class="wf-td hgroup">
-                    <h1 id="itemName"><?= $item['name'] ?></h1>
+                    <h2 class="product_name_item"><?=$item['name']?></h2>
                 </div>
                 <div class="wf-td">
                     <ul class="breadcrumbs text-normal">
@@ -28,16 +28,20 @@
             </div>
 
         </div>
-    </div>
+    </div> 
 
     <!-- Page title -->
 
 
     <!-- Main Content -->
-
+    <!-- <pre>
+        <?php
+        // var_dump($product);
+        ?>
+    </pre> -->
     <div id="main" class="cat-main">
         <div class="container wf-wrap clearfix">
-
+             <?php include_once'application/views/templates/category-sidebar.php'; ?>       
             <div id="content" class=" clearfix col-lg-8 col-md-8 col-sm-12 col-xs-12">
 
                 <!-- Main Product Image -->
@@ -85,12 +89,11 @@
                 <!-- Summary -->
 
                 <div class="summary">
-
                     <p class="item_price">
                         <span class="price"><?= $item['price'] ?></span>
                         <span class="currency"><?= $item['currency'] ?></span>
-                        <span class="separator">за</span>
-                        <span class="quantity"><?= $item['prod_quantity'] ?></span>
+                        <!-- <span class="separator">за</span>
+                        <span class="quantity"><?= $item['prod_quantity'] ?></span> -->
                     </p>
                     <? if(!empty($item['prod_min_order'])) {?>
                     <p class="order">
@@ -103,22 +106,37 @@
                         <div class="add2cart buy-it" data-toggle="modal" data-target="#modalCart" id="<?= $item['id'] ?>">Купить</div>
                     </div>
 
-                    <div class="product_meta"> 
-                        <span class="date">
-                            Товар добавлен:
-                            <span href="<?= base_url(); ?>" class="phone_value"><?= $item['date'] ?></span>
-                        </span>
-                    </div>
+                    
 
                     <div class="seller_info">                        
                         <span class="company" style="display: none;">
                             Компания:
                             <a href="<?= base_url('view_company'); ?>/<?= $user_data['id'] ?>" class="company_value"><?= $user_data['company'] ?></a>
-                        </span>
-                         
-                            <div class="project-content-box"> 
-                            <h2>Характеристики</h2>
-                            <table class="project-charasteristics table table-responsive table-striped table-bordered">
+                        </span>                        
+                                               
+                    </div>
+
+                </div>
+            <?php } ?>
+            <!-- Product Tabs -->
+
+            <div class="product-tabs">
+                <ul class="tabs clearfix">
+                    <li class="description_tab active">
+                        <a href="#">Описание</a>
+                    </li>
+                    <li class="add_info_tab">
+                        <a href="#">Дополнительная информация</a>
+                    </li>
+                </ul>
+
+                <section id="description_panel">
+                    <p> <?= nl2br($item['description']) ?></p>
+                </section>
+
+                <section id="add_info_panel" style="display: none;">
+                    <h2>Дополнительная информация</h2>
+                    <table class="project-charasteristics table table-responsive table-striped table-bordered">
                                 <tbody>
                                     <?php $param = unserialize($item['parametr']) ?>
                                     <tr>
@@ -164,51 +182,44 @@
 
                                 </tbody>
                             </table>
-                        </div>                     
-                    </div>
-
-                </div>
-            <?php } ?>
-            <!-- Product Tabs -->
-
-            <div class="product-tabs">
-                <ul class="tabs clearfix">
-                    <li class="description_tab active">
-                        <a href="#">Описание</a>
-                    </li>
-                    <li class="add_info_tab">
-                        <a href="#">Дополнительная информация</a>
-                    </li>
-                </ul>
-
-                <section id="description_panel">
-                    <p> <?= nl2br($item['description']) ?></p>
-                </section>
-
-                <section id="add_info_panel" style="display: none;">
-                    <h2>Дополнительная информация</h2>
-                    <table class="shop_attributes">
-                        <tbody>
-                            <tr>
-                                <th>License </th>
-                                <td>
-                                    <p>Pesonal <?= $item['id'] ?></p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>Format</th>
-                                <td>
-                                    <p>Vector</p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </section>
             </div>
 
 
             <!-- Company's Others Goods -->
-            
+            <?php if (!empty($popular)) { ?>
+                <div class="marketing-carousel" id="others">
+                    <h3>Хиты продаж</h3>
+
+                    <ul class="carou-fred-sel clearfix">
+                        <?php foreach ($popular as $oth_item) {
+                            ?>
+                            <li>
+                                <div class="carousel-img">
+                                    <a href="<?= base_url(); ?>products/item/<?= $oth_item['id'] ?>-<?= $oth_item['trans'] ?>" title="<?= $oth_item['name'] ?>">
+                                        <img src="<?= $oth_item['image_path'] ?>" alt="<?= $oth_item['name'] ?>">
+                                    </a>
+                                </div>
+                                <div class="carousel-info">
+                                    <a href="<?= base_url(); ?>products/item/<?= $oth_item['id'] ?>-<?= $oth_item['trans'] ?>" title="<?= $oth_item['name'] ?>">
+                                        <span class="product-title"><?= $oth_item['name'] ?></span>
+                                        <span class="amount"><?= $oth_item['price'] ?> <?= $oth_item['currency'] ?></span>
+                                    </a>
+                                </div>
+                            </li>
+                        <?php } ?>
+
+                    </ul>
+
+                    <span href="#" id="other_next" class="marketing-ctrl next">
+                        <i class="fa fa-chevron-right"></i>
+                    </span>
+
+                    <span href="#" id="other_prev" class="marketing-ctrl prev">
+                        <i class="fa fa-chevron-left"></i>
+                    </span>
+                </div>
+            <?php }  ?>
 
             <!--  Similar Goods -->
 
@@ -254,10 +265,9 @@
                 <?php
             }
             ?>
+           
         </div>
-        <?php
-        include_once 'application/views/templates/sidebar.php';
-        ?>
+       <?php include_once'application/views/templates/brand-list.php'; ?>     
     </div>
 </div>
 

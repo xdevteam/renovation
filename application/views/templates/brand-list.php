@@ -3,7 +3,7 @@
                             <div class="sidebar-content">
                                 <section class="widget-top-rated hidden-xs" id="most-popular">
                                     <h3 class="widget-title">Выбор по торговой марке</h3>
-                                    <?php if(!empty($popular)){ ?>
+                                    <?php if(!empty($partner)){ ?>
                                         <span id="car_next" class="carou-fred-sel-ctrl">
                                             <i class="fa fa-chevron-up"></i>
                                         </span>

@@ -31,6 +31,7 @@ class Product extends CI_Controller {
         $session = $this->session->userdata('user');
         $this->data['slider'] = $this->main_m->get_slider_item();
         $this->data['menu'] = $this->main_m->get_menu_item();
+        $this->data['partner'] = $this->main_m->get_partners();
         if (!empty($session)) {
             $this->data['user'] = @$this->session->userdata('user');
             $this->data['user_category'] = $this->user_model->get_usercat_byID($this->data['user']['id']);
