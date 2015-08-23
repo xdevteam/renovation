@@ -4,8 +4,39 @@
     <div class="wf-wrap">
         <div class="wf-container-footer">
             <div class="wf-container clearfix">
-
-                <section class="widget col-sm-3 col-xs-6" id="footer-contact-us-widget">
+                <section class="widget col-sm-6 col-xs-12" >
+                    <img src="http://cms.loc/images/footbab.png" style="left: 80%;
+    top:-70px;" alt="" title="Logo" class="hidden-xs hidden-sm">
+                </section>
+                <section class="widget col-sm-2 col-xs-12" >
+                    <ul>
+                        <li>
+                            <a href="http://cms.loc/">Главная</a>  
+                        </li>
+                        <li>
+                            <a href="http://cms.loc/about_us">О компании</a>  
+                        </li>
+                        <li>
+                            <a href="http://cms.loc/news">Новости</a>  
+                        </li>
+                        <li>
+                            <a href="http://cms.loc/blog">Статьи</a>  
+                        </li>
+                        <li>
+                            <a href="http://cms.loc/shipping">Доставака</a>  
+                        </li>
+                        <li>
+                            <a href="http://cms.loc/trade_marks">Торговые Марки</a>  
+                        </li>
+                        <li>
+                            <a href="http://cms.loc/gallery">Галерея</a>  
+                        </li>
+                        <li>
+                            <a href="http://cms.loc/how_to_order">Сделать заказ?</a>  
+                        </li>
+                    </ul>
+                </section>
+                <section class="widget col-sm-2 col-xs-6 foota1" id="footer-contact-us-widget">
                     <div class="widget-title">НАШИ КОНТАКТЫ</div>
                     <ul class="contact-info">
                         <li>
@@ -67,75 +98,15 @@
                     </div>
                 </section>               
 
-                <section class="widget col-sm-3 col-xs-6" id="footer-our-services-widget">                   
-                    <div class="widget-title">НАШИ ПРЕДЛОЖЕНИЯ</div>
-
-                    <?php if (!empty($popular)) { ?>
-                        <ul class="foot-accordion clearfix">                            
-                            <?php
-                            $m = 0;
-                            foreach ($popular as $item) {
-                                $stream = 'down';
-                                if ($m == 0) {
-                                    $stream = 'up';
-                                }
-                                $m++;
-                                if ($m < 5) {
-                                    ?>
-                                    <li>
-                                        <a href="<?= base_url(); ?>products/item/<?= $item['id'] ?>-<?= $item['trans'] ?>" class="accor-link text-primary">
-                                            <span class="accor-toggle-icon">
-                                                <i class="fa fa-angle-<?= $stream ?>"></i>
-                                            </span>
-                                            <span class="color-primary"><?= $item['name'] ?></span>
-                                        </a>
-                                        <div class="accor-content">                                            
-                                            <a href="<?= base_url(); ?>products/item/<?= $item['id'] ?>-<?= $item['trans'] ?>" class="alignLeft">
-                                                <img src="<?= $item['image_path'] ?>" alt="<?= $item['name'] ?>" width="40" height="40">
-                                            </a>                                            
-                                        </div>
-                                    </li>    
-                                    <?php
-                                }
-                            }
-                            ?>
-                        </ul>
-                    <?php } ?>
-                </section>
-
-                <section class="widget col-sm-3 hidden-xs" id="footer-featured-posts-widget">
-                    <div class="widget-title">ПОПУЛЯРНЫЕ ТОВАРЫ</div>
-                    <br>
-                    <?php if (!empty($popular)) { ?>
-                        <ul class="recent-posts">
-                            <?php
-                            $m = 0;
-                            foreach ($popular as $item) {
-                                $m++;
-                                if ($m < 4) {
-                                    ?>
-                                    <li>
-                                        <article>
-                                            <div class="wf-td">
-                                                <a href="<?= base_url(); ?>products/item/<?= $item['id'] ?>-<?= $item['trans'] ?>" class="alignLeft">
-                                                    <img src="<?= $item['image_path'] ?>" alt="<?= $item['name'] ?>" width="40" height="40">
-                                                </a>
-                                            </div>
-                                            <div class="post-content">
-                                                <a href="<?= base_url(); ?>products/item/<?= $item['id'] ?>-<?= $item['trans'] ?>"><?= $item['name'] ?></a>
-                                                <br>
-                                                <time class="text-secondary"><?= $item['date'] ?></time>
-                                            </div>
-                                        </article>
-                                    </li>
-                                    <?php
-                                }
-                            }
-                            ?>
-                        </ul>
-                    <?php } ?>
-                </section>
-                <section class="widget col-sm-3 col-xs-12" >
+                <section class="widget col-sm-2 col-xs-12" >
+                    <ul class="widget hidden-sm pull-left">
+                        <li>
+                            <a>Открыть корзину</a> 
+                        </li>
+                        <li>
+                            <a>Оформить заказ</a> 
+                        </li>
+                    </ul>
                     <div class="widget-title">ПОИСК</div>
                     <br>
                     <div class="widget-product-search">                       
@@ -147,8 +118,9 @@
                             </span>
                         </form>                            
                     </div>
+                    <div class="widget hidden-sm pricen pull-left"><img src="http://cms.loc/images/icc.png">Скачать прайс</div>
                 </section>
-
+                
             </div>
         </div>
     </div>
@@ -304,7 +276,9 @@
     <!-- Overlay -->
 
     <div id="overlay"></div>
-
+<section class="footgs widget col-sm-12 hidden-xs " >
+                  <h6 >2015 @ МАГАЗИН СТРОИТЕЛЬНЫХ МАТЕРИАЛОВ “ЕВРОРЕМОНТ”</h6>  
+                </section>
 
 </footer>
 
