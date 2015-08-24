@@ -271,4 +271,26 @@ class Admin_m extends CI_Model {
     /*
      * COMMENTS END
      */
+
+    /*
+    *NEWS START 
+    */
+     function add_news($data) {
+        if ($this->db->insert('news', $data)) {
+            return TRUE;
+        }
+    }
+  
+    function get_news_by_id($id) {
+        $blog = $this->db->where('id', $id)->get('news');
+        return $blog->result_array();
+    }
+
+    function get_news_back() {
+        $blog = $this->db->get('news');
+        return $blog->result_array();
+    }
+    /*
+    *NEWS END
+    */
 }

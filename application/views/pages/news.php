@@ -4,7 +4,7 @@
         <div class="wf-table">
             <div class="wf-td hgroup">
                 <h2 class="product_name_item">
-                    Cтатьи
+                    Новости
                 </h2>
             </div>
             <div class="wf-td hidden-xs hidden-sm">
@@ -13,8 +13,8 @@
                         <a href="<?= base_url(); ?>default">Главная</a>
                     </li>
                     <li>
-                        <a href="<?= base_url(); ?>/blog" >
-                        Cтатьи
+                        <a href="<?= base_url(); ?>/news" >
+                        Новости
                         </a>
                     </li>
                     
@@ -36,10 +36,10 @@
                 
                 <?php 
 
-                foreach($post as $p){ 
+                foreach($news as $p){ 
                 ?>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 post_block">
-                    <a href="<?=  base_url()?>single-post/<?=$p['id']?>" >
+                    <a href="<?=  base_url()?>news/<?=$p['id']?>" >
                         <div class="col-lg-4 col-md-4 col-sm-4 hidden-xs">
                             <img src="<?=$p['image_path']?>" alt=<?=$p['name']?> >
                         </div>

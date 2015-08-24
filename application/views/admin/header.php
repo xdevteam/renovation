@@ -110,6 +110,9 @@
                     <li>
                         <a href="<?= base_url(); ?>admin/blog_article" class="dropped"><i class="fa fa-fw fa-newspaper-o"></i> Блог</a>
                     </li>
+                     <li>
+                        <a href="<?= base_url(); ?>admin/news_article" class="dropped"><i class="fa fa-fw fa-newspaper-o"></i> Новости</a>
+                    </li>
                     <li>
                         <a href="<?= base_url(); ?>admin/about_us" class="dropped"><i class="fa fa-fw fa-info-circle"></i> О нас</a>
                     </li>
