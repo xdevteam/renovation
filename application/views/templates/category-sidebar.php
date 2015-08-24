@@ -7,7 +7,7 @@
                                     foreach ($subcategory as $k => $v) {
                                         ?>                        
                                         <li class="cat-item cat-parent" data-ajax="<?= $k ?>">
-                                            <span class="count hidden-xs">
+                                            <span class="count ">
                                             <img src="http://cms.loc/images/strl.png" width="11" height="11">
                                             <?= $cat ?>
                                             (<?= count($v) ?>)</span>

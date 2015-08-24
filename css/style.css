@@ -2242,11 +2242,13 @@ section .add-review input[type="submit"]:hover {
 }
 
 .widget-product-categories .product-cat .cat-item {
+    height: 25px;
     margin-top: 9px;
     position: relative;
     display: block;
     overflow: hidden;
 }
+
 .widget-product-categories .product-cat .cat-item:first-child {
     margin-top: 0;
 }
