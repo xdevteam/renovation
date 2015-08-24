@@ -167,9 +167,49 @@
 }
 
 header .cart_button {
-    background: linear-gradient(to top, #919191, #c0c0c0)!important;;
+    background: linear-gradient(to top, #919191, #c0c0c0)!important;
 }
 
 .sidebar-content {
     text-align: center;
+}
+
+#footer .widget div {
+    font-weight: bolder!important;
+}
+
+#footer .widget  {
+    font-weight: bolder!important;
+}
+
+.ctf {
+    width: 300px;
+    margin-bottom: 200px;
+    
+}
+
+textarea {
+    resize: none!important;
+}
+
+.ctf button{
+   background: linear-gradient(to top, #919191, #c0c0c0)!important;
+   color: #fff;
+}
+
+.ctf button:hover {
+    background: linear-gradient(to top, #919191, #c0c0c0)!important;
+   color: #fff;
+}
+
+@media (max-width: 320px){
+    .cat-item {
+        width: 30%;
+        float:left;
+        height: 23px;
+    }
+    
+    .count {
+        padding-left:  10px;
+    }
 }
