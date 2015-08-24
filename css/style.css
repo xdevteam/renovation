@@ -2241,8 +2241,7 @@ section .add-review input[type="submit"]:hover {
     margin-bottom: 10px;
 }
 
-.widget-product-categories .product-cat .cat-item {
-    height: 25px;
+.widget-product-categories .product-cat .cat-item {    
     margin-top: 9px;
     position: relative;
     display: block;
@@ -3432,4 +3431,30 @@ header .navbar-nav > li:nth-child(9) {
 #car_next i,
 #car_prev i{
     color:#fff;
+}
+
+.post_block{
+    padding: 20px 15px;    
+}
+.post_block a{
+    color: #000;
+}
+
+.post_block img{
+    width: 100%;
+}
+.blog_content_prev h1,
+.blog_content_prev h2,
+.blog_content_prev h3,
+.blog_content_prev h4,
+.blog_content_prev h5,
+.blog_content_prev h6,
+.blog_content_prev hr,
+.blog_content_prev img,
+.blog_content_prev iframe{
+    display: none;
+}
+.blog_content_prev{
+    font-size: 10px;
+    line-height: 1.2;
 }

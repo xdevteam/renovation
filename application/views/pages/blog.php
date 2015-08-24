@@ -4,7 +4,7 @@
         <div class="wf-table">
             <div class="wf-td hgroup">
                 <h2 class="product_name_item">
-                    О Компании
+                    Cтатьи
                 </h2>
             </div>
             <div class="wf-td hidden-xs hidden-sm">
@@ -13,8 +13,8 @@
                         <a href="<?= base_url(); ?>default">Главная</a>
                     </li>
                     <li>
-                        <a href="<?= base_url(); ?>/about_us" >
-                        О Компании
+                        <a href="<?= base_url(); ?>/blog" >
+                        Cтатьи
                         </a>
                     </li>
                     
@@ -33,7 +33,24 @@
         <div id="content" class="content"> 
  
             <div class="row cat-row">
-                <?=$about_us?>
+                
+                <?php 
+
+                foreach($post as $p){ 
+                ?>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 post_block">
+                    <a href="#" >
+                        <div class="col-lg-4 col-md-4 col-sm-4 hidden-xs">
+                            <img src="<?=$p['image_path']?>" alt=<?=$p['name']?> >
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                            <h4><?=$p['name']?></h4>
+                            <div class="blog_content_prev"><?=$p['blog_page']?></div>
+                        </div>
+                    </a>
+                </div>    
+                <?php } ?> 
+                          
             </div>       
            
 

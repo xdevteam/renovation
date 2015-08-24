@@ -136,5 +136,25 @@ class Main_m extends CI_Model {
         $partner = $this->db->where('status', 'enable')->get('fake_comments');
         return $partner->result_array();
     }
+     function get_blog($num, $offset) {
+        $blog = $this->db->where('status', 'enable')->order_by("date", "desc")->get('blog',$num, $offset);
+        return $blog->result_array();
+    }
+    function count_blog(){
+         $blog = $this->db->where('status', 'enable')->order_by("date", "desc")->get('blog');
+        return $blog->result_array();
+    }
+    function get_blog_by_id($id) {
+        $blog = $this->db->where('id', $id)->get('blog');
+        return $blog->result_array();
+    }
+    function get_blog_back() {
+        $blog = $this->db->get('blog');
+        return $blog->result_array();
+    }
+    function get_commit_num() {
+        $query = $this->db->get('commit');
+        return $query->num_rows();
+    }
 
 }
