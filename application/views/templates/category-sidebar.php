@@ -1,4 +1,4 @@
-<div class="col-sm-4 col-md-3 col-lg-3 col-xs-4 tabs-category-container">
+<div class="col-sm-4 col-md-3 col-lg-3 col-xs-12 tabs-category-container">
                         <section class="widget-product-categories">
                             <h4 class="widget-title"><img src="http://cms.loc/images/dom.png">Каталог продукции</h4>
                             <ul class="product-cat">                        
@@ -11,7 +11,7 @@
                                             <img src="http://cms.loc/images/strl.png" width="11" height="11">
                                             <?= $cat ?>
                                             (<?= count($v) ?>)</span>
-                                            <ul class="children">      
+                                            <ul class="children hiden-xs">      
                                                 <?php
                                                 if (!empty($v)) {
                                                     foreach ($v as $key => $val) {

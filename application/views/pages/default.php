@@ -12,7 +12,7 @@
                     <?php include_once'application/views/templates/category-sidebar.php'; ?>
                     <!-- Categories List End -->
                     <!-- Home tab Grid -->
-                    <div class="col-sm-8 col-md-7 col-lg-7 col-xs-8 clearfix tabs-content-grid home-tab-grid">
+                    <div class="col-sm-8 col-md-7 col-lg-7 col-xs-12 clearfix tabs-content-grid home-tab-grid">
                         <div id="category_content">                       
                             <?php include_once'application/views/templates/slider.php'; ?>
                         </div>
