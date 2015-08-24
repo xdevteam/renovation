@@ -39,7 +39,7 @@
                 <header class="custom_header col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="topblock col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         
-                        <div class="topbl1 col-lg-8 col-md-8 col-sm-8 col-xs-8 pull-left">                                                        
+                        <div class="topbl1 col-lg-8 col-md-8 col-sm-8 col-xs-7 pull-left">                                                        
                             <span class="genname col-lg-12 col-md-12 col-sm-10 col-xs-10 pull-right">МАГАЗИН СТРОИТЕЛЬНЫХ МАТЕРИАЛОВ</span>
                             <a href="<?=base_url()?>" class="home_icon">
                                 <img src="<?=base_url()?>images/evrfutt.png" alt="" title="Logo">

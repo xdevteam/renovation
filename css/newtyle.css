@@ -52,6 +52,11 @@
     padding: 0px!important;
 }
 
+.widget-product-categories {
+    margin-left: 30px!important;
+}
+
+
 .widget-product-categories h4{
     background-color: #df5c26;
         background-color: #df5c26;
@@ -111,4 +116,60 @@
 }
 .active_cat{
     background: #F5C499!important;
+}
+
+#main .row {
+    margin-right: 0px!important;
+}
+@media (max-width: 400px){
+   #footer .contact-info li {
+        font-size: 10px!important;
+    }
+    
+}
+
+@media (max-width: 400px){
+   #footer #gentaim {
+        font-size: 10px!important;
+    }
+    
+}
+
+@media (max-width: 400px){
+    .topbl1 .tel1{
+        font-size: 10px!important;
+    }
+    .topbl1 .tel2{
+        font-size: 10px!important;
+    }
+    .widget-product-categories h4 {
+        font-size: 10px!important;
+    }
+    .widget-product-categories  img {
+        display: none;
+    }
+    
+    .widget-product-categories .product-cat {
+        font-size: 8px!important;
+    }
+}
+
+@media (max-width: 650px){
+    .widget-product-categories  img {
+        display: none;
+    }
+}
+
+.trty1 img{
+    max-width: 100%;
+    margin-bottom: 20px;
+    border: 2px solid #f6a828;
+}
+
+header .cart_button {
+    background: linear-gradient(to top, #919191, #c0c0c0)!important;;
+}
+
+.sidebar-content {
+    text-align: center;
 }
