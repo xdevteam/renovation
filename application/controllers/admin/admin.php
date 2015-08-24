@@ -44,6 +44,7 @@ class Admin extends CI_Controller {
         /* load blog */
         $this->data['post'] = $this->admin_m->get_blog_back();
         /* load about_us_m */
+        $this->data['news'] = $this->admin_m->get_news_back();
         $this->load->model('about_us_m');
         $this->data['about_us'] = $this->about_us_m->about_us_data();
         $session = $this->session->userdata('admin');

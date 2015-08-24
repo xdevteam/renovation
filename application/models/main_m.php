@@ -140,8 +140,16 @@ class Main_m extends CI_Model {
         $blog = $this->db->where('status', 'enable')->order_by("date", "desc")->get('blog',$num, $offset);
         return $blog->result_array();
     }
+     function get_news($num, $offset) {
+        $blog = $this->db->where('status', 'enable')->order_by("date", "desc")->get('news',$num, $offset);
+        return $blog->result_array();
+    }
     function count_blog(){
          $blog = $this->db->where('status', 'enable')->order_by("date", "desc")->get('blog');
+        return $blog->result_array();
+    }
+    function count_news(){
+         $blog = $this->db->where('status', 'enable')->order_by("date", "desc")->get('news');
         return $blog->result_array();
     }
     function get_blog_by_id($id) {

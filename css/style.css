@@ -3458,3 +3458,33 @@ header .navbar-nav > li:nth-child(9) {
     font-size: 10px;
     line-height: 1.2;
 }
+ul.pagination-list {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 40px;
+}
+ul.pagination-list li {
+    display: inline-block;
+    margin-right: 8px;
+}
+ul.pagination-list li a {
+    display: inline-block;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    color: #666666;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Ubuntu', sans-serif;
+    text-transform: uppercase;
+}
+ul.pagination-list li a:hover,
+ul.pagination-list li a.active {
+
+  color: #336699;
+}
+.post_content{
+    padding: 0 25px;
+}
