@@ -4,8 +4,17 @@ $(function() {
 	
 	
 	$('ul .cat-item').click(function(ev) {
-		ev.preventDefault();
-		$('ul .cat-item').addClass('active');
+		// ev.preventDefault();
+		// var src="http://cms.loc/images/1downarrow.png";
+		// var srcOld="http://cms.loc/images/strl.png";
+		// $('ul .cat-item').removeClass('active_cat');
+		// $(this).addClass('active_cat');
+		// $('ul .cat-item').find('img').each( function(){ this.src = srcOld } );
+		// $(this).find('img').each( function(){ this.src = src } );
+		// $('ul .cat-item').find('ul').hide('slow');
+		// $(this).find('ul').slideToggle();
+
+
 		var val = $( this ).attr('data-ajax');
 		$('#category_content').animate({
     							opacity: 0    
@@ -27,11 +36,7 @@ $(function() {
             });  
  		});		
 	});
-	$('.children li').click(function(ev) {
-		var link=$(this).find("a").attr("href");
-		console.log("link", link);
-		window.location.href=link;
-	})
+	
 });
 	
 

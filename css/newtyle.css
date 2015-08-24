@@ -79,7 +79,9 @@
     margin-left: 5px;
     margin-top: -2px;
 }
-
+.widget-product-categories .children li {
+    background: #F6F5F3;
+}
 
 
 .widget-product-categories .children {
@@ -93,10 +95,20 @@
 }
 
 .widget-product-categories .children li {
-    border-top: 2px solid #fff;
+    border-top: 1px solid #fff;
     text-align: center;
 }
 
 .widget-product-categories .product-cat .cat-item {
     margin: 2px!important;
+}
+.cat-item  :hover{
+    background: #F5C499;
+    cursor: pointer;
+}
+.cat-item  span{
+    width: 100%;
+}
+.active_cat{
+    background: #F5C499!important;
 }

@@ -12,7 +12,7 @@
                 <div class="wf-td hidden-xs hidden-sm">
                     <ul class="breadcrumbs text-normal">
                         <li>
-                            <a href="<?= base_url(); ?>default">Главная</a>
+                            <a href="<?= base_url(); ?>default">Главная </a>
                         </li>
                         <li>
                             <a href="<?= base_url(); ?>subcategories/<?= $subcat_name['0']['link'] ?>"><?= $subcat_name['0']['name'] ?></a>
@@ -42,7 +42,7 @@
     <div id="main" class="cat-main">
         <div class="container wf-wrap clearfix">
              <?php include_once'application/views/templates/category-sidebar.php'; ?>       
-            <div id="content" class=" clearfix product_info col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div id="content" class=" clearfix product_info col-lg-7 col-md-7 col-sm-8 col-xs-8">
 
                 <!-- Main Product Image -->
 
@@ -68,14 +68,13 @@
                     </div>
                 </div>
 
-                <!-- Summary -->
+                <div class="summary">
 
-                <div class="summary col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <p class="item_price">
                         <span class="price"><?= $item['price'] ?></span>
                         <span class="currency"><?= $item['currency'] ?></span>
-                        <!-- <span class="separator">за</span>
-                        <span class="quantity"><?= $item['prod_quantity'] ?></span> -->
+                        <span class="separator">за</span>
+                        <span class="quantity"><?= $item['prod_quantity'] ?></span>
                     </p>
                     <? if(!empty($item['prod_min_order'])) {?>
                     <p class="order">
@@ -86,16 +85,32 @@
                     <div class="quantity_ clearfix">
                         <input type="number" step="1" min="1" value="1" title="Change quantity" size="4">
                         <div class="add2cart buy-it" data-toggle="modal" data-target="#modalCart" id="<?= $item['id'] ?>">Купить</div>
-                    </div> 
+                    </div>
+                    <?php if (!empty($item['pdf_path'])){ ?>
+                    <div>
+                        <span class="date">                           
+                            <a href="<?= base_url();?>/<?= $item['pdf_path'] ?>" class="phone_value"> Скачать PDF интсрукцию</span>
+                        </span>
+                    </div>
+                    <? } ?>
+                    <div class="product_meta"> 
+                        <span class="date">
+                            Товар добавлен:
+                            <span href="<?= base_url(); ?>" class="phone_value"><?= $item['date'] ?></span>
+                        </span>
+                    </div>
+
                     <div class="seller_info">                        
                         <span class="company" style="display: none;">
                             Компания:
                             <a href="<?= base_url('view_company'); ?>/<?= $user_data['id'] ?>" class="company_value"><?= $user_data['company'] ?></a>
-                        </span>                
+                        </span>
+                         
+                                       
                     </div>
+
                 </div>
             <?php } ?>
-            <!-- Product Tabs -->
 
             <div class="product-tabs hidden-sm hidden-xs">
                 <ul class="tabs clearfix">

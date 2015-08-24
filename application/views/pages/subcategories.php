@@ -42,7 +42,7 @@
 <div id="main" class="cat-main">
     <div class="container wf-wrap">
         <?php include_once'application/views/templates/category-sidebar.php'; ?>       
-            <div id="content" class=" clearfix col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <div id="content" class=" clearfix col-lg-7 col-md-7 col-sm-8 col-xs-8">
         <!-- 1st Row -->
         <div class="row cat-row">
             <?php
