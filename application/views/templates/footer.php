@@ -10,30 +10,13 @@
                 </section>
                 <section class="widget col-sm-4 col-xs-6 col-md-2 text-right" >
                     <ul>
-                        <li>
-                            <a href="http://cms.loc/">Главная</a>  
-                        </li>
-                        <li>
-                            <a href="http://cms.loc/about_us">О компании</a>  
-                        </li>
-                        <li>
-                            <a href="http://cms.loc/news">Новости</a>  
-                        </li>
-                        <li>
-                            <a href="http://cms.loc/blog">Статьи</a>  
-                        </li>
-                        <li>
-                            <a href="http://cms.loc/shipping">Доставака</a>  
-                        </li>
-                        <li>
-                            <a href="http://cms.loc/trade_marks">Торговые Марки</a>  
-                        </li>
-                        <li>
-                            <a href="http://cms.loc/gallery">Галерея</a>  
-                        </li>
-                        <li>
-                            <a href="http://cms.loc/how_to_order">Сделать заказ?</a>  
-                        </li>
+                        <?
+                                foreach ($menu as $item){                                                          
+                                ?>
+                                <li class="drop">
+                                    <a  href="<?= base_url() ?><?= $item['link'] ?>"><?= $item['name'] ?></a> 
+                                </li>                                
+                                <? } ?>
                     </ul>
                 </section>
                 <section class="widget col-sm-4 col-lg-2 col-md-2  col-xs-6 foota1" id="footer-contact-us-widget">

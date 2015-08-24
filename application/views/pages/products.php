@@ -54,7 +54,7 @@
 <div id="main" class="cat-main">
     <div class="container wf-wrap clearfix" id="main_wrapper_wf">
          <?php include_once'application/views/templates/category-sidebar.php'; ?>
-        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" >
+        <div class="col-lg-7 col-md-7 col-sm-8 col-xs-8" >
         <div id="content" class="content"> 
             <? if (!empty($items)) { ?>
             <p class="cat-result-count col-lg-12 col-md-12 col-sm-12 col-xs-12">Показано <?= count($items) ?> позиции из <?= $total_rows ?></p>

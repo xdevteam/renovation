@@ -1067,7 +1067,7 @@ p .form-submit {
 }
 
 .tabs-category-container {
-    padding-left: 15px;
+    padding-left: 0px;
     padding-right: 15px;
 }
 
@@ -1793,8 +1793,8 @@ section .add-review input[type="submit"]:hover {
 
 .hover-over-btns > a > div {
     display: inline-block;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background: rgba(0, 0, 0, .4);
     margin: 0 5px;
@@ -1811,7 +1811,7 @@ section .add-review input[type="submit"]:hover {
 }
 
 .hover-over-btns a > div > i {
-    line-height: 80px;
+    line-height: 66px;
 }
 
 /* Item */
@@ -2170,7 +2170,7 @@ section .add-review input[type="submit"]:hover {
 }
 
 .sidebar-content section .widget-cart-list li {
-    padding-top: 15px;
+    padding-top: 0px;
     position: relative;
     display: block;
     overflow: hidden;
@@ -2256,6 +2256,7 @@ section .add-review input[type="submit"]:hover {
     font-size: 14px;
     line-height: 25px;
     text-decoration: none;
+    width: 100%;
 }
 
 .widget-product-categories .product-cat .cat-item a:hover {
@@ -2263,7 +2264,7 @@ section .add-review input[type="submit"]:hover {
 }
 
 .widget-product-categories .product-cat .cat-item .count {
-    color: rgba(119,119,119,0.5);
+    color: #000;
     display: inline-block;
 }
 
@@ -3338,8 +3339,14 @@ header .navbar-nav > li:nth-child(9) {
 #page{
     /*background-color: rgba(136, 136, 136, 0.2);*/
 }
-.link_brand{
-    height: 85px;
+.link_brand {
+    border: 1px solid #ccc;   
+}
+.link_brand img{
+    height: 75px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 .home-tab-grid{
     background-color: #fff;
@@ -3416,4 +3423,11 @@ header .navbar-nav > li:nth-child(9) {
     .product-tabs .tabs li a{
         font-size: 14px;
     }
+}
+.footgs{
+    margin: 0px!important;
+}
+#car_next i,
+#car_prev i{
+    color:#fff;
 }
