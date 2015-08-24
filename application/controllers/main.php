@@ -14,6 +14,7 @@ class Main extends CI_Controller {
         $this->load->model('main_m');
         $this->load->model('settings_m');
         $this->load->model('product_m');
+        $this->load->model('about_us_m');
         $this->script['city'] = $this->settings_m->get_set('city');
         $this->script['street_build'] = $this->settings_m->get_set('street/build');
         $this->script['phone1'] = $this->settings_m->get_set('phone1');
@@ -28,6 +29,7 @@ class Main extends CI_Controller {
         $this->data['fb_link'] = $this->settings_m->get_set('fb_link');
         $this->data['vk_link'] = $this->settings_m->get_set('vk_link');
         $this->data['prep_popular'] = $this->product_m->get_popular();
+        $this->data['about_us'] = $this->about_us_m->about_us_data();
         foreach ($this->data['prep_popular'] as $k => $v) {
             foreach ($v as $key => $val) {
                 if ($key == 'name') {
@@ -81,6 +83,7 @@ class Main extends CI_Controller {
                 show_404();
             }
         } else {
+            
             $this->data['subcat_side'] = $this->subcategories_m->get_subcategories_sidebar();
             $this->data['prepare'] = $this->category_m->get_category_sidebar();
             foreach ($this->data['prepare'] as $key => $value) {
@@ -138,4 +141,79 @@ class Main extends CI_Controller {
     }
 
     /* END Main Page USER */
+    /* get_blog START */
+
+    public function get_blog() {
+        $this->data['city'] = $this->settings_m->get_set('city');
+        $this->data['street_build'] = $this->settings_m->get_set('street/build');
+        $this->data['phone1'] = $this->settings_m->get_set('phone1');
+        $this->data['phone2'] = $this->settings_m->get_set('phone2');
+        $this->data['email'] = $this->settings_m->get_set('email');
+        $this->data['tw_link'] = $this->settings_m->get_set('tw_link');
+        $this->data['inst_link'] = $this->settings_m->get_set('inst_link');
+        $this->data['fb_link'] = $this->settings_m->get_set('fb_link');
+        $this->data['vk_link'] = $this->settings_m->get_set('vk_link');
+        $this->data['tw_link'] = $this->settings_m->get_set('tw_link');
+        $this->data['inst_link'] = $this->settings_m->get_set('inst_link');
+        $this->data['fb_link'] = $this->settings_m->get_set('fb_link');
+        $this->data['vk_link'] = $this->settings_m->get_set('vk_link');
+        $this->data['subcat_side'] = $this->subcategories_m->get_subcategories_sidebar();
+        $this->data['prepare'] = $this->category_m->get_category_sidebar();
+        foreach ($this->data['prepare'] as $key => $value) {
+            foreach ($this->data['subcat_side'] as $k => $v) {
+                if ($v['cat_id'] == $value['id']) {
+                    $this->data['cat_list'][$value['name']][$value['link']][$v['link']][$v['name']] = $this->product_m->count_products($v['id']);
+                }
+            }
+        }
+        $arr = $this->main_m->count_blog();
+        $config['base_url'] = base_url() . 'blog/page';
+        $config['total_rows'] = count($arr);
+        $config['per_page'] = '2';
+        $config['full_tag_open'] = '<ul class="pagination-list text-center">';
+        $config['full_tag_close'] = '</ul>';
+        $config['cur_tag_open'] = '<li><a  class="active">';
+        $config['cur_tag_close'] = '</a></li>';
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
+        $config['prev_link'] = 'Назад';
+        $config['next_link'] = 'Вперед';
+        $config['prev_tag_open'] = '<li><a class="prev-pag">';
+        $config['prev_tag_close'] = '</a></li>';
+        $config['next_tag_open'] = '<li><a class="next-pag">';
+        $config['next_tag_close'] = '</a></li>';
+        $this->load->model('main_m');
+        $this->data['post'] = $this->main_m->get_blog($config['per_page'], $this->uri->segment(3));
+        $this->pagination->initialize($config);
+        $this->load->view("pages/blog", $this->data);
+        $this->data['script'] = ""
+                        . "<script src='../../../js/sidebar.js'></script>"
+                        . "<script src='../../../js/perfect-scrollbar.jquery.js'></script>"
+                        . "<script src='../../../js/autoComplete.js'></script>"
+                        . "<script src='../../../js/main.js'></script>"
+                        . "<script src='../../../js/cart.js'></script>"
+                        . "<script src='../../../js/ajax_select.js'></script>"
+                        . "<script src='../../../js/bootstrap-switch.js'></script>"
+                        . "<script src='../../../js/main_nav.js'></script>"
+                        . "<script src='../../../js/switcher.js'></script>"
+                        . "<script src='../../../js/contentBlog.js'></script>"
+                        . "<script src='../../../js/main_tabs.js'></script>";
+
+         
+        $this->load->view("templates/footer", $this->data);
+
+    }
+
+    /* get_blog END */
+    /* get_post START */
+
+    function get_post($id) {
+        $this->load->model('main_m');
+        $this->data['post_view'] = $this->main_m->get_blog_by_id($id);
+        $this->load->view('pages/single-post', $this->data);
+        $this->load->view('templates/footer');
+//         
+    }
+
+    /* get_post END */
 }

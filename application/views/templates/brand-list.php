@@ -2,7 +2,7 @@
                         <!-- <aside id="sidebar" class="sidebar">  -->
                             <div class="sidebar-content">
                                 <section class="widget-top-rated hidden-xs" id="most-popular">
-                                    <h5 class="">Выбор по торговой марке</h5>
+                                    <h4 class="text-center">Выбор по торговой марке</h4>
                                     <?php if(!empty($partner)){ ?>
                                         <span id="car_next" class="carou-fred-sel-ctrl">
                                             <i class="fa fa-chevron-up"></i>

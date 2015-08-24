@@ -93,6 +93,7 @@ $route['admin/edit_about_page']='admin/admin/edit_about_us_data';
 
 $route['admin/(:any)'] = 'admin/admin/admin_pages/$1';
 
+$route['blog']='main/get_blog';
 $route['subcategories/(:any)'] = 'subcategories/get_subgategory/$1';
 $route['subcategories'] = 'subcategories/get_all_subcat';
 $route['user/add_product'] = 'user/add_product';
