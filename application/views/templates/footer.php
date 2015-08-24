@@ -8,7 +8,7 @@
                     <img src="http://cms.loc/images/footbab.png" style=" margin-top: -115px;
     margin-left: -90px; margin-bottom: -38px;" alt="" title="Logo" >
                 </section>
-                <section class="widget col-sm-4 col-xs-6 col-md-2 text-right" >
+                <section class="widget col-sm-4 col-xs-5 col-md-2 text-right" id="gentaim" >
                     <ul>
                         <?
                                 foreach ($menu as $item){                                                          
@@ -19,7 +19,7 @@
                                 <? } ?>
                     </ul>
                 </section>
-                <section class="widget col-sm-4 col-lg-2 col-md-2  col-xs-6 foota1" id="footer-contact-us-widget">
+                <section class="widget col-sm-4 col-lg-2 col-md-2  col-xs-7 foota1" id="footer-contact-us-widget">
                     <div class="widget-title">НАШИ КОНТАКТЫ</div>
                     <ul class="contact-info">
                         <li>
@@ -81,7 +81,7 @@
                     </div>
                 </section>               
 
-                <section class="widget col-lg-2 col-sm-4 col-xs-12 col-md-2 " >
+                <section class="widget col-lg-2 col-sm-4 col-xs-10 col-md-2 " >
                     <ul class="widget  hidden-xs pull-left">
                         <li>
                             <a>Открыть корзину</a> 
