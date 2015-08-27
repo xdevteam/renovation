@@ -232,6 +232,18 @@ class Main extends CI_Controller {
         }
         $this->load->model('main_m');
         $this->data['post_view'] = $this->main_m->get_blog_by_id($id);
+        $this->data['script'] = ""
+                        . "<script src='../../../js/sidebar.js'></script>"
+                        . "<script src='../../../js/perfect-scrollbar.jquery.js'></script>"
+                        . "<script src='../../../js/autoComplete.js'></script>"
+                        . "<script src='../../../js/main.js'></script>"
+                        . "<script src='../../../js/cart.js'></script>"
+                        . "<script src='../../../js/ajax_select.js'></script>"
+                        . "<script src='../../../js/bootstrap-switch.js'></script>"
+                        . "<script src='../../../js/main_nav.js'></script>"
+                        . "<script src='../../../js/switcher.js'></script>"
+                        . "<script src='../../../js/contentBlog.js'></script>"
+                        . "<script src='../../../js/main_tabs.js'></script>";
         $this->load->view('pages/single-post', $this->data);
         $this->load->view('templates/footer');
 //         
@@ -328,6 +340,18 @@ class Main extends CI_Controller {
         }
         $this->load->model('admin_m');
         $this->data['post_view'] = $this->admin_m->get_news_by_id($id);
+        $this->data['script'] = ""
+                        . "<script src='../../../js/sidebar.js'></script>"
+                        . "<script src='../../../js/perfect-scrollbar.jquery.js'></script>"
+                        . "<script src='../../../js/autoComplete.js'></script>"
+                        . "<script src='../../../js/main.js'></script>"
+                        . "<script src='../../../js/cart.js'></script>"
+                        . "<script src='../../../js/ajax_select.js'></script>"
+                        . "<script src='../../../js/bootstrap-switch.js'></script>"
+                        . "<script src='../../../js/main_nav.js'></script>"
+                        . "<script src='../../../js/switcher.js'></script>"
+                        . "<script src='../../../js/contentBlog.js'></script>"
+                        . "<script src='../../../js/main_tabs.js'></script>";
         $this->load->view('pages/single-post', $this->data);
         $this->load->view('templates/footer');
 //         

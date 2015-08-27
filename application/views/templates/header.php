@@ -93,16 +93,24 @@
                             <ul class="nav navbar-nav main-nav ">
                                 <?
                                 $i=1;
-                                foreach ($menu as $item){
-                                if($i==1){
-                                $border="";
+                                if(count($menu)>=8){
+                                    $class="more8";
+                                    $style="";
                                 }else{
-                                $border="style='border-left: 1px solid rgba(171, 127, 127, 0.66);'";
+                                    $width=100/count($menu);
+                                    $style="width:".$width."%;";
+                                    $class="less8";
                                 }
-                                $i++;                                 
+                                foreach ($menu as $item){
+                                    if($i==1){
+                                        $border="";
+                                    }else{
+                                        $border="style='border-left: 1px solid rgba(171, 127, 127, 0.66);'";
+                                    }
+                                    $i++;                                 
                                 ?>
-                                <li class="drop">
-                                    <a <?= $border ?> href="<?= base_url() ?><?= $item['link'] ?>"><?= $item['name'] ?></a> 
+                                <li class="drop" style="<?=$style?>">
+                                    <a <?= $border ?> class="<?=$class?>" href="<?= base_url() ?><?= $item['link'] ?>"><?= $item['name'] ?></a> 
                                 </li>                                
                                 <? } ?>
                          
