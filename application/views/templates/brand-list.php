@@ -15,7 +15,12 @@
                                                         <!-- <span class="product-title"><?=$item['name']?></span> -->
                                                     </a>                                    
                                                 </li>
-                                               
+                                               <li>
+                                                    <a href="<?=$item['link']?>" class="link_brand" title="<?=$item['name']?>"> 
+                                                        <img src="<?=$item['logo']?>" alt="<?=$item['name']?>">
+                                                        <!-- <span class="product-title"><?=$item['name']?></span> -->
+                                                    </a>                                    
+                                                </li>
                                 
                                             <?php }?>
                                         </ul>
@@ -27,4 +32,4 @@
                                 </section>
                             </div>
                         <!-- </aside> -->
-                    </div>  
+                    </div>

@@ -5,8 +5,8 @@
         <div class="wf-container-footer">
             <div class="wf-container clearfix">
                 <section class="widget hidden-sm hidden-xs col-md-6 col-lg-6" >
-                    <img src="http://cms.loc/images/footbab.png" style=" margin-top: -115px;
-    margin-left: -90px; margin-bottom: -38px;" alt="" title="Logo" >
+                    <img src="<?=base_url()?>/images/footbab.png" style=" margin-top: -115px;
+    margin-left: -45px; margin-bottom: -38px;" alt="" title="Logo" >
                 </section>
                 <section class="widget col-sm-4 col-xs-5 col-md-2 text-right" id="gentaim" >
                     <ul>
@@ -101,7 +101,7 @@
                             </span>
                         </form>                            
                     </div>
-                    <div class="widget  hidden-xs pricen pull-left"><img src="http://cms.loc/images/icc.png">Скачать прайс</div>
+                    <div class="widget  hidden-xs pricen pull-left"><img src="<?=base_url()?>/images/icc.png">Скачать прайс</div>
                 </section>
                 
             </div>

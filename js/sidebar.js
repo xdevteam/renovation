@@ -8,8 +8,8 @@
 	// 	$( this ).next().next().slideToggle();
 	$('ul .cat-item').click(function(ev) {
 		ev.preventDefault();
-		var src="http://cms.loc/images/1downarrow.png";
-		var srcOld="http://cms.loc/images/strl.png";
+		var src="../images/1downarrow.png";
+		var srcOld="../images/strl.png";
 		$('ul .cat-item').removeClass('active_cat');
 		$(this).addClass('active_cat');
 		$('ul .cat-item').find('img').each( function(){ this.src = srcOld } );
