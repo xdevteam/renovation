@@ -2258,6 +2258,8 @@ section .add-review input[type="submit"]:hover {
     position: relative;
     display: block;
     overflow: hidden;
+    font-weight: bold;
+    color: #423F4A;
 }
 
 .widget-product-categories .product-cat .cat-item:first-child {
@@ -2277,7 +2279,8 @@ section .add-review input[type="submit"]:hover {
 }
 
 .widget-product-categories .product-cat .cat-item .count {
-    color: #000;
+    padding: 2px;
+    color: #423F4A;
     display: inline-block;
 }
 
@@ -2285,6 +2288,10 @@ section .add-review input[type="submit"]:hover {
     padding-top: 10px;
     margin-left: 20px;
 	display: none;
+}
+.children li a span{
+    font-size: 12px;
+    font-weight: normal;
 }
 .children li span:hover{
     background: #E7E6E4!important;
