@@ -1,4 +1,3 @@
-
 <div class="page-title">
     <div class="wf-wrap">
         <div class="wf-table">
@@ -50,7 +49,7 @@
                 foreach ($subcategories as $item) {
                     if ($item['status'] == 'enable') {
                         ?>
-                        <div class="col-md-4 col-sm-4 col-xs-12 cat-content-row-item">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 cat-content-row-item">
                             <article>
                                 <div class="cat-item-img">
                                     <a href="<?= base_url(); ?>products/<?= $item['link'] ?>">
@@ -105,4 +104,3 @@
 
 
 <!-- Main Content End -->
-

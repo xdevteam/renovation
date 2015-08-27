@@ -8,22 +8,22 @@
 
             <div class="row cat-row trty1">
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
-                    <img src="http://cms.loc/img/shop-item-4.jpg" >
+                    <img src="<?=base_url()?>img/shop-item-4.jpg" >
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
-                    <img src="http://cms.loc/img/shop-item-3.jpg" >
+                    <img src="<?=base_url()?>img/shop-item-3.jpg" >
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
-                    <img src="http://cms.loc/img/shop-item-2.jpg" >
+                    <img src="<?=base_url()?>img/shop-item-2.jpg" >
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
-                    <img src="http://cms.loc/img/shop-item-7.jpg" >
+                    <img src="<?=base_url()?>img/shop-item-7.jpg" >
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
-                    <img src="http://cms.loc/img/shop-item-5.jpg" >
+                    <img src="<?=base_url()?>img/shop-item-5.jpg" >
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
-                    <img src="http://cms.loc/img/shop-item-6.jpg" >
+                    <img src="<?=base_url()?>img/shop-item-6.jpg" >
                 </div>
             </div>         
             <div >

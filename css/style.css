@@ -55,6 +55,8 @@ body.no-bg {
     background: #ffffff none repeat center top;
     background-size: auto;
     position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
     /*overflow: hidden;*/
 }
 
@@ -816,13 +818,20 @@ body.no-bg {
 }
 
 /* Main Content */
-
+@media screen and (min-width: 1201px){
 #main {
     padding: 0 0 50px 0;
     position: relative;
     width: 100%;
 }
-
+}
+@media screen and (max-width: 1200px){
+#main {
+    padding: 0 30px 50px 30px;
+    position: relative;
+    width: 100%;
+}
+}
 #main.cat-main {
     padding: 50px 0;
 }
