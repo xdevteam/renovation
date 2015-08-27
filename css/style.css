@@ -3036,7 +3036,7 @@ a.button-one {
         position: relative;
         z-index: 701;
         padding: 60px 0 25px;
-        font-size: 21px;        
+        font-size: 19px;        
         color: #42404a;        
         text-align: center;
     }
@@ -3077,6 +3077,7 @@ a.button-one {
         padding: 0;
         margin-left: 0px;
     }
+
 }
 @media screen and (max-width: 600px){
      .topbl2 {
@@ -3096,7 +3097,7 @@ a.button-one {
         position: relative;
         z-index: 701;
         padding: 45px 0 25px;
-        font-size: 17px;        
+        font-size: 15px;        
         color: #42404a;        
         text-align: center;
     }
@@ -3327,6 +3328,10 @@ header .navbar-nav > li:nth-child(9) {
     z-index: 1050;
    
 }
+.cart-icons img {
+    margin-top: -10px;
+    padding-bottom: 20px;
+}
 .cart_info{
    /*top: 50%; */
 }
@@ -3516,4 +3521,20 @@ ul.pagination-list li a.active {
 }
 .post_content{
     padding: 0 25px;
+}
+.pricen{
+    font-size: 10px!important;
+}
+.web_tools,
+#footer-contact-us-widget,
+#gentaim a{
+    text-shadow:
+        -1px -1px 0 rgba(0, 0, 0, 0.38),
+        1px -1px 0 rgba(0, 0, 0, 0.38),
+        -1px 1px 0 rgba(0, 0, 0, 0.38),
+        1px 1px 0 rgba(0, 0, 0, 0.38);
+
+}
+.modal {
+    z-index: 1300;
 }

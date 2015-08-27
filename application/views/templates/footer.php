@@ -81,10 +81,14 @@
                     </div>
                 </section>               
 
-                <section class="widget col-lg-2 col-sm-4 col-xs-10 col-md-2 " >
+                <section class="widget col-lg-2 col-sm-4 col-xs-10 col-md-2 web_tools" >
                     <ul class="widget  hidden-xs pull-left">
                         <li>
-                            <a>Открыть корзину</a> 
+                           <a href="#" class="submit" data-toggle="modal" data-target="#modalCart" id="topBarCartLink_down">
+                            <!-- <i class="fa fa-shopping-cart"></i> -->
+                                    <span class="top-bar-icon-text">Открыть корзину</span> 
+                            
+                            </a> 
                         </li>
                         <li>
                             <a>Оформить заказ</a> 
