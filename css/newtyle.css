@@ -221,12 +221,43 @@ textarea {
 
 .teg-item {
     float: left;
-    margin-right: 7px;
+    margin-right: 5px;
     margin-bottom: 10px;
     padding: 0!important;
-    
+    margin-top: 5px;
+    border: 2px solid #f5c599;
+        padding-left: 2px;
+        background: #f4d5b9;
+        color: #645b5d; 
+        cursor: pointer;
+}
+
+.teg-item:hover {
+     border: 2px solid #e8e6e4;
+        background: #f6f5f4;
 }
 
 .teg-item span {
     padding: 0!important;  
+}
+
+.teg-item ul {
+        display: inline-block;
+       
+}
+
+
+
+@media (max-width: 400px){
+.cart-icons {
+        position: relative;
+    
+    top: 55px;
+    z-index: 702;
+   right: 19px!important;
+}
+
+#page .bock{
+        font-size: 13px!important;
+}
 }

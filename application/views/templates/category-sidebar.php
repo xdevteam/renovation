@@ -49,7 +49,7 @@
 
 <div class="hidden-sm hidden-md hidden-lg col-xs-12 tabs-category-container">
                         <section class="widget-product-categories">
-                            <h4 class="widget-title"><img src="<?=base_url()?>images/dom.png">Каталог продукции</h4>
+                            <h4 class="widget-title bock"><img src="<?=base_url()?>images/dom.png">Каталог продукции</h4>
                             <ul class="teg-cat">                        
                                 <?php                     
                                 foreach ($cat_list as $cat => $subcategory) {
