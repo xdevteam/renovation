@@ -33,10 +33,13 @@ body {
     font: normal normal normal 14px / 24px "Open Sans", Helvetica, Arial, Verdana, sans-serif;
     word-spacing: normal;
     color: #888888;
+    background: url('../images/basck.png');
+    background-position: top;
+    background-repeat: no-repeat;
 }
 
 body {
-    background-size: cover;
+    /*background-size: cover;*/
 }
 
 body.no-bg {
@@ -2255,6 +2258,8 @@ section .add-review input[type="submit"]:hover {
     position: relative;
     display: block;
     overflow: hidden;
+    font-weight: bold;
+    color: #423F4A;
 }
 
 .widget-product-categories .product-cat .cat-item:first-child {
@@ -2274,7 +2279,8 @@ section .add-review input[type="submit"]:hover {
 }
 
 .widget-product-categories .product-cat .cat-item .count {
-    color: #000;
+    padding: 2px;
+    color: #423F4A;
     display: inline-block;
 }
 
@@ -2283,7 +2289,13 @@ section .add-review input[type="submit"]:hover {
     margin-left: 20px;
 	display: none;
 }
-
+.children li a span{
+    font-size: 12px;
+    font-weight: normal;
+}
+.children li span:hover{
+    background: #E7E6E4!important;
+}
 .widget-top-rated .widget-cart-list li img {
        
     float: left;
@@ -2311,7 +2323,7 @@ section .add-review input[type="submit"]:hover {
 .carou-fred-sel-ctrl {
 	display: inline-block;
 	text-align: center;
-	font-size: 1.5em;
+	font-size: 1em;
 	width: 100%;
 	padding: 5px 0;
 	-webkit-user-select: none;
@@ -3024,7 +3036,7 @@ a.button-one {
         position: relative;
         z-index: 701;
         padding: 60px 0 25px;
-        font-size: 21px;        
+        font-size: 19px;        
         color: #42404a;        
         text-align: center;
     }
@@ -3065,6 +3077,7 @@ a.button-one {
         padding: 0;
         margin-left: 0px;
     }
+
 }
 @media screen and (max-width: 600px){
      .topbl2 {
@@ -3084,7 +3097,7 @@ a.button-one {
         position: relative;
         z-index: 701;
         padding: 45px 0 25px;
-        font-size: 17px;        
+        font-size: 15px;        
         color: #42404a;        
         text-align: center;
     }
@@ -3178,6 +3191,7 @@ a.button-one {
     } 
     div .cart_button_mini {
         position: relative;
+        z-index: 1100;
         bottom: -25px;
         right: 16px;
         color: #fff;
@@ -3238,11 +3252,16 @@ body nav ul{
     width: 100%;
 }
 body nav ul li{    
-    width: 12.5%
+   
 }
-body nav ul li a{
+body nav ul li .less8{
 font-size: 11px;
 padding: 13px 2px!important;
+font-weight: bold; 
+}
+body nav ul li .more8{
+font-size: 11px;
+padding: 13px 15px!important;
 font-weight: bold; 
 }
 body nav ul li a:hover{ 
@@ -3298,7 +3317,7 @@ header .navbar-nav > li:nth-child(9) {
     width: 150px;
 }
 .cart_button{
-    bordrer: none;
+    border: none;
     box-sizing: border-box;
     background: #B8B8B8!important;
     margin: 0 -14%;
@@ -3308,6 +3327,10 @@ header .navbar-nav > li:nth-child(9) {
     top: 45px;
     z-index: 1050;
    
+}
+.cart-icons img {
+    margin-top: -10px;
+    padding-bottom: 20px;
 }
 .cart_info{
    /*top: 50%; */
@@ -3341,6 +3364,8 @@ header .navbar-nav > li:nth-child(9) {
     padding-left: 15px;
 }
 #brands{
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
     width: 100%;
 }
 #most-popular h3{
@@ -3350,10 +3375,10 @@ header .navbar-nav > li:nth-child(9) {
     /*background-color: rgba(136, 136, 136, 0.2);*/
 }
 .link_brand {
-    border: 1px solid #ccc;   
+    border-bottom: 1px solid #ccc;   
 }
 .link_brand img{
-    height: 75px;
+    height: 57px;
     width: 100%;
     padding: 0;
     margin: 0;
@@ -3496,4 +3521,20 @@ ul.pagination-list li a.active {
 }
 .post_content{
     padding: 0 25px;
+}
+.pricen{
+    font-size: 10px!important;
+}
+.web_tools,
+#footer-contact-us-widget,
+#gentaim a{
+    text-shadow:
+        -1px -1px 0 rgba(0, 0, 0, 0.38),
+        1px -1px 0 rgba(0, 0, 0, 0.38),
+        -1px 1px 0 rgba(0, 0, 0, 0.38),
+        1px 1px 0 rgba(0, 0, 0, 0.38);
+
+}
+.modal {
+    z-index: 1300;
 }

@@ -14,7 +14,7 @@
                             ?>
                             <li data-transition="fade" data-slotamount="7" data-masterspeed="500" data-saveperformance="on"  data-title="Intro Slide">
                                 <!-- MAIN IMAGE -->
-                                <img src="<?= $item['path'] ?>"  alt="slidebg1" data-lazyload="<?= $item['path'] ?>" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+                                <img src="<?= $item['path'] ?>"  alt="slidebg1" data-lazyload="<?= $item['path'] ?>" class="hidden" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
                                 <!-- LAYERS -->
 
                                 <!-- LAYER NR. 1 -->
@@ -84,7 +84,7 @@
                             <!-- SLIDE  -->
                             <li data-transition="fade" data-slotamount="7" data-masterspeed="2000" data-saveperformance="on"  data-title="Ken Burns Slide">
                                 <!--MAIN IMAGE--> 
-                                <img src="images/dummy.png"  alt="2" data-lazyload="<?= $item['path'] ?>" data-bgposition="right top" data-kenburns="on" data-duration="12000" data-ease="Power0.easeInOut" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center bottom">
+                                <img src="images/dummy.png" class="hidden" alt="2" data-lazyload="<?= $item['path'] ?>" data-bgposition="right top" data-kenburns="on" data-duration="12000" data-ease="Power0.easeInOut" data-bgfit="115" data-bgfitend="100" data-bgpositionend="center bottom">
                                 <!--LAYERS--> 
 
                                 <!--LAYER NR. 1--> 
@@ -153,7 +153,7 @@
                             ?>
                             <li data-transition="fade" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on"  data-title="Parallax 3D">
                                 <!-- MAIN IMAGE -->
-                                <img src="<?= $item['path'] ?> "  alt="3dbg" data-lazyload="<?= $item['path'] ?>" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+                                <img class="hidden" src="<?= $item['path'] ?> "  alt="3dbg" data-lazyload="<?= $item['path'] ?>" data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
                                 <!-- LAYERS -->
 
                                 <!-- LAYER NR. 1 -->

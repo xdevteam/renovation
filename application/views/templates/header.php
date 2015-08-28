@@ -39,7 +39,7 @@
                 <header class="custom_header col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="topblock col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         
-                        <div class="topbl1 col-lg-8 col-md-8 col-sm-8 col-xs-7 pull-left">                                                        
+                        <div class="topbl1 col-lg-8 col-md-8 col-sm-8 col-xs-8 pull-left">                                                        
                             <span class="genname col-lg-12 col-md-12 col-sm-10 col-xs-10 pull-right">МАГАЗИН СТРОИТЕЛЬНЫХ МАТЕРИАЛОВ</span>
                             <a href="<?=base_url()?>" class="home_icon">
                                 <img src="<?=base_url()?>images/evrfutt.png" alt="" title="Logo">
@@ -58,7 +58,7 @@
                                     <span class="num badge pull-right" id="cart-amount">0</span>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 cart-icons">
-                                    <img src="<?=base_url()?>images/cart-icon.png" alt="cart-icon" title="cart-icon" width='125'>
+                                    <img src="<?=base_url()?>images/cart-icon.png" alt="cart-icon" title="cart-icon" width='100'>
                                 </div>
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -93,16 +93,24 @@
                             <ul class="nav navbar-nav main-nav ">
                                 <?
                                 $i=1;
-                                foreach ($menu as $item){
-                                if($i==1){
-                                $border="";
+                                if(count($menu)>=8){
+                                    $class="more8";
+                                    $style="";
                                 }else{
-                                $border="style='border-left: 1px solid rgba(171, 127, 127, 0.66);'";
+                                    $width=100/count($menu);
+                                    $style="width:".$width."%;";
+                                    $class="less8";
                                 }
-                                $i++;                                 
+                                foreach ($menu as $item){
+                                    if($i==1){
+                                        $border="";
+                                    }else{
+                                        $border="style='border-left: 1px solid rgba(171, 127, 127, 0.66);'";
+                                    }
+                                    $i++;                                 
                                 ?>
-                                <li class="drop">
-                                    <a <?= $border ?> href="<?= base_url() ?><?= $item['link'] ?>"><?= $item['name'] ?></a> 
+                                <li class="drop" style="<?=$style?>">
+                                    <a <?= $border ?> class="<?=$class?>" href="<?= base_url() ?><?= $item['link'] ?>"><?= $item['name'] ?></a> 
                                 </li>                                
                                 <? } ?>
                          

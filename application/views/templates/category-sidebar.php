@@ -1,5 +1,14 @@
 <div class="col-sm-4 col-md-3 col-lg-3 hidden-xs tabs-category-container">
                         <section class="widget-product-categories">
+                            <div class="widget-product-search">                       
+                                <form role="search" method="POST" action="<?= base_url(); ?>search">
+                                    <input type="search" class="search-field" placeholder="Искать.." value="" name="name" title="Search for..">
+                                    <input type="submit" name="search" value="search">
+                                    <span class="search-icon">
+                                        <i class="fa fa-search"></i>
+                                    </span>
+                                </form>                            
+                            </div>
                             <h4 class="widget-title"><img src="<?=base_url()?>images/dom.png">Каталог продукции</h4>
                             <ul class="product-cat">                        
                                 <?php                     
@@ -17,10 +26,11 @@
                                                     foreach ($v as $key => $val) {
                                                         foreach ($val as $kl => $zn) {
                                                             ?>      
-                                                            <li>
+                                                            <li><a href="<?= base_url(); ?>products/<?= $key ?>">
                                                                 <span class="count hidden-xs">
-                                                                <a href="<?= base_url(); ?>products/<?= $key ?>"><?= $kl ?></a>
+                                                                <?= $kl ?>
                                                                 (<?= $zn ?>)</span>
+                                                                </a>
                                                             </li> 
                                                             <?php
                                                         }
