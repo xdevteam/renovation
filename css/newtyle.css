@@ -212,3 +212,21 @@ textarea {
         padding-left:  10px;
     }
 }
+
+.teg-cat {
+    font-size: 12px;
+    float: left;
+    padding: 0!important;
+}
+
+.teg-item {
+    float: left;
+    margin-right: 7px;
+    margin-bottom: 10px;
+    padding: 0!important;
+    
+}
+
+.teg-item span {
+    padding: 0!important;  
+}

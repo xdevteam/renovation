@@ -1,4 +1,4 @@
-<div class="col-sm-4 col-md-3 col-lg-3 col-xs-12 tabs-category-container">
+<div class="col-sm-4 col-md-3 col-lg-3 hidden-xs tabs-category-container">
                         <section class="widget-product-categories">
                             <h4 class="widget-title"><img src="<?=base_url()?>images/dom.png">Каталог продукции</h4>
                             <ul class="product-cat">                        
@@ -8,6 +8,45 @@
                                         ?>                        
                                         <li class="cat-item cat-parent" data-ajax="<?= $k ?>">
                                             <span class="count ">
+                                            <img src="<?=base_url()?>images/strl.png" width="11" height="11">
+                                            <?= $cat ?>
+                                            (<?= count($v) ?>)</span>
+                                            <ul class="children hiden-xs">      
+                                                <?php
+                                                if (!empty($v)) {
+                                                    foreach ($v as $key => $val) {
+                                                        foreach ($val as $kl => $zn) {
+                                                            ?>      
+                                                            <li>
+                                                                <span class="count hidden-xs">
+                                                                <a href="<?= base_url(); ?>products/<?= $key ?>"><?= $kl ?></a>
+                                                                (<?= $zn ?>)</span>
+                                                            </li> 
+                                                            <?php
+                                                        }
+                                                    }
+                                                }
+                                                ?>                                                              
+                                            </ul>
+                                        </li>
+                                        <?php
+                                    }
+                                }
+                                ?>                   
+                            </ul>
+                        </section>
+                    </div>
+
+<div class="hidden-sm hidden-md hidden-lg col-xs-12 tabs-category-container">
+                        <section class="widget-product-categories">
+                            <h4 class="widget-title"><img src="<?=base_url()?>images/dom.png">Каталог продукции</h4>
+                            <ul class="teg-cat">                        
+                                <?php                     
+                                foreach ($cat_list as $cat => $subcategory) {
+                                    foreach ($subcategory as $k => $v) {
+                                        ?>                        
+                                        <li class="teg-item" data-ajax="<?= $k ?>">
+                                            <span class="teg-count ">
                                             <img src="<?=base_url()?>images/strl.png" width="11" height="11">
                                             <?= $cat ?>
                                             (<?= count($v) ?>)</span>
