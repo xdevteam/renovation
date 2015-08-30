@@ -37,6 +37,7 @@
                     </th>
                     </thead>
                     <?php
+                  
                     foreach ($settings as $item) {
                         ?>
                         <tr>
@@ -44,7 +45,20 @@
                                 <label><?= $item['name'] ?></label>                    
                             </td>
                             <td>
+                                <?if($item['parametr']=='map_shop'){ ?>                                    
+                                    <textarea class="form-control" id="shop_maps" type='text' name="set[<?= $item['id'] ?>]"><?= $item['value'] ?></textarea>
+                               <script type="text/javascript">
+                                        CKEDITOR.replace('shop_maps');
+                                    </script>
+                                     <?}elseif($item['parametr']=='route'){ ?>                                    
+                                    <textarea class="form-control" id="shop_route" type='text' name="set[<?= $item['id'] ?>]"><?= $item['value'] ?></textarea>
+                               <script type="text/javascript">
+                                        CKEDITOR.replace('shop_route');
+                                    </script>
+                               <?
+                                }else{?>
                                 <input class="form-control" type='text' name="set[<?= $item['id'] ?>]" value="<?= $item['value'] ?>"/>                               
+                                <? } ?>
                             </td>                                         
                             <td><button class="btn btn-success" type='submit' name="edit[<?= $item['id'] ?>]" value="<?= $item['id'] ?>"><i class="fa fa-pencil"></i> Редактировать</button></td>
                         </tr>
