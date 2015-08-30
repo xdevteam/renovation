@@ -162,8 +162,12 @@
 .trty1 img{
     max-width: 100%;
     margin-bottom: 20px;
-    border: 2px solid #f6a828;
+    border: 1px solid #f4d5b9;
 }
+.trty1 img:hover {
+    border: 1px solid #f6a828;
+}
+
 
 header .cart_button {
     background: linear-gradient(to top, #919191, #c0c0c0)!important;
@@ -325,10 +329,22 @@ textarea {
 }
 
 .trty3  div {
-    border: 1px solid #919191;
-    margin-right: 5px;
-    margin-bottom: 5px;
+    
+    
+    margin-bottom: 10px;
 }
 
+.trty3 .link_brand img {
+    border: 1px solid #f4d5b9;
+}
 
+.trty3 .link_brand img:hover  {
+   border: 1px solid #f6a828; 
+}
 
+@media (max-width: 1100px){
+    
+    #footer img{
+        max-width: 510px;
+    }
+}
