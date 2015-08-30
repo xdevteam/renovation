@@ -14,7 +14,7 @@ class Main extends CI_Controller {
         $this->load->model('main_m');
         $this->load->model('settings_m');
         $this->load->model('product_m');
-        $this->load->model('about_us_m');
+        $this->load->model('about_us_m');        
         $this->script['city'] = $this->settings_m->get_set('city');
         $this->script['street_build'] = $this->settings_m->get_set('street/build');
         $this->script['phone1'] = $this->settings_m->get_set('phone1');
@@ -87,15 +87,23 @@ class Main extends CI_Controller {
             }
             $this->data['slider'] = $this->main_m->get_slider_item();
 
-        if (file_exists(APPPATH . '/views/pages/' . $page . '.php')) {
-            $this->load->view("pages/$page", $this->data);
-        }elseif (file_exists(APPPATH . '/views/userpages/' . $page . '.php')) {
-            $this->data['user_cont']=$this->main_m->get_page_item($page);
-            $this->load->view("pages/template_user", $this->data);               
-        }else {
-             show_404();  
-        }
+       
         switch ($page) {
+            case'contact_us':
+                $this->data['city'] = $this->settings_m->get_set('city');
+                $this->data['street_build'] = $this->settings_m->get_set('street/build');
+                $this->data['phone1'] = $this->settings_m->get_set('phone1');
+                $this->data['phone2'] = $this->settings_m->get_set('phone2');
+                $this->data['email'] = $this->settings_m->get_set('email');
+                $this->data['worktime'] = $this->settings_m->get_set('time_m_f');
+                $this->data['worktime_2'] = $this->settings_m->get_set('time_st');
+                $this->data['worktime_3'] = $this->settings_m->get_set('sunday');
+                $this->data['route_path'] = $this->settings_m->get_set('route');
+                $this->data['map_office'] = $this->settings_m->get_set('map_office');
+                $this->data['map_shops']= $this->settings_m->get_set('map_shop');  
+                $this->data['inn']= $this->settings_m->get_set('inn');
+                $this->data['ogrn']= $this->settings_m->get_set('ogrn'); 
+                break;
             case'registration':
                 $this->script['script'] = "<script src='../../../js/validation.js'></script>"
                         . "<script src='../../../js/ajax_select.js'></script>"
@@ -134,6 +142,14 @@ class Main extends CI_Controller {
                         . "<script src='../../../js/main_tabs.js'></script>";
 
                 break;
+        }
+         if (file_exists(APPPATH . '/views/pages/' . $page . '.php')) {
+            $this->load->view("pages/$page", $this->data);
+        }elseif (file_exists(APPPATH . '/views/userpages/' . $page . '.php')) {
+            $this->data['user_cont']=$this->main_m->get_page_item($page);
+            $this->load->view("pages/template_user", $this->data);               
+        }else {
+             show_404();  
         }
         $this->load->view("templates/footer", $this->script);
         unset($this->script, $this->data);

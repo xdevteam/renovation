@@ -39,9 +39,10 @@
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
                     
                         <h4 class="gallery_titile text-center"><?=$item['name']?></h4>
+                     <a class="gallery_item"  href="<?=base_url()?>single_gallery/<?=$item['id']?>">
                         <img src="<?=base_url()?><?=$item['image_path']?>" >
                         <br>
-                    <a class="gallery_item"  href="<?=base_url()?>single_gallery/<?=$item['id']?>">
+                   
                         <small>Подробнее..</small>
                     </a>
                 </div>

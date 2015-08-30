@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Авг 30 2015 г., 17:58
+-- Время создания: Авг 31 2015 г., 01:58
 -- Версия сервера: 5.6.25-0ubuntu0.15.04.1
 -- Версия PHP: 5.6.4-4ubuntu6.2
 
@@ -152,9 +152,7 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('ac646dc6e37f34f33a205920eb40c1f5', '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36', 1440870483, 'a:2:{s:9:"user_data";s:0:"";s:5:"admin";a:3:{s:4:"name";s:5:"Admin";s:5:"email";s:5:"admin";s:9:"user_type";s:5:"admin";}}'),
-('fadd02162271c103c80b5abdd6d16ee9', '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36', 1440941610, ''),
-('3f59a1eabfc38a05ae9feec4789df33d', '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36', 1440943847, '');
+('53dba247ba82ff85527b628ec421dd66', '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36', 1440975459, 'a:2:{s:5:"admin";a:3:{s:4:"name";s:5:"Admin";s:5:"email";s:5:"admin";s:9:"user_type";s:5:"admin";}s:9:"data_view";a:3:{i:0;s:1:"6";i:1;s:1:"7";i:2;s:1:"1";}}');
 
 -- --------------------------------------------------------
 
@@ -240,7 +238,15 @@ CREATE TABLE IF NOT EXISTS `gallery` (
   `image_path` varchar(350) CHARACTER SET utf8 NOT NULL,
   `description` text CHARACTER SET utf8 NOT NULL,
   `status` varchar(10) CHARACTER SET utf8 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Дамп данных таблицы `gallery`
+--
+
+INSERT INTO `gallery` (`id`, `name`, `image_path`, `description`, `status`) VALUES
+(2, 'Picture 13434', '../../../upload/gallery/air_compressor_256.png', '<p>Собственники новых жилых объектов в скором времени могут быть освобождены от обязанности вносить плату за капитальный ремонт многоквартирного дома. Такая информация содержится в новом пакете поправок, предлагаемых к внесению в закон &laquo;О платежной дисциплине собственников жилья&raquo;, который был принять депутатами Государственной Думы в первом же чтении еще на весенней сессии парламента.</p>\n\n\n', 'enable'),
+(3, 'Picture 2', '../../../upload/gallery/awls_256.png', '<p>Собственники новых жилых объектов в скором времени могут быть освобождены от обязанности вносить плату за капитальный ремонт многоквартирного дома. Такая информация содержится в новом пакете поправок, предлагаемых к внесению в закон &laquo;О платежной дисциплине собственников жилья&raquo;, который был принять депутатами Государственной Думы в первом же чтении еще на весенней сессии парламента.</p>\n', 'enable');
 
 -- --------------------------------------------------------
 
@@ -2755,8 +2761,7 @@ INSERT INTO `menu` (`id`, `name`, `type`, `p_id`, `p_id2`, `status`, `link`, `ow
 (61, 'Галерея', 'r', 0, 0, 'enable', 'gallery', 'admin', '', 'gallery'),
 (66, 'Доставка', 'r', 0, 0, 'enable', 'shipping', 'user', '', 'shipping'),
 (63, 'Контакты', 'r', 0, 0, 'enable', 'contact_us', 'admin', '', 'contact_us'),
-(67, 'Оплата', 'r', 0, 0, 'enable', 'payment', 'user', '', 'payment'),
-(65, 'Хиты продаж', 'r', 0, 0, 'enable', 'lider_sale', 'user', '', 'lider_sale');
+(67, 'Оплата', 'r', 0, 0, 'enable', 'payment', 'user', '', 'payment');
 
 -- --------------------------------------------------------
 
@@ -2802,7 +2807,14 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `currency` varchar(10) NOT NULL,
   `quantity` varchar(25) NOT NULL,
   `item_id` int(11) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `orders`
+--
+
+INSERT INTO `orders` (`id`, `name`, `price`, `buyer_data`, `status`, `a_status`, `type_of_order`, `type_of_deliverance`, `seller_data`, `adress`, `date`, `currency`, `quantity`, `item_id`) VALUES
+(8, 'Однорежимный перфоратор', 123, 'a:4:{s:4:"name";s:12:"апрвар";s:7:"surname";s:16:"аврварва";s:5:"email";s:18:"avp1768@rambler.ru";s:5:"phone";s:8:"45634545";}', 'Новый', 'new', 'Наличные', 'Нова Пошта', 'a:16:{s:2:"id";s:1:"1";s:4:"name";s:5:"Admin";s:5:"email";s:5:"admin";s:8:"password";s:10:"prom_admin";s:7:"company";s:5:"Admin";s:9:"user_type";s:5:"admin";s:7:"usercat";s:4:"Maks";s:7:"surname";s:8:"Prihodko";s:10:"patronymic";s:13:"Alexandrovich";s:7:"country";s:14:"Украина";s:4:"city";s:18:"Запорожье";s:5:"phone";s:12:"380938246066";s:6:"street";s:19:"Ладожская ";s:8:"building";s:2:"17";s:10:"phone_more";s:0:"";s:8:"location";s:37:"Запорожская область";}', 'a:2:{s:8:"location";s:2:"13";s:4:"city";s:4:"1370";}', '2015-08-30 18:10:31', 'Грн.', '1', 1);
 
 -- --------------------------------------------------------
 
@@ -2864,9 +2876,9 @@ CREATE TABLE IF NOT EXISTS `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `image_path`, `subcat_id`, `status`, `description`, `views`, `date`, `min_img`, `parametr`, `size`, `power`, `size_img`, `color`, `pdf_path`, `video_path`, `interior_img`, `price`, `currency`, `prod_quantity`, `id_user`) VALUES
-(1, 'Однорежимный перфоратор', '../../../upload/products/js9aere22ag5hand_driller_256.png', 1, 'enable', '<p>вапвапварварварва</p>\n', 186, '0000-00-00 00:00:00', 'a:4:{i:0;s:51:"../../../upload/products/autofeed_screw_gun_256.png";i:1;s:44:"../../../upload/products/Brad_nailer_256.png";i:2;s:44:"../../../upload/products/chaine_vise_256.png";i:4;s:51:"../../../upload/products/autofeed_screw_gun_256.png";}', 'a:10:{i:0;s:1:"1";i:1;s:1:"2";i:2;s:1:"3";i:3;s:1:"4";i:4;s:1:"5";i:5;s:1:"6";i:6;s:1:"7";i:7;s:1:"8";i:8;s:1:"9";i:9;s:1:"-";}', '213', '123412', '', '12312', '../../../upload/pdfdocs/docvitiazhki6.jpg', '0', '', 123, 'Грн.', '1', 1),
-(6, 'Двухрежимный перфоратор', '../../../upload/products/jt5tqsdyqswnhand_driller_256.png', 1, 'enable', '<p>Двухрежимный перфоратор</p>\n', 45, '0000-00-00 00:00:00', 'N;', 'a:10:{i:0;s:2:"12";i:1;s:1:"2";i:2;s:1:"3";i:3;s:1:"4";i:4;s:1:"5";i:5;s:1:"6";i:6;s:1:"7";i:7;s:1:"8";i:8;s:1:"9";i:9;s:2:"10";}', '1', '1', '', '1', '', '0', '', 234, 'Грн.', '1', 1),
-(7, 'Трехрежимный перфоратор', '../../../upload/products/jmqbggwmtr3fadhesive_tape_256.png', 3, 'enable', '<p>ыарварварварварва</p>\n', 2, '0000-00-00 00:00:00', 'N;', 'a:10:{i:0;s:1:"1";i:1;s:1:"2";i:2;s:1:"3";i:3;s:1:"4";i:4;s:1:"5";i:5;s:1:"6";i:6;s:1:"7";i:7;s:1:"8";i:8;s:1:"9";i:9;s:1:"9";}', '1', '1', '', '1', '', '0', '', 454, 'Грн.', '1', 1),
+(1, 'Однорежимный перфоратор', '../../../upload/products/js9aere22ag5hand_driller_256.png', 1, 'enable', '<p>вапвапварварварва</p>\n', 194, '0000-00-00 00:00:00', 'a:4:{i:0;s:51:"../../../upload/products/autofeed_screw_gun_256.png";i:1;s:44:"../../../upload/products/Brad_nailer_256.png";i:2;s:44:"../../../upload/products/chaine_vise_256.png";i:4;s:51:"../../../upload/products/autofeed_screw_gun_256.png";}', 'a:10:{i:0;s:1:"1";i:1;s:1:"2";i:2;s:1:"3";i:3;s:1:"4";i:4;s:1:"5";i:5;s:1:"6";i:6;s:1:"7";i:7;s:1:"8";i:8;s:1:"9";i:9;s:1:"-";}', '213', '123412', '', '12312', '../../../upload/pdfdocs/docvitiazhki6.jpg', '0', '', 123, 'Грн.', '1', 1),
+(6, 'Двухрежимный перфоратор', '../../../upload/products/jt5tqsdyqswnhand_driller_256.png', 1, 'enable', '<p>Двухрежимный перфоратор</p>\n', 46, '0000-00-00 00:00:00', 'N;', 'a:10:{i:0;s:2:"12";i:1;s:1:"2";i:2;s:1:"3";i:3;s:1:"4";i:4;s:1:"5";i:5;s:1:"6";i:6;s:1:"7";i:7;s:1:"8";i:8;s:1:"9";i:9;s:2:"10";}', '1', '1', '', '1', '', '0', '', 234, 'Грн.', '1', 1),
+(7, 'Трехрежимный перфоратор', '../../../upload/products/jmqbggwmtr3fadhesive_tape_256.png', 3, 'enable', '<p>ыарварварварварва</p>\n', 3, '0000-00-00 00:00:00', 'N;', 'a:10:{i:0;s:1:"1";i:1;s:1:"2";i:2;s:1:"3";i:3;s:1:"4";i:4;s:1:"5";i:5;s:1:"6";i:6;s:1:"7";i:7;s:1:"8";i:8;s:1:"9";i:9;s:1:"9";}', '1', '1', '', '1', '', '0', '', 454, 'Грн.', '1', 1),
 (8, 'test1', '../../../upload/products/cd773kwpsps3bearing_256.png', 2, 'enable', '<p>fdhdfhffg &nbsp;rrtghfghfg fgjf gjfg jf gf fgfgfhfgjf</p>\n', 6, '0000-00-00 00:00:00', 'N;', 'a:10:{i:0;s:1:"1";i:1;s:1:"3";i:2;s:1:"2";i:3;s:1:"4";i:4;s:1:"5";i:5;s:1:"7";i:6;s:3:"865";i:7;s:3:"457";i:8;s:3:"457";i:9;s:5:"54745";}', '453', '63', '', '634', '', '0', '', 3534, 'Грн.', '1', 1),
 (9, 'test 2 ', '../../../upload/products/uq65vsjsk2pzbattery_pack_256.png', 1, 'enable', '<p>fdhdfhdfhdf dfhdfh ddfhhdfhd dfhdfhdfhd</p>\n', 21, '0000-00-00 00:00:00', 'N;', 'a:10:{i:0;s:3:"654";i:1;s:4:"4564";i:2;s:4:"4564";i:3;s:4:"5464";i:4;s:5:"45645";i:5;s:5:"64564";i:6;s:4:"4564";i:7;s:4:"4564";i:8;s:5:"45645";i:9;s:5:"45645";}', '45645', '645645', '', '65464', '', '0', '', 63, 'Грн.', '2', 1);
 
@@ -2878,10 +2890,10 @@ INSERT INTO `product` (`id`, `name`, `image_path`, `subcat_id`, `status`, `descr
 
 CREATE TABLE IF NOT EXISTS `settings` (
   `parametr` varchar(100) NOT NULL,
-  `value` varchar(3000) NOT NULL,
+  `value` text NOT NULL,
   `name` varchar(100) NOT NULL,
   `id` int(11) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `settings`
@@ -2896,7 +2908,15 @@ INSERT INTO `settings` (`parametr`, `value`, `name`, `id`) VALUES
 ('tw_link', 'https://twitter.com', 'Ссылка Твиттер', 6),
 ('inst_link', 'https://instagram.com/', 'Ссылка Инстаграм', 7),
 ('fb_link', 'https://www.facebook.com/', 'Ссылка ФэйсБук', 8),
-('vk_link', '', 'Ссылка Вконтакте', 9);
+('vk_link', 'http://vk.com', 'Ссылка Вконтакте', 9),
+('inn', '124124124', 'Реквизит ИНН', 10),
+('ogrn', '1115003008372', 'Реквизит ОГРН ', 11),
+('time_m_f', 'с 9 до 18 часов\r\n', 'Время работы Пн-Пт', 12),
+('time_st', 'с 9 до 16 часов', 'Время работы Cуббота', 13),
+('sunday', 'c 9 до 15 часов', 'Время работы Воскресение', 14),
+('map_office', '                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d73175.88331946432!2d82.92042732238771!3d55.03013748809723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x42dfe5d035f6e8fb%3A0xcf8f4577bed20871!2z0J_Qu9C-0YnQsNC00Ywg0JvQtdC90LjQvdCw!5e0!3m2!1sru!2sua!4v1440953795526" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>', 'Карта(офис)', 15),
+('map_shop', '<div class="map02 col-lg-6 col-md-6 col-sm-6 col-xs-12"><iframe frameborder="0" height="450" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d201892.21830307692!2d132.34098221350666!3d61.059477865561554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5bf88b42df2a3a2b%3A0x62b72ca5054674c9!2z0JDQsdCw0LPQsCwg0KDQtdGB0L8uINCh0LDRhdCwICjQr9C60YPRgtC40Y8pLCDQoNC-0YHRgdC40Y8sIDY3ODYwNA!5e0!3m2!1sru!2sua!4v1440954062043" style="border:0" width="600"></iframe></div><div class="map02 col-lg-6 col-md-6 col-sm-6 col-xs-12"><iframe frameborder="0" height="450" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14601.0684447597!2d148.14149784999995!3d62.77746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x59616511393e9b2f%3A0x4124bfff0ff513ab!2z0KHRg9GB0YPQvNCw0L0sINCc0LDQs9Cw0LTQsNC90YHQutCw0Y8g0L7QsdC7Liwg0KDQvtGB0YHQuNGPLCA2ODYzMTQ!5e0!3m2!1sru!2sua!4v1440954139153" style="border:0" width="600"></iframe></div>', 'Карты Магазинов', 16),
+('route', '<p><img alt="" src="../../../upload/slide/6.jpg" /></p>\n', 'Схема проезда', 17);
 
 -- --------------------------------------------------------
 
@@ -3158,7 +3178,7 @@ ALTER TABLE `focus_products`
 -- AUTO_INCREMENT для таблицы `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT для таблицы `locality`
 --
@@ -3178,7 +3198,7 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT для таблицы `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT для таблицы `partners`
 --
@@ -3193,7 +3213,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT для таблицы `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT для таблицы `slider`
 --

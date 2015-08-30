@@ -177,5 +177,5 @@ class Main_m extends CI_Model {
         $query = $this->db->where('id', $id)->get('gallery');
         return $query->result_array();
     }
-
+   
 }

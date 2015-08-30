@@ -31,30 +31,18 @@
          <?php include_once'application/views/templates/category-sidebar.php'; ?>
         <div class="col-lg-7 col-md-7 col-sm-8 col-xs-8" >
         <div id="content" class="content"> 
-            
-
             <div class="row cat-row trty3">
                 <?php if(!empty($partner)){ ?>
-                                        
-                                        
-                                            <?php foreach($partner as $item) {?>
-                                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                    <a href="<?=$item['link']?>" class="link_brand" title="<?=$item['name']?>"> 
-                                                        <img src="<?=$item['logo']?>" alt="<?=$item['name']?>">
-                                                        <!-- <span class="product-title"><?=$item['name']?></span> -->
-                                                    </a>                                    
-                                                </div> <?php }?>
-                                        
-
-                                        
-                                    <?php }?>
-            </div>         
-            <div >
-                <?php
-                
-                ?>   
-            </div>
-
+                    <?php foreach($partner as $item) {?>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                            <a href="<?=$item['link']?>" class="link_brand" title="<?=$item['name']?>"> 
+                                <img src="<?=$item['logo']?>" alt="<?=$item['name']?>">
+                                <!-- <span class="product-title"><?=$item['name']?></span> -->
+                            </a>                                    
+                        </div> 
+                    <?php }?>
+                <?php }?>
+            </div> 
         </div>
         </div>
             <?php include_once'application/views/templates/brand-list.php'; ?>                    

@@ -50,10 +50,15 @@
                                <script type="text/javascript">
                                         CKEDITOR.replace('shop_maps');
                                     </script>
-                                     <?}elseif($item['parametr']=='route'){ ?>                                    
+                                <?}elseif($item['parametr']=='route'){ ?>                                    
                                     <textarea class="form-control" id="shop_route" type='text' name="set[<?= $item['id'] ?>]"><?= $item['value'] ?></textarea>
-                               <script type="text/javascript">
+                                    <script type="text/javascript">
                                         CKEDITOR.replace('shop_route');
+                                    </script>
+                                <?}elseif($item['parametr']=='map_office'){ ?>                                    
+                                    <textarea class="form-control" id="map_office" type='text' name="set[<?= $item['id'] ?>]"><?= $item['value'] ?></textarea>
+                                    <script type="text/javascript">
+                                        CKEDITOR.replace('map_office');
                                     </script>
                                <?
                                 }else{?>

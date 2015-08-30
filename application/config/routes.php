@@ -101,6 +101,7 @@ $route['admin/edit_gallery_del_hide']='admin/admin/edit_gallery';
 $route['admin/gallery_editor/(:any)']='admin/admin/gallery_editor/$1';
 $route['admin/update_gallery_img']='admin/admin/update_gallery_img';
 $route['admin/gallery']='admin/admin/get_gallery_data';
+// $route['add_query']
 $route['admin/(:any)'] = 'admin/admin/admin_pages/$1';
 
 $route['blog']='main/get_blog';
