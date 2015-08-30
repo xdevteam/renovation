@@ -329,10 +329,72 @@ class Admin extends CI_Controller {
                 if (move_uploaded_file($_FILES["prod_photo"]["tmp_name"], './upload/gallery/' . $_FILES["prod_photo"]["name"])){
                     $this->data = $this->input->post();
                     $this->data['image_path'] = '../../../upload/gallery/' . $_FILES["prod_photo"]["name"];
-                    var_dump($this->data);
+                    // var_dump($this->data);
+                    unset($this->data['save_gallery']);
+                    if($this->admin_m->insert_table('gallery', $this->data)){
+                        redirect(base_url('admin/gallery'));
+                    }
                 }
             }  
         }
+    }
+    function update_gallery_img(){
+        if(isset($_POST['save_gallery'])){
+            unset( $this->data);
+            $id=$this->input->post('id');
+            if (is_uploaded_file($_FILES["prod_photo"]["tmp_name"])) {
+                unlink(substr($this->input->post('old_src'), 7));
+                if (move_uploaded_file($_FILES["prod_photo"]["tmp_name"], './upload/gallery/' . $_FILES["prod_photo"]["name"])){
+                    $this->data = $this->input->post();
+                    $this->data['image_path'] = '../../../upload/gallery/' . $_FILES["prod_photo"]["name"];
+                    //
+                    unset($this->data['save_gallery'], $this->data['old_src'],$this->data['id']);
+                   
+                    
+                }
+            }else{
+                $this->data = $this->input->post();
+                $this->data['image_path'] = $this->input->post('old_src');
+                unset($this->data['save_gallery'], $this->data['old_src'], $this->data['id']);
+            }
+
+           if($this->admin_m->update_data($id, $this->data, 'id', 'gallery')){
+                redirect(base_url('admin/gallery'));
+            }   
+        }
+
+    }
+    function edit_gallery(){
+        if (isset($_POST['delete'])) {
+            foreach ($this->input->post('delete') as $id) {                
+                $this->db->where('id', $id)->delete('gallery');                
+            }
+            
+            redirect(base_url('admin/gallery'));
+        }
+        if (isset($_POST['status'])) {
+            unset($this->data);
+            foreach ($this->input->post('status') as $key => $val) {
+                if ($val == 'enable') {
+                    $this->data['status'] = 'disable';
+                    $this->admin_m->update_data($key, $this->data, 'id', 'gallery');               
+                   
+                } else {
+                    $this->data['status'] = 'enable';                  
+                    $this->admin_m->update_data($key, $this->data, 'id', 'gallery');
+              
+                }
+                redirect(base_url('admin/gallery'));   
+            }
+        }
+    }
+    function gallery_editor($id){
+        if(isset($id)){
+            $this->data['gallery_info']=$this->admin_m->get_data_where('gallery', 'id', $id);
+       
+        $this->load->view('admin/add_gallery', $this->data);
+        $this->load->view('admin/footer');
+         }
     }
     /* GALLERY PAGE  END*/
 

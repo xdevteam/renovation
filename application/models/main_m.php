@@ -169,5 +169,13 @@ class Main_m extends CI_Model {
         $query = $this->db->get('commit');
         return $query->num_rows();
     }
+    function get_gallery_data() {
+        $query = $this->db->get('gallery');
+        return $query->result_array();
+    }
+    function get_gallery_item($id) {
+        $query = $this->db->where('id', $id)->get('gallery');
+        return $query->result_array();
+    }
 
 }

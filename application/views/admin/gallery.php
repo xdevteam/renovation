@@ -34,7 +34,7 @@
                 <!--NAV START -->
 
 
-                <form action="edit_gallery_first" method="POST" class="form-submit">
+                <form action="edit_gallery_del_hide" method="POST" class="form-submit">
                     <!--TABLE NAV START -->
                     
                     <div class="col-lg-12">
@@ -55,7 +55,7 @@
                               Операции
                             </th>  
                             </thead>
-                            <?php
+                            <?php                           
                             if (!empty($gallery)) {
                                 foreach ($gallery as $item) {
                                     if ($item['status'] == 'enable') {
@@ -63,20 +63,16 @@
                                     } else {
                                         $btn_name = '<i class = "fa fa-eye"></i> Показать';
                                     }
-                                    if ($item['owner'] == 'admin') {
-                                        $dis = 'disabled';
-                                    } else {
-                                        $dis = '';
-                                    }                                   
+                                                           
                                     ?>
                                     <tr>
                                         <td style="vertical-align: middle;">
                                             <?= $item['id'] ?>                                            
                                         </td>                                        
-                                        <td style="vertical-align: middle;"><input class="form-control " type='text' name="name[<?= $item['id'] ?>]" value="<?= $item['name'] ?>"/></td>  
+                                        <td style="vertical-align: middle;"><a href="<?=base_url('admin/gallery_editor/'.$item['id'])?>" class="text-center"><h3><?=$item['name']?></h3></a></td>  
                                         <td style="vertical-align: middle;"><img  src="<?= $item['image_path'] ?>" alt="img" title="post_img" width="250"></td>
-                                        <td><button class="btn btn-success col-lg-12" type='submit' name="edit[<?= $item['id'] ?>]" value="<?= $item['id'] ?>"><i class="fa fa-pencil"></i> Редактировать</button>
-                                        <button class="btn btn-danger col-lg-12"type='submit' name="delete[<?= $item['id'] ?>]" value="<?= $item['id'] ?>" <?= $dis ?>><i class="fa fa-trash-o"></i> Удалить</button>
+                                        <td><a href="<?=base_url('admin/gallery_editor/'.$item['id'])?>" class = "btn btn-success col-lg-12"><i class="fa fa-pencil"></i> Редактировать</a>
+                                        <button class="btn btn-danger col-lg-12"type='submit' name="delete[<?= $item['id'] ?>]" value="<?= $item['id'] ?>" ><i class="fa fa-trash-o"></i> Удалить</button>
                                         <button class = "btn btn-default col-lg-12"type = 'submit' name = "status[<?= $item['id'] ?>]" value = "<?= $item['status'] ?>"><?= $btn_name ?></button></td>   
                                     </tr>
                                     <?php

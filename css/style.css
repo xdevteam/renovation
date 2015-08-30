@@ -3538,3 +3538,14 @@ ul.pagination-list li a.active {
 .modal {
     z-index: 1300;
 }
+.gallery_title,
+.gallery_item small{
+   text-align: center;
+    color: #423F4A;
+}
+.gallery_title{
+    font-weight: bold;
+}
+.cat-row iframe{
+    width: 100%!important;
+}

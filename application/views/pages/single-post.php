@@ -19,6 +19,9 @@
                         <?php if(!empty($post_view[0]['news_page'])) { ?>
                         <a href="<?= base_url(); ?>news">Новости</a>
                         <?php } ?>
+                        <?php if(!empty($post_view[0]['description'])) { ?>
+                        <a href="<?= base_url(); ?>gallery">Галерея</a>
+                        <?php } ?>
                     </li>
                     <li>
                         <a href="<?=  base_url()?>single-post/<?=$post_view[0]['id']?>" >
@@ -44,10 +47,16 @@
                 <?php if(!empty($post_view[0]['blog_page'])) { ?>
                 <?=$post_view[0]['blog_page']?>
                 <?php } ?>
+                <?php if(!empty($post_view[0]['description'])) { ?>
+                <img src="<?=$post_view[0]['image_path']?>" alt="" title="main_image">
+                <?=$post_view[0]['description']?>
+                <?php } ?>
                 <?php if(!empty($post_view[0]['news_page'])) { ?>
                 <?=$post_view[0]['news_page']?>
                 <?php } ?>
-               <span class="pull-right"><strong>Опубликован: </strong>  <small><?=$post_view[0]['date']?><small></span>
+                <?php if(!empty($post_view[0]['date'])) { ?>
+                <span class="pull-right"><strong>Опубликован: </strong>  <small><?=$post_view[0]['date']?><small></span>
+                <?php } ?>               
             </div>       
            
 

@@ -29,6 +29,7 @@ class Main extends CI_Controller {
         $this->data['fb_link'] = $this->settings_m->get_set('fb_link');
         $this->data['vk_link'] = $this->settings_m->get_set('vk_link');
         $this->data['prep_popular'] = $this->product_m->get_popular();
+        $this->data['gallery'] = $this->main_m->get_gallery_data();
         $this->data['about_us'] = $this->about_us_m->about_us_data();
         foreach ($this->data['prep_popular'] as $k => $v) {
             foreach ($v as $key => $val) {
@@ -356,4 +357,46 @@ class Main extends CI_Controller {
     }
 
     /* get_post END */
+
+    function single_gallery($id){
+        $this->data['city'] = $this->settings_m->get_set('city');
+        $this->data['street_build'] = $this->settings_m->get_set('street/build');
+        $this->data['phone1'] = $this->settings_m->get_set('phone1');
+        $this->data['phone2'] = $this->settings_m->get_set('phone2');
+        $this->data['email'] = $this->settings_m->get_set('email');
+        $this->data['tw_link'] = $this->settings_m->get_set('tw_link');
+        $this->data['inst_link'] = $this->settings_m->get_set('inst_link');
+        $this->data['fb_link'] = $this->settings_m->get_set('fb_link');
+        $this->data['vk_link'] = $this->settings_m->get_set('vk_link');
+        $this->data['tw_link'] = $this->settings_m->get_set('tw_link');
+        $this->data['inst_link'] = $this->settings_m->get_set('inst_link');
+        $this->data['fb_link'] = $this->settings_m->get_set('fb_link');
+        $this->data['vk_link'] = $this->settings_m->get_set('vk_link');
+        $this->data['subcat_side'] = $this->subcategories_m->get_subcategories_sidebar();
+        $this->data['prepare'] = $this->category_m->get_category_sidebar();
+        foreach ($this->data['prepare'] as $key => $value) {
+            foreach ($this->data['subcat_side'] as $k => $v) {
+                if ($v['cat_id'] == $value['id']) {
+                    $this->data['cat_list'][$value['name']][$value['link']][$v['link']][$v['name']] = $this->product_m->count_products($v['id']);
+                }
+            }
+        }
+        $this->load->model('admin_m');
+        
+        $this->data['post_view'] = $this->main_m->get_gallery_item($id);
+        $this->data['script'] = ""
+                        . "<script src='../../../js/sidebar.js'></script>"
+                        . "<script src='../../../js/perfect-scrollbar.jquery.js'></script>"
+                        . "<script src='../../../js/autoComplete.js'></script>"
+                        . "<script src='../../../js/main.js'></script>"
+                        . "<script src='../../../js/cart.js'></script>"
+                        . "<script src='../../../js/ajax_select.js'></script>"
+                        . "<script src='../../../js/bootstrap-switch.js'></script>"
+                        . "<script src='../../../js/main_nav.js'></script>"
+                        . "<script src='../../../js/switcher.js'></script>"
+                        . "<script src='../../../js/contentBlog.js'></script>"
+                        . "<script src='../../../js/main_tabs.js'></script>";
+        $this->load->view('pages/single-post', $this->data);
+        $this->load->view('templates/footer');
+    }
 }

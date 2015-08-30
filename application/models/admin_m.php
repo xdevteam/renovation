@@ -11,13 +11,23 @@ class Admin_m extends CI_Model {
      */
 
     function update_data($id, $data, $column, $table) {
-        $this->db->where($column, $id);
-        $this->db->update($table, $data);
+        if($this->db->where($column, $id)->update($table, $data)){
+             return true;
+        }
     }
 
     function get_table($table) {
         $partner = $this->db->get($table);
         return $partner->result_array();
+    }
+    function get_data_where($table, $field, $value) {
+        $partner =$this->db->where($field, $value)->get($table);
+        return $partner->result_array();
+    }
+    function insert_table($table, $data) {
+        if($this->db->insert($table, $data))
+            return true;
+
     }
      function get_table_where($table, $field, $search, $element) {
         $query = $this->db->select($element)->where($field, $search)->get($table);

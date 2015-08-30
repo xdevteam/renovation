@@ -99,7 +99,7 @@
                         <a href="<?= base_url(); ?>admin/menu" class="dropped"><i class="fa fa-fw fa-bars"></i> Меню</a>
                     </li>
                     <li>
-                        <a href="pages" class="dropped"><i class="fa fa-fw fa-file-o"></i> Страницы</a>
+                        <a href="<?= base_url(); ?>admin/pages" class="dropped"><i class="fa fa-fw fa-file-o"></i> Страницы</a>
                     </li>
                     <li>
                         <a href="<?= base_url(); ?>admin/slider" class="dropped"><i class="fa fa-fw fa-sliders"></i> Слайдер</a>

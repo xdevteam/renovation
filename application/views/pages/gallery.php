@@ -34,36 +34,18 @@
             
 
             <div class="row cat-row trty1">
+                <?php foreach ($gallery as $item) {
+                    ?>.
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
-                    <a class="fancybox" rel="group" href="<?=base_url()?>img/shop-item-4.jpg">
-                        <img src="<?=base_url()?>img/shop-item-4.jpg" >
+                    
+                        <h4 class="gallery_titile text-center"><?=$item['name']?></h4>
+                        <img src="<?=base_url()?><?=$item['image_path']?>" >
+                        <br>
+                    <a class="gallery_item"  href="<?=base_url()?>single_gallery/<?=$item['id']?>">
+                        <small>Подробнее..</small>
                     </a>
                 </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
-                    <a class="fancybox" rel="group" href="<?=base_url()?>img/shop-item-3.jpg">
-                        <img src="<?=base_url()?>img/shop-item-3.jpg" >
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
-                    <a class="fancybox" rel="group" href="<?=base_url()?>img/shop-item-7.jpg">
-                        <img src="<?=base_url()?>img/shop-item-7.jpg" >
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
-                   <a class="fancybox" rel="group" href="<?=base_url()?>img/shop-item-5.jpg">
-                        <img src="<?=base_url()?>img/shop-item-5.jpg" >
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
-                    <a class="fancybox" rel="group" href="<?=base_url()?>img/shop-item-2.jpg">
-                        <img src="<?=base_url()?>img/shop-item-2.jpg" >
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" >
-                    <a class="fancybox" rel="group" href="<?=base_url()?>img/shop-item-6.jpg">
-                        <img src="<?=base_url()?>img/shop-item-6.jpg" >
-                    </a>
-                </div>
+                <?php } ?>
             </div>         
             <div >
                 <?php
