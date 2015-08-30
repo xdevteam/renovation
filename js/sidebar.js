@@ -2,12 +2,26 @@
 	
 	// CATEGORIES ACCORDION
 		
-	$('.cat-parent > a').click(function(ev) {
+	// $('.cat-parent > a').click(function(ev) {
+	// 	ev.preventDefault();
+	// 	$('.product-cat li ul').attr('style', 'display:none;');
+	// 	$( this ).next().next().slideToggle();
+	$('ul .cat-item').click(function(ev) {
 		ev.preventDefault();
-		$('.product-cat li ul').attr('style', 'display:none;');
-		$( this ).next().next().slideToggle();
+		var src="../images/1downarrow.png";
+		var srcOld="../images/strl.png";
+		$('ul .cat-item').removeClass('active_cat');
+		$(this).addClass('active_cat');
+		$('ul .cat-item').find('img').each( function(){ this.src = srcOld } );
+		$(this).find('img').each( function(){ this.src = src } );
+		$('ul .cat-item').find('ul').hide('slow');
+		$(this).find('ul').slideToggle();
 	});
-	
+	$('.children li').click(function(ev) {
+		var link=$(this).find("a").attr("href");
+		console.log("link", link);
+		window.location.href=link;
+	});
 	// CAROUFREDSEL
 	
 	(function() {
@@ -70,7 +84,8 @@
 		
 		$('.caroufredsel_wrapper').css({
 			'marginBottom': '0',
-			'height': '340px'
+			'minHeight': '340px',
+			'maxHeight': '1000px'
 		});
 		
 	})();	

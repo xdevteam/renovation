@@ -3,6 +3,8 @@ $( document ).ready(function() {
 	// VARIABLES
 	
 	var topBarCounter = $('#topBarCartLink'),
+	    topBarCounter2 = $('#topBarCartLink_mini'),
+	    topBarCounter3 = $('#topBarCartLink_down'),
 		buyBtn = $('.buy-it'),
 		cartAmount = $('#cart-amount'),
 		cartTotalPrice = $('#modalCart .totalPrice .sum'),
@@ -31,6 +33,14 @@ $( document ).ready(function() {
 	// TOPBAR CLICK
 		
 	$( topBarCounter ).click(function() {
+		isEmpty();
+		if( isSession ) useSession();
+	});
+	$( topBarCounter2 ).click(function() {
+		isEmpty();
+		if( isSession ) useSession();
+	});
+	$( topBarCounter3 ).click(function() {
 		isEmpty();
 		if( isSession ) useSession();
 	});

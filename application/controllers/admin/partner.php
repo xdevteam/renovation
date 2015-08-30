@@ -18,6 +18,7 @@ class Partner extends CI_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model('admin_m');
+        $this->load->model('main_m');
         $session = $this->session->userdata('admin');
         $this->data['admin'] = $this->session->userdata('admin');
         if (!empty($session)) {

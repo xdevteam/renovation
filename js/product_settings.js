@@ -1,5 +1,17 @@
 $( document ).ready(function() {
-	
+	/*mini tabs*/
+	$('.add_info_tab_mini').click(function(){
+		$('#reviews_tab').show();
+		$('#description_tab_mini').hide();
+		$(this).addClass('active');
+		$('.description_tab').removeClass('active');
+	});
+	$('.description_tab').click(function(){
+		$('#reviews_tab').hide();
+		$('#description_tab_mini').show();
+		$(this).addClass('active');
+		$('.add_info_tab_mini').removeClass('active');
+	});
 	/* Fancybox Gallery */
 	
 	try {

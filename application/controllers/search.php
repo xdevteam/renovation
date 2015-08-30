@@ -39,6 +39,8 @@ class Search extends CI_Controller {
         $this->data['fb_link'] = $this->settings_m->get_set('fb_link');
         $this->data['vk_link'] = $this->settings_m->get_set('vk_link');
         /* load header */
+        $this->data['menu'] = $this->main_m->get_menu_item();
+        $this->data['partner'] = $this->main_m->get_partners();
         $session = $this->session->userdata('user');
         $this->data['slider'] = $this->main_m->get_slider_item();
         if (!empty($session)) {

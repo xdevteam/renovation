@@ -11,13 +11,23 @@ class Admin_m extends CI_Model {
      */
 
     function update_data($id, $data, $column, $table) {
-        $this->db->where($column, $id);
-        $this->db->update($table, $data);
+        if($this->db->where($column, $id)->update($table, $data)){
+             return true;
+        }
     }
 
     function get_table($table) {
         $partner = $this->db->get($table);
         return $partner->result_array();
+    }
+    function get_data_where($table, $field, $value) {
+        $partner =$this->db->where($field, $value)->get($table);
+        return $partner->result_array();
+    }
+    function insert_table($table, $data) {
+        if($this->db->insert($table, $data))
+            return true;
+
     }
      function get_table_where($table, $field, $search, $element) {
         $query = $this->db->select($element)->where($field, $search)->get($table);
@@ -228,7 +238,10 @@ class Admin_m extends CI_Model {
         $partner = $this->db->where('link',!'#')->get('menu');
         return $partner->result_array();
     }
-
+    function get_page_item($id){
+        $main = $this->db->where('link', $id)->get('menu');
+        return $main->result_array();
+    }
     /*
      * MENU END
      */
@@ -271,4 +284,35 @@ class Admin_m extends CI_Model {
     /*
      * COMMENTS END
      */
+
+    /*
+    *NEWS START 
+    */
+     function add_news($data) {
+        if ($this->db->insert('news', $data)) {
+            return TRUE;
+        }
+    }
+  
+    function get_news_by_id($id) {
+        $blog = $this->db->where('id', $id)->get('news');
+        return $blog->result_array();
+    }
+
+    function get_news_back() {
+        $blog = $this->db->get('news');
+        return $blog->result_array();
+    }
+    /*
+    *NEWS END
+    */
+
+    /*
+    * Gallery Start
+    */
+    
+
+    /*
+    * Galllery End
+    */
 }

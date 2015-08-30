@@ -13,7 +13,7 @@ class Product extends CI_Controller {
 
         $this->load->model('main_m');
         $this->load->model('user_model');
-         $this->load->model('settings_m');
+        $this->load->model('settings_m');
         $this->script['city'] = $this->settings_m->get_set('city');
         $this->script['street_build'] = $this->settings_m->get_set('street/build');
         $this->script['phone1'] = $this->settings_m->get_set('phone1');
@@ -30,6 +30,8 @@ class Product extends CI_Controller {
         /* load header */
         $session = $this->session->userdata('user');
         $this->data['slider'] = $this->main_m->get_slider_item();
+        $this->data['menu'] = $this->main_m->get_menu_item();
+        $this->data['partner'] = $this->main_m->get_partners();
         if (!empty($session)) {
             $this->data['user'] = @$this->session->userdata('user');
             $this->data['user_category'] = $this->user_model->get_usercat_byID($this->data['user']['id']);
@@ -38,7 +40,7 @@ class Product extends CI_Controller {
             } else {
                 $num = 2;
             }
-            $this->data['menu'] = $this->main_m->get_menu_front($num);            
+            $this->data['menu'] = $this->main_m->get_menu_item();            
             $this->load->view("templates/header_user", $this->data);
         } else {
             $this->load->view("templates/header", $this->data);

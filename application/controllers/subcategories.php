@@ -36,6 +36,7 @@ class Subcategories extends CI_Controller {
         $this->data['vk_link'] = $this->settings_m->get_set('vk_link');
         $session = $this->session->userdata('user');
         $this->data['slider'] = $this->main_m->get_slider_item();
+        $this->data['menu'] = $this->main_m->get_menu_item();
         if (!empty($session)) {
             $this->data['user'] = @$this->session->userdata('user');
             $this->data['user_category'] = $this->user_model->get_usercat_byID($this->data['user']['id']);
@@ -56,6 +57,16 @@ class Subcategories extends CI_Controller {
         $this->script['location'] = $this->main_m->get_location();
         $this->data['location'] = $this->main_m->get_location();
         $this->data['city'] = $this->main_m->get_city();
+        $this->data['partner'] = $this->main_m->get_partners();
+         $this->data['subcat_side'] = $this->subcategories_m->get_subcategories_sidebar();
+            $this->data['prepare'] = $this->category_m->get_category_sidebar();
+            foreach ($this->data['prepare'] as $key => $value) {
+                foreach ($this->data['subcat_side'] as $k => $v) {
+                    if ($v['cat_id'] == $value['id']) {
+                        $this->data['cat_list'][$value['name']][$value['link']][$v['link']][$v['name']] = $this->product_m->count_products($v['id']);
+                    }
+                }
+            }
         $this->script['script'] = "<script src='../../../js/validation.js'></script>"
                 . "<script src='../../../js/ajax_select.js'></script>"
                 . "<script src='../../../js/perfect-scrollbar.jquery.js'></script>"

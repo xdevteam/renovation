@@ -4,8 +4,22 @@
     <div class="wf-wrap">
         <div class="wf-container-footer">
             <div class="wf-container clearfix">
-
-                <section class="widget col-sm-3" id="footer-contact-us-widget">
+                <section class="widget hidden-sm hidden-xs col-md-6 col-lg-6" >
+                    <img src="<?=base_url()?>/images/footbab.png" style=" margin-top: -115px;
+    margin-left: -45px; margin-bottom: -38px;" alt="" title="Logo" >
+                </section>
+                <section class="widget col-sm-4 col-xs-5 col-md-2 text-right" id="gentaim" >
+                    <ul>
+                        <?
+                                foreach ($menu as $item){                                                          
+                                ?>
+                                <li class="drop">
+                                    <a  href="<?= base_url() ?><?= $item['link'] ?>"><?= $item['name'] ?></a> 
+                                </li>                                
+                                <? } ?>
+                    </ul>
+                </section>
+                <section class="widget col-sm-4 col-lg-2 col-md-2  col-xs-7 foota1" id="footer-contact-us-widget">
                     <div class="widget-title">НАШИ КОНТАКТЫ</div>
                     <ul class="contact-info">
                         <li>
@@ -67,75 +81,19 @@
                     </div>
                 </section>               
 
-                <section class="widget col-sm-3" id="footer-our-services-widget">                   
-                    <div class="widget-title">НАШИ ПРЕДЛОЖЕНИЯ</div>
-
-                    <?php if (!empty($popular)) { ?>
-                        <ul class="foot-accordion clearfix">                            
-                            <?php
-                            $m = 0;
-                            foreach ($popular as $item) {
-                                $stream = 'down';
-                                if ($m == 0) {
-                                    $stream = 'up';
-                                }
-                                $m++;
-                                if ($m < 5) {
-                                    ?>
-                                    <li>
-                                        <a href="<?= base_url(); ?>products/item/<?= $item['id'] ?>-<?= $item['trans'] ?>" class="accor-link text-primary">
-                                            <span class="accor-toggle-icon">
-                                                <i class="fa fa-angle-<?= $stream ?>"></i>
-                                            </span>
-                                            <span class="color-primary"><?= $item['name'] ?></span>
-                                        </a>
-                                        <div class="accor-content">                                            
-                                            <a href="<?= base_url(); ?>products/item/<?= $item['id'] ?>-<?= $item['trans'] ?>" class="alignLeft">
-                                                <img src="<?= $item['image_path'] ?>" alt="<?= $item['name'] ?>" width="40" height="40">
-                                            </a>                                            
-                                        </div>
-                                    </li>    
-                                    <?php
-                                }
-                            }
-                            ?>
-                        </ul>
-                    <?php } ?>
-                </section>
-
-                <section class="widget col-sm-3" id="footer-featured-posts-widget">
-                    <div class="widget-title">ПОПУЛЯРНЫЕ ТОВАРЫ</div>
-                    <br>
-                    <?php if (!empty($popular)) { ?>
-                        <ul class="recent-posts">
-                            <?php
-                            $m = 0;
-                            foreach ($popular as $item) {
-                                $m++;
-                                if ($m < 4) {
-                                    ?>
-                                    <li>
-                                        <article>
-                                            <div class="wf-td">
-                                                <a href="<?= base_url(); ?>products/item/<?= $item['id'] ?>-<?= $item['trans'] ?>" class="alignLeft">
-                                                    <img src="<?= $item['image_path'] ?>" alt="<?= $item['name'] ?>" width="40" height="40">
-                                                </a>
-                                            </div>
-                                            <div class="post-content">
-                                                <a href="<?= base_url(); ?>products/item/<?= $item['id'] ?>-<?= $item['trans'] ?>"><?= $item['name'] ?></a>
-                                                <br>
-                                                <time class="text-secondary"><?= $item['date'] ?></time>
-                                            </div>
-                                        </article>
-                                    </li>
-                                    <?php
-                                }
-                            }
-                            ?>
-                        </ul>
-                    <?php } ?>
-                </section>
-                <section class="widget col-sm-3" >
+                <section class="widget col-lg-2 col-sm-4 col-xs-10 col-md-2 web_tools" >
+                    <ul class="widget  hidden-xs pull-left">
+                        <li>
+                           <a href="#" class="submit" data-toggle="modal" data-target="#modalCart" id="topBarCartLink_down">
+                            <!-- <i class="fa fa-shopping-cart"></i> -->
+                                    <span class="top-bar-icon-text">Открыть корзину</span> 
+                            
+                            </a> 
+                        </li>
+                        <li>
+                            <a>Оформить заказ</a> 
+                        </li>
+                    </ul>
                     <div class="widget-title">ПОИСК</div>
                     <br>
                     <div class="widget-product-search">                       
@@ -147,8 +105,9 @@
                             </span>
                         </form>                            
                     </div>
+                    <div class="widget  hidden-xs pricen pull-left"><img src="<?=base_url()?>/images/icc.png">Скачать прайс</div>
                 </section>
-
+                
             </div>
         </div>
     </div>
@@ -304,7 +263,9 @@
     <!-- Overlay -->
 
     <div id="overlay"></div>
-
+<section class="footgs widget col-sm-12 hidden-xs " >
+                  <h6 >2015 @ МАГАЗИН СТРОИТЕЛЬНЫХ МАТЕРИАЛОВ “ЕВРОРЕМОНТ”</h6>  
+                </section>
 
 </footer>
 

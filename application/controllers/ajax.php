@@ -148,7 +148,7 @@ class Ajax extends CI_Controller {
             <?php foreach ($this->data['subcategories_img'] as $item) {
             ?>
             <!-- 1st row -->
-            <div class="col-md-4 col-sm-5 tabs-grid-item">
+            <div class="col-lg-4 col-md-4 col-sm-5 col-xs-6 tabs-grid-item">
                 <div class="inner-item">
                     <a href="<?= base_url(); ?>products/<?= $item['link'] ?>" class="item-link">
                         <div class="photo-frame">
@@ -163,7 +163,7 @@ class Ajax extends CI_Controller {
             <?php }
             ?>
             <!-- Category  descrition -->
-                    <div class="col-sm-12 col-lg-12 col-md-12 clearfix">
+                    <div class="col-sm-12 col-lg-12 col-md-12 col-xs-12 clearfix">
                         <?=$description?>
                     </div>
                     <!-- Category Description END --> 

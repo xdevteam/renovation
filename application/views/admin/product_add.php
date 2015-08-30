@@ -128,6 +128,28 @@
                     <div class="">     
                         <input type="file" id="main_photo" name="main_photo" accept="image/*" class="form-control">
                     </div>
+                    <div class="">
+                        <label>Минимальный заказ</label>
+                        <div class="">                   
+                            <input type="text" id="size" name="prod_quantity" value="" class="form-control">
+                        </div>
+                    </div>
+                    <div class="">
+                        <label>Цена</label>
+                        <div class="">                   
+                            <input type="text" id="size" name="price" value="" class="form-control">
+                        </div>
+                    </div>
+                    <div class="">
+                        <label>Валюта</label>
+                        <div class="">                   
+                            <select type="text" id="size" name="currency" value="" class="form-control">
+                                <option value="Грн.">Грн.</option>
+                                <option value="Руб.">Руб.</option>
+                                <option value="USD">USD</option>                                
+                            </select>
+                        </div>
+                    </div>
                     <label>Дополнительные Фото</label>
                     <div class="">                   
                         <input type="file" id="prod_photo_0" name="prod_photo[0]" accept="image/*" class="form-control">
@@ -137,7 +159,9 @@
                         <input type="file" id="prod_photo_4" name="prod_photo[4]" accept="image/*" class="form-control">
                         <input type="file" id="prod_photo_5" name="prod_photo[5]" accept="image/*" class="form-control">
                         <input type="file" id="prod_photo_6" name="prod_photo[6]" accept="image/*" class="form-control">
-                        <small>Добавить еще одну картинку</small>
+                        <input type="file" id="prod_photo_7" name="prod_photo[3]" accept="image/*" class="form-control">
+                        <input type="file" id="prod_photo_8" name="prod_photo[4]" accept="image/*" class="form-control">
+                        <input type="file" id="prod_photo_9" name="prod_photo[5]" accept="image/*" class="form-control">                        
                     </div>
                     <label>Фото размеров</label>
                     <div class="">                   

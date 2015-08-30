@@ -99,16 +99,25 @@
                         <a href="<?= base_url(); ?>admin/menu" class="dropped"><i class="fa fa-fw fa-bars"></i> Меню</a>
                     </li>
                     <li>
-                        <a href="pages" class="dropped"><i class="fa fa-fw fa-file-o"></i> Страницы</a>
+                        <a href="<?= base_url(); ?>admin/pages" class="dropped"><i class="fa fa-fw fa-file-o"></i> Страницы</a>
                     </li>
                     <li>
                         <a href="<?= base_url(); ?>admin/slider" class="dropped"><i class="fa fa-fw fa-sliders"></i> Слайдер</a>
+                    </li>
+                     <li>
+                        <a href="<?= base_url(); ?>admin/gallery" class="dropped"><i class="fa fa-fw fa-picture-o"></i> Галерея</a>
                     </li>
                     <li>
                         <a href="<?= base_url(); ?>admin/partners" class="dropped"><i class="fa fa-fw fa-suitcase"></i> Партнеры</a>
                     </li>
                     <li>
                         <a href="<?= base_url(); ?>admin/blog_article" class="dropped"><i class="fa fa-fw fa-newspaper-o"></i> Блог</a>
+                    </li>
+                     <li>
+                        <a href="<?= base_url(); ?>admin/news_article" class="dropped"><i class="fa fa-fw fa-newspaper-o"></i> Новости</a>
+                    </li>                    
+                    <li>
+                        <a href="<?= base_url(); ?>admin/about_us" class="dropped"><i class="fa fa-fw fa-info-circle"></i> О нас</a>
                     </li>
                     <li>
                         <a href="<?= base_url(); ?>admin/about_us" class="dropped"><i class="fa fa-fw fa-info-circle"></i> О нас</a>

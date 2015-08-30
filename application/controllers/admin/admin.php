@@ -44,6 +44,7 @@ class Admin extends CI_Controller {
         /* load blog */
         $this->data['post'] = $this->admin_m->get_blog_back();
         /* load about_us_m */
+        $this->data['news'] = $this->admin_m->get_news_back();
         $this->load->model('about_us_m');
         $this->data['about_us'] = $this->about_us_m->about_us_data();
         $session = $this->session->userdata('admin');
@@ -97,7 +98,8 @@ class Admin extends CI_Controller {
      */
 
     function admin_pages($page = 'index') {
-        if (!empty($this->session->userdata('admin'))) {
+        $session=$this->session->userdata('admin');
+        if (!empty($session)) {
             if (!file_exists(APPPATH . '/views/admin/' . $page . '.php')) {
                 show_404();
             } else {
@@ -238,4 +240,163 @@ class Admin extends CI_Controller {
     }
 
     /* END  function edit_about_us_data */
+
+    /* USER PAGE CONTENT START*/ 
+    function user_page_content($id){
+        $file ='application/views/userpages/'.$id.'.php';
+        $this->data['page_inf']=$this->admin_m->get_page_item($id);
+        $this->data['current'] = file_get_contents($file);
+        $this->load->view('admin/edit_page', $this->data);
+        $this->load->view('admin/footer');
+    }
+    /* USER PAGE CONTENT END*/
+
+     /* USER PAGE CONTENT EDIT START*/ 
+    function edit_user_page_content(){
+        if(isset($_POST['save_user_page'])){
+            $current=$this->input->post('page_editor');
+            $id=$this->input->post('save_user_page');
+            $file ='application/views/userpages/'.$id.'.php';
+            file_put_contents($file, $current);
+            redirect(base_url('admin/pages'));
+        }
+    }
+    /* USER PAGE CONTENT EDIT END*/ 
+
+     /* USER PAGE CONTENT DEL_HIDE START*/ 
+    function del_hide_user_page_content(){
+        if (isset($_POST['delete'])) {
+            foreach ($this->input->post('delete') as $id) {
+                $a = $this->db->where('p_id', $id)->select("id")->get('menu');
+                foreach ($a->result() as $items) {
+                    $this->db->where('p_id2', $items->id)->delete('menu');
+                }
+                $this->db->where('id', $id)->delete('menu');
+                $this->db->where('p_id', $id)->delete('menu');
+                $this->db->where('p_id2', $id)->delete('menu');
+            }
+            foreach ($this->input->post('link') as $key => $value) {
+                if ($id == $key)
+                    $link = $value;
+            }            
+            
+            if (file_exists(APPPATH . '/views/userpages/' . $link . '.php')) {
+                $fp = unlink('application/views/userpages/' . $link . '.php');
+                if ($fp) {
+                    echo 'ok';
+                }
+            }
+            echo $link;
+            redirect(base_url('admin/pages'));
+        }
+        if (isset($_POST['status'])) {
+            unset($this->data);
+            foreach ($this->input->post('status') as $key => $val) {
+                if ($val == 'enable') {
+                    $this->data['status'] = 'disable';
+                    $this->admin_m->update_data($key, $this->data, 'id', 'menu');
+                    $this->admin_m->update_data($key, $this->data, 'p_id', 'menu');
+                    $a = $this->db->query("SELECT id FROM menu  WHERE p_id='$key'");
+                    foreach ($a->result() as $items) {
+                        $this->admin_m->update_data($items->id, $this->data, 'p_id2', 'menu');
+                    }
+                } else {
+                    $this->data['status'] = 'enable';
+                    $a = $this->db->query("SELECT id FROM menu  WHERE p_id='$key'");
+                    foreach ($a->result() as $items) {
+                        $this->admin_m->update_data($items->id, $this->data, 'p_id2', 'menu');
+                    }
+                    $this->admin_m->update_data($key, $this->data, 'id', 'menu');
+                    $this->admin_m->update_data($key, $this->data, 'p_id', 'menu');
+                }
+            }
+            redirect(base_url('admin/pages'));   
+        }
+    }
+    /* USER PAGE CONTENT DEL_HIDE END*/
+
+
+    /* GALLERY PAGE  START*/
+    function get_gallery_data(){
+        $this->data['gallery']=$this->admin_m->get_table("gallery");
+        $this->load->view('admin/gallery', $this->data);
+        $this->load->view('admin/footer');
+    }
+    function add_gallery_img(){
+        if(isset($_POST['save_gallery'])){
+            unset( $this->data);
+            if (is_uploaded_file($_FILES["prod_photo"]["tmp_name"])) {
+                if (move_uploaded_file($_FILES["prod_photo"]["tmp_name"], './upload/gallery/' . $_FILES["prod_photo"]["name"])){
+                    $this->data = $this->input->post();
+                    $this->data['image_path'] = '../../../upload/gallery/' . $_FILES["prod_photo"]["name"];
+                    // var_dump($this->data);
+                    unset($this->data['save_gallery']);
+                    if($this->admin_m->insert_table('gallery', $this->data)){
+                        redirect(base_url('admin/gallery'));
+                    }
+                }
+            }  
+        }
+    }
+    function update_gallery_img(){
+        if(isset($_POST['save_gallery'])){
+            unset( $this->data);
+            $id=$this->input->post('id');
+            if (is_uploaded_file($_FILES["prod_photo"]["tmp_name"])) {
+                unlink(substr($this->input->post('old_src'), 7));
+                if (move_uploaded_file($_FILES["prod_photo"]["tmp_name"], './upload/gallery/' . $_FILES["prod_photo"]["name"])){
+                    $this->data = $this->input->post();
+                    $this->data['image_path'] = '../../../upload/gallery/' . $_FILES["prod_photo"]["name"];
+                    //
+                    unset($this->data['save_gallery'], $this->data['old_src'],$this->data['id']);
+                   
+                    
+                }
+            }else{
+                $this->data = $this->input->post();
+                $this->data['image_path'] = $this->input->post('old_src');
+                unset($this->data['save_gallery'], $this->data['old_src'], $this->data['id']);
+            }
+
+           if($this->admin_m->update_data($id, $this->data, 'id', 'gallery')){
+                redirect(base_url('admin/gallery'));
+            }   
+        }
+
+    }
+    function edit_gallery(){
+        if (isset($_POST['delete'])) {
+            foreach ($this->input->post('delete') as $id) {                
+                $this->db->where('id', $id)->delete('gallery');                
+            }
+            
+            redirect(base_url('admin/gallery'));
+        }
+        if (isset($_POST['status'])) {
+            unset($this->data);
+            foreach ($this->input->post('status') as $key => $val) {
+                if ($val == 'enable') {
+                    $this->data['status'] = 'disable';
+                    $this->admin_m->update_data($key, $this->data, 'id', 'gallery');               
+                   
+                } else {
+                    $this->data['status'] = 'enable';                  
+                    $this->admin_m->update_data($key, $this->data, 'id', 'gallery');
+              
+                }
+                redirect(base_url('admin/gallery'));   
+            }
+        }
+    }
+    function gallery_editor($id){
+        if(isset($id)){
+            $this->data['gallery_info']=$this->admin_m->get_data_where('gallery', 'id', $id);
+       
+        $this->load->view('admin/add_gallery', $this->data);
+        $this->load->view('admin/footer');
+         }
+    }
+    /* GALLERY PAGE  END*/
+
+
 }

@@ -45,6 +45,7 @@ class User extends CI_Controller {
         $this->data['location'] = $this->main_m->get_location();
         $this->data['city'] = $this->main_m->get_city();
         $this->data_user['user'] = @$this->session->userdata('user');
+        $this->data['menu'] = $this->main_m->get_menu_item();
         $session = $this->session->userdata('user');
     }
 
