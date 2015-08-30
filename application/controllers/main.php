@@ -75,16 +75,7 @@ class Main extends CI_Controller {
     /* Main Page USER */
 
     public function index($page = "default") {
-
-
-        if (!file_exists(APPPATH . '/views/pages/' . $page . '.php')) {
-
-            if (!file_exists(APPPATH . '/views/userpages/' . $page . '.php')) {
-                show_404();
-            }
-        } else {
-            
-            $this->data['subcat_side'] = $this->subcategories_m->get_subcategories_sidebar();
+         $this->data['subcat_side'] = $this->subcategories_m->get_subcategories_sidebar();
             $this->data['prepare'] = $this->category_m->get_category_sidebar();
             foreach ($this->data['prepare'] as $key => $value) {
                 foreach ($this->data['subcat_side'] as $k => $v) {
@@ -94,7 +85,14 @@ class Main extends CI_Controller {
                 }
             }
             $this->data['slider'] = $this->main_m->get_slider_item();
+
+        if (file_exists(APPPATH . '/views/pages/' . $page . '.php')) {
             $this->load->view("pages/$page", $this->data);
+        }elseif (file_exists(APPPATH . '/views/userpages/' . $page . '.php')) {
+            $this->data['user_cont']=$this->main_m->get_page_item($page);
+            $this->load->view("pages/template_user", $this->data);               
+        }else {
+             show_404();  
         }
         switch ($page) {
             case'registration':

@@ -52,10 +52,15 @@ class Main_m extends CI_Model {
 //        }
 //        return $arr1;
 //    }
+    function get_page_item($id){
+        $main = $this->db->where('link', $id)->get('menu');
+        return $main->result_array();
+    }
     function get_menu_item(){
         $main = $this->db->where('status', 'enable')->get('menu');
         return $main->result_array();
     }
+    
     function get_parent($type) {
         $main = $this->db->where('type', $type)->select('id, name')->get('menu');
         return $main->result_array();

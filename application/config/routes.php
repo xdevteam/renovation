@@ -93,7 +93,10 @@ $route['admin/add_user'] = 'admin/user/add_user';
 $route['admin/edit_product/(:any)'] = 'admin/product/edit_product/$1';
 $route['admin/about_us']='admin/admin/get_about_us_info';
 $route['admin/edit_about_page']='admin/admin/edit_about_us_data';
-
+$route['admin/page_edit/(:any)']='admin/admin/user_page_content/$1';
+$route['admin/edit_user_page']='admin/admin/edit_user_page_content';
+$route['admin/del_hide_user_page']='admin/admin/del_hide_user_page_content';
+$route['admin/add_gallery_img']='admin/admin/add_gallery_img';
 $route['admin/(:any)'] = 'admin/admin/admin_pages/$1';
 
 $route['blog']='main/get_blog';

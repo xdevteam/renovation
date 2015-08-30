@@ -51,32 +51,17 @@
                         <section class="widget-product-categories">
                             <h4 class="widget-title bock"><img src="<?=base_url()?>images/dom.png">Каталог продукции</h4>
                             <ul class="teg-cat">                        
-                                <?php                     
+                                <?php 
+                                // print_r($cat_list);                    
                                 foreach ($cat_list as $cat => $subcategory) {
                                     foreach ($subcategory as $k => $v) {
                                         ?>                        
                                         <li class="teg-item" data-ajax="<?= $k ?>">
-                                            <span class="teg-count ">
+                                            <a href="<?=base_url()?>subcategories/<?= $k ?>" class="teg-count ">
                                             <img src="<?=base_url()?>images/strl.png" width="11" height="11">
                                             <?= $cat ?>
-                                            (<?= count($v) ?>)</span>
-                                            <ul class="children hiden-xs">      
-                                                <?php
-                                                if (!empty($v)) {
-                                                    foreach ($v as $key => $val) {
-                                                        foreach ($val as $kl => $zn) {
-                                                            ?>      
-                                                            <li>
-                                                                <span class="count hidden-xs">
-                                                                <a href="<?= base_url(); ?>products/<?= $key ?>"><?= $kl ?></a>
-                                                                (<?= $zn ?>)</span>
-                                                            </li> 
-                                                            <?php
-                                                        }
-                                                    }
-                                                }
-                                                ?>                                                              
-                                            </ul>
+                                            </a>
+                                            
                                         </li>
                                         <?php
                                     }

@@ -45,7 +45,7 @@
                         </div>
                         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
                             <h4><?=$p['name']?></h4>
-                            <div class="blog_content_prev"><?=$p['article_description']?></div>
+                            <div class="blog_content_prev"><?=substr(strip_tags($p['article_description']), 0, 350)?></div>
                         </div>
                     </a>
                 </div>    

@@ -104,6 +104,9 @@
                     <li>
                         <a href="<?= base_url(); ?>admin/slider" class="dropped"><i class="fa fa-fw fa-sliders"></i> Слайдер</a>
                     </li>
+                     <li>
+                        <a href="<?= base_url(); ?>admin/gallery" class="dropped"><i class="fa fa-fw fa-picture-o"></i> Галерея</a>
+                    </li>
                     <li>
                         <a href="<?= base_url(); ?>admin/partners" class="dropped"><i class="fa fa-fw fa-suitcase"></i> Партнеры</a>
                     </li>
@@ -112,7 +115,7 @@
                     </li>
                      <li>
                         <a href="<?= base_url(); ?>admin/news_article" class="dropped"><i class="fa fa-fw fa-newspaper-o"></i> Новости</a>
-                    </li>
+                    </li>                    
                     <li>
                         <a href="<?= base_url(); ?>admin/about_us" class="dropped"><i class="fa fa-fw fa-info-circle"></i> О нас</a>
                     </li>

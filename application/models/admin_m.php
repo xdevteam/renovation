@@ -228,7 +228,10 @@ class Admin_m extends CI_Model {
         $partner = $this->db->where('link',!'#')->get('menu');
         return $partner->result_array();
     }
-
+    function get_page_item($id){
+        $main = $this->db->where('link', $id)->get('menu');
+        return $main->result_array();
+    }
     /*
      * MENU END
      */
@@ -292,5 +295,14 @@ class Admin_m extends CI_Model {
     }
     /*
     *NEWS END
+    */
+
+    /*
+    * Gallery Start
+    */
+    
+
+    /*
+    * Galllery End
     */
 }
