@@ -836,7 +836,7 @@ body.no-bg {
 }
 }
 #main.cat-main {
-    padding: 50px 0;
+    
 }
 
 #main .main-gradient {
@@ -853,6 +853,7 @@ body.no-bg {
     min-height: 90px;
     background-color: rgba(136,136,136,0.04);
     border-bottom: 1px solid rgba(136,136,136,0.15);
+    margin-bottom: 50px;
 }
 
 .hgroup {
