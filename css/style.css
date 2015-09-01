@@ -1079,7 +1079,7 @@ p .form-submit {
 }
 
 .tabs-category-container {
-    padding-left: 0px;
+    /*padding-left: 0px;*/
     padding-right: 15px;
 }
 
@@ -1874,15 +1874,16 @@ section .add-review input[type="submit"]:hover {
 	margin-bottom: 10px;
 }
 
-.summary .item_price > soan {
+.summary .item_price > span {
 	margin-right: 5px;
+    color: #DF5C26;
 }
 
 .summary .item_price .price,
 .summary .item_price .quantity {
     font-family: "Roboto", Helvetica, Arial, Verdana, sans-serif;
     text-transform: none;
-    color: #333;
+    color: #DF5C26;
 }
 
 .summary .item_price .price {
@@ -1912,7 +1913,7 @@ section .add-review input[type="submit"]:hover {
 
 .quantity_  input {
     width: 15%;
-    float: left;
+    float: right;
     margin: 0 15px 0 0;
     vertical-align: middle;
     padding: 6px 5px 5px;
@@ -1926,12 +1927,14 @@ section .add-review input[type="submit"]:hover {
     color: #b8bcbe;
     box-sizing: border-box;
 }
-
+.pdf:hover{
+    text-decoration: none;
+}
 .quantity_ .add2cart {
     box-shadow: 0 1px 6px rgba(0,0,0,0.12);
     transition: all .2s;
     line-height: 27px;
-    float: left;
+    float: right;
     vertical-align: middle;
     padding-top: 4px;
     padding-bottom: 3px;
@@ -1940,7 +1943,7 @@ section .add-review input[type="submit"]:hover {
     padding-right: 14.3px;
     color: #fff;
     border-radius: 4px;
-    background: #aaa;
+    background: #DF5C26;
     cursor: pointer;
 }
 
@@ -3359,8 +3362,8 @@ header .navbar-nav > li:nth-child(9) {
 }
 .cart-icons img{}
 .brands_col{
-    background-color: 
-    padding: 0;
+    /*background-color: */
+    /*padding: 0;*/
     padding-left: 15px;
 }
 #brands{

@@ -123,11 +123,11 @@ class Admin_m extends CI_Model {
         }
     }
 
-    function get_product_by_subcat_link($link) {
-        $query = $this->db->where('link', $link)->select('id')->get('subcategories');
-        foreach ($query->result() as $row) {
-            $subcat_id = $row->id;
-        }
+    function get_product_by_subcat_link($subcat_id) {
+        // $query = $this->db->where('link', $link)->select('id')->get('subcategories');
+        // foreach ($query->result() as $row) {
+        //     $subcat_id = $row->id;
+        // }
         $query = $this->db->where('subcat_id', $subcat_id)->get('product');
         return $query->result_array();
     }

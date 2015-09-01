@@ -1,4 +1,5 @@
 <div class="col-sm-4 col-md-3 col-lg-3 hidden-xs tabs-category-container">
+    <input type="hidden" value="<?=base_url()?>" id="url_site">
                         <section class="widget-product-categories">
                             <div class="widget-product-search">                       
                                 <form role="search" method="POST" action="<?= base_url(); ?>search">

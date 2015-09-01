@@ -8,8 +8,9 @@
 	// 	$( this ).next().next().slideToggle();
 	$('ul .cat-item').click(function(ev) {
 		ev.preventDefault();
-		var src="../images/1downarrow.png";
-		var srcOld="../images/strl.png";
+		var url=$("#url_site").val();
+		var src=url+"images/1downarrow.png";
+		var srcOld=url+"images/strl.png";
 		$('ul .cat-item').removeClass('active_cat');
 		$(this).addClass('active_cat');
 		$('ul .cat-item').find('img').each( function(){ this.src = srcOld } );
