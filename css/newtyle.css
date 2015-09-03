@@ -348,3 +348,95 @@ textarea {
         max-width: 510px;
     }
 }
+
+#page #main .row {
+    margin-right: -15px!important;
+}
+
+#main .akcii h4 {
+    color: #fff;
+    background-color: #df5c26;
+        border-radius: 16px 0px 0px 0px;
+    
+}
+
+.akcii {
+    background-color: #fae2cc;
+    min-height: 180px;
+    padding-bottom: 10px;
+    font-size: 12px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+        border-radius: 16px 0px 0px 0px;
+}
+
+.akcii img {
+        width: 75%;
+        margin-bottom: 5px;
+        
+}
+.akcii span {
+    text-align: center;
+}
+
+.akcost {
+    color:#df5c26 ;
+}
+
+#main .best h4 {
+    color: #fff;
+    background-color: #249d10;
+        border-radius: 16px 0px 0px 0px;
+    
+}
+
+.best {
+    background-color: #b4dead;
+    min-height: 180px;
+    padding-bottom: 10px;
+    font-size: 12px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+        border-radius: 16px 0px 0px 0px;
+}
+
+.best img {
+        width: 75%;
+        margin-bottom: 5px;
+        
+}
+.best span {
+    text-align: center;
+}
+
+.bscost {
+    color:#249d10 ;
+}
+
+.statii a{
+    color: #df5c26;
+    font-size: 16px;
+}
+
+.statii a,p:hover {
+   color: #df5c26; 
+   cursor: pointer;
+}
+
+.statii a:visited {
+   color: #df5c26; 
+}
+
+.newsc a{
+    color: #df5c26;
+    font-size: 16px;
+}
+
+.newsc a,p:hover {
+   color: #df5c26; 
+   cursor: pointer;
+}
+
+.newsc a:visited {
+   color: #df5c26; 
+}

@@ -29,6 +29,26 @@
                                             <i class="fa fa-chevron-down"></i>
                                         </span> 
                                     <?php }?>
+                                    
+                                    <div class="akcii">
+                                        <h4 class="widget-title">Акция</h4>
+                                        <img src="<?=base_url()?>/img/iphone.jpg" >
+                                        <br/>
+                                        <span>Кнауф Ротбанд</span>
+                                        <br/>
+                                        <span class="akcost">Цена: 389 руб.</span>
+                                    </div>
+                                    
+                                    <div class="best">
+                                        <h4 class="widget-title">Наш выбор</h4>
+                                        <img src="<?=base_url()?>/img/iphone.jpg" >
+                                        <br/>
+                                        <span>Кнауф Ротбанд</span>
+                                        <br/>
+                                        <span class="bscost">Цена: 389 руб.</span>
+                                    </div>
+                                    
+                                    
                                 </section>
                             </div>
                         <!-- </aside> -->
