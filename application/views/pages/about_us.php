@@ -28,6 +28,7 @@
 <!-- Main Content -->
 <div id="main" class="cat-main">
     <div class="container wf-wrap clearfix" id="main_wrapper_wf">
+        <div class="row">
          <?php include_once'application/views/templates/category-sidebar.php'; ?>
         <div class="col-lg-7 col-md-7 col-sm-8 col-xs-8" >
         <div id="content" class="content"> 
@@ -40,7 +41,7 @@
         </div>
         </div>
         <?php include_once'application/views/templates/brand-list.php'; ?>              
-    </div>
+        </div></div>
 </div>
 
 
