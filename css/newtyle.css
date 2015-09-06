@@ -76,7 +76,7 @@
 
 .widget-product-categories .cat-item {
     background-color: #f4d5b9;
-    
+    cursor: pointer;
 }
 
 .widget-product-categories .cat-item img {
@@ -409,6 +409,7 @@ textarea {
 }
 .best span {
     text-align: center;
+   
 }
 
 .bscost {
@@ -449,7 +450,7 @@ textarea {
     width: 38px;
     height: 177px;
     right: 0px;
-    top: 10px;
+    top: 70px;
    z-index: 5;
 }
 
@@ -457,3 +458,9 @@ textarea {
     margin-right:  5px;
     margin-top: -5px;
 }
+
+#bs_name, #stock_name {
+    padding-left: 5px;
+       padding-right: 5px;
+}
+
