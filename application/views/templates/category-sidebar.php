@@ -46,7 +46,7 @@
                                 ?>                   
                             </ul>
                             <div class="statii">
-                                <h5><img src="<?=base_url()?>/images/book1.jpg" ><a href="/blog">Статьи</a></h5>
+                                <h3><img src="<?=base_url()?>/images/book1.jpg" ><a href="/blog">Статьи</a></h3>
                                 <?php 
                                 if(count($recent_post)<5){
                                     $count=count($recent_post);
@@ -58,7 +58,7 @@
                                 <?php  }?> 
                             </div>
                             <div class="newsc">
-                                <h5><img src="<?=base_url()?>/images/glob1.jpg" ><a href="/news">Новости</a></h5>
+                                <h3><img src="<?=base_url()?>/images/glob1.jpg" ><a href="/news">Новости</a></h3>
                                 <?php 
                                 if(count($recent_news)<5){
                                     $count=count($recent_news);

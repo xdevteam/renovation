@@ -442,3 +442,18 @@ textarea {
 .newsc a:visited {
    color: #df5c26; 
 }
+
+.buttright {
+    position: fixed;
+    background: url('../images/bright.png') no-repeat;
+    width: 38px;
+    height: 177px;
+    right: 0px;
+    top: 10px;
+   z-index: 5;
+}
+
+.statii img, .newsc img{
+    margin-right:  5px;
+    margin-top: -5px;
+}
