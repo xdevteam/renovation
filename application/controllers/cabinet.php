@@ -44,6 +44,7 @@ class Cabinet extends CI_Controller {
             $this->data['fb_link'] = $this->settings_m->get_set('fb_link');
             $this->data['vk_link'] = $this->settings_m->get_set('vk_link');
             $this->data['prep_popular'] = $this->product_m->get_popular();
+            $this->data['recent_news']=$this->main_m->get_recent_news(); 
             foreach ($this->data['prep_popular'] as $k => $v) {
                 foreach ($v as $key => $val) {
                     if ($key == 'name') {

@@ -58,44 +58,48 @@
                             Характеристики <span class="required">*</span>
                             <table class="table table-bordered">
                                 <tbody>
+                                    <thead>
+                                        <th>Параметр</th>
+                                        <th>Значение</th>
+                                    </thead>
                                     <tr>
-                                        <td>Тип вентилятора</td>
+                                        <td><input type="text" name="param[]" class='form-control'></td>
                                         <td><input type="text" name="param[]" class='form-control'></td>
                                     </tr>
                                     <tr>
-                                        <td>Размер</td>
+                                        <td><input type="text" name="param[]" class='form-control'></td>
                                         <td><input type="text" name="param[]" class='form-control'></td>
                                     </tr>
                                     <tr>
-                                        <td>Продуктивность</td>
+                                        <td><input type="text" name="param[]" class='form-control'></td>
                                         <td><input type="text" name="param[]" class='form-control'></td>
                                     </tr>
                                     <tr>
-                                        <td>Потребляемая мощность</td>
+                                        <td><input type="text" name="param[]" class='form-control'></td>
                                         <td><input type="text" name="param[]" class='form-control'></td>
                                     </tr>
                                     <tr>
-                                        <td>Класс защиты</td>
+                                        <td><input type="text" name="param[]" class='form-control'></td>
                                         <td><input type="text" name="param[]" class='form-control'></td>
                                     </tr>
                                     <tr>
-                                        <td>Управление</td>
+                                        <td><input type="text" name="param[]" class='form-control'></td>
                                         <td><input type="text" name="param[]" class='form-control'></td>
                                     </tr>
                                     <tr>
-                                        <td>Фильтр</td>
+                                        <td><input type="text" name="param[]" class='form-control'></td>
                                         <td><input type="text" name="param[]" class='form-control'></td>
                                     </tr>
                                     <tr>
-                                        <td>Освещение</td>
+                                        <td><input type="text" name="param[]" class='form-control'></td>
                                         <td><input type="text" name="param[]" class='form-control'></td>
                                     </tr>
                                     <tr>
-                                        <td>Вес</td>
+                                        <td><input type="text" name="param[]" class='form-control'></td>
                                         <td><input type="text" name="param[]" class='form-control'></td>
                                     </tr>
                                     <tr>
-                                        <td>Уровень шума</td>
+                                        <td><input type="text" name="param[]" class='form-control'></td>
                                         <td><input type="text" name="param[]" class='form-control'></td>
                                     </tr>
                                 </tbody>
@@ -167,10 +171,7 @@
                     <div class="">                   
                         <input type="file" id="size" name="size_img" accept="image/*" class="form-control">    
                     </div>
-                    <label>Фото в интерьере</label>
-                    <div class="">                   
-                        <input type="file" id="interior_img" name="interior_img" accept="image/*" class="form-control">    
-                    </div>
+                    
                     <label>Путь к Видеообзору</label>
                     <div class="">                   
                         <input type="text" id="video_path" name="video_path" class="form-control">   

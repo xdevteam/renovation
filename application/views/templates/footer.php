@@ -89,10 +89,7 @@
                                     <span class="top-bar-icon-text">Открыть корзину</span> 
                             
                             </a> 
-                        </li>
-                        <li>
-                            <a>Оформить заказ</a> 
-                        </li>
+                        </li>                        
                     </ul>
                     <div class="widget-title">ПОИСК</div>
                     <br>
@@ -122,7 +119,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Оформление заказ</h4>
+                        <h4 class="modal-title">Оформление заказa</h4>
                     </div>
                     <div class="modal-body clearfix">
 
@@ -278,6 +275,9 @@
 
 
 <script src="../../../js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+    
+</script>
 <script src="../../../js/jquery-ui.js"></script> 
 <script src="../../../js/bootstrap.js"></script>
 <script src="../../../js/carouFredSel-6.2.1.js"></script>
@@ -289,7 +289,7 @@ if (!empty($script))
 ?>
 
 <script src="../../../js/jquery.scrollbar.js"></script>
-
+<script src="../../../js/sidebar_ajax.js"></script>
 
 
 
@@ -346,5 +346,6 @@ if (!empty($script))
     }); //ready
 
 </script>
+
 </body>
 </html>

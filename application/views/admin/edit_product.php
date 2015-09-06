@@ -98,44 +98,44 @@
                             <table class="table table-bordered">
                                 <tbody>
                                     <tr>
-                                        <td>Тип вентилятора</td>
                                         <td><input type="text" name="param[]"  value="<?= $param[0] ?>" class='form-control'></td>
+                                        <td><input type="text" name="param[]"  value="<?= $param[1] ?>" class='form-control'></td>
                                     </tr>
                                     <tr>
-                                        <td>Размер</td>
-                                        <td><input type="text" name="param[]" value="<?= $param[1] ?>" class='form-control'></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Продуктивность</td>
-                                        <td><input type="text" name="param[]" value="<?= $param[2] ?>" class='form-control'></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Потребляемая мощность</td>
+                                        <td><input type="text" name="param[]"  value="<?= $param[2] ?>" class='form-control'></td>
                                         <td><input type="text" name="param[]" value="<?= $param[3] ?>" class='form-control'></td>
                                     </tr>
                                     <tr>
-                                        <td>Класс защиты</td>
-                                        <td><input type="text" name="param[]" value="<?= $param[4] ?>"  class='form-control'></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Управление</td>
+                                        <td><input type="text" name="param[]"  value="<?= $param[4] ?>" class='form-control'></td>
                                         <td><input type="text" name="param[]" value="<?= $param[5] ?>" class='form-control'></td>
                                     </tr>
                                     <tr>
-                                        <td>Фильтр</td>
                                         <td><input type="text" name="param[]"  value="<?= $param[6] ?>" class='form-control'></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Освещение</td>
                                         <td><input type="text" name="param[]" value="<?= $param[7] ?>" class='form-control'></td>
                                     </tr>
                                     <tr>
-                                        <td>Вес</td>
-                                        <td><input type="text" name="param[]" value="<?= $param[8] ?>" class='form-control'></td>
+                                        <td><input type="text" name="param[]"  value="<?= $param[8] ?>" class='form-control'></td>
+                                        <td><input type="text" name="param[]" value="<?= $param[9] ?>"  class='form-control'></td>
                                     </tr>
                                     <tr>
-                                        <td>Уровень шума</td>
-                                        <td><input type="text" name="param[]" value="<?= $param[9] ?>" class='form-control'></td>
+                                        <td><input type="text" name="param[]"  value="<?= $param[10] ?>" class='form-control'></td>
+                                        <td><input type="text" name="param[]" value="<?= $param[11] ?>" class='form-control'></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="param[]"  value="<?= $param[12] ?>" class='form-control'></td>
+                                        <td><input type="text" name="param[]"  value="<?= $param[13] ?>" class='form-control'></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="param[]"  value="<?= $param[14] ?>" class='form-control'></td>
+                                        <td><input type="text" name="param[]" value="<?= $param[15] ?>" class='form-control'></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" name="param[]"  value="<?= $param[16] ?>" class='form-control'></td>
+                                        <td><input type="text" name="param[]" value="<?= $param[17] ?>" class='form-control'></td>
+                                    </tr>                                    
+                                    <tr>
+                                        <td><input type="text" name="param[]"  value="<?= $param[18] ?>" class='form-control'></td>
+                                        <td><input type="text" name="param[]" value="<?= $param[19] ?>" class='form-control'></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -157,7 +157,7 @@
                     <div class="">
                         <label>Путь к Видеообзору</label>
                         <div class=" ">                   
-                            <input type="text" id="video_path" name="video_path" value="<?= $prod[0]['video_path'] ?>" class="form-control">
+                            <textarea type="text" id="video_path" name="video_path" class="form-control"><?= $prod[0]['video_path'] ?></textarea>
                         </div>
                     </div>
                     <div class="col-lg-12 tab_margin_top">
@@ -215,19 +215,7 @@
                             <input type="hidden" id="old_size_img" name="old_size_img" value="<?= $prod[0]['size_img'] ?>">
                         </div>
                     </div>
-                    <div class="col-lg-4 ">
-                        <div  style="height: 269px;">
-                            <label>Фото в интерьере</label><br>
-                            <?if(!empty($prod[0]['interior_img'])){ ?>
-                            <img src="<?= $prod[0]['interior_img'] ?>" alt="" height="180">
-                            <button class="btn btn-danger col-lg-7 tab_margin_top" type="submit" value="<?= $prod[0]['id'] ?>" name="del_interior_img"><i class="fa fa-trash-o"></i> Удалить</button>
-                            <?}?>
-                        </div>
-                        <div class="tab_margin_top col-lg-12">                   
-                            <input type="file" id="interior_img" name="interior_img" accept="image/*" class="form-control col-lg-12 ">
-                            <input type="hidden" id="old_interior_img" name="old_interior_img" value="<?= $prod[0]['interior_img'] ?>">
-                        </div> 
-                    </div>   
+                      
                     <div class="tab_margin_top col-lg-12">
                         <label>Дополнительные Фото</label>                          
                         <table class="table table-bordered col-lg-12">

@@ -27,9 +27,11 @@ class Product extends CI_Controller {
         $this->data['inst_link'] = $this->settings_m->get_set('inst_link');
         $this->data['fb_link'] = $this->settings_m->get_set('fb_link');
         $this->data['vk_link'] = $this->settings_m->get_set('vk_link');
+        $this->data['recent_news']=$this->main_m->get_recent_news(); 
         /* load header */
         $session = $this->session->userdata('user');
         $this->data['slider'] = $this->main_m->get_slider_item();
+        $this->data['recent_post']=$this->main_m->get_recent_post();
         $this->data['menu'] = $this->main_m->get_menu_item();
         $this->data['partner'] = $this->main_m->get_partners();
         if (!empty($session)) {

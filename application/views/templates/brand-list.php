@@ -32,20 +32,20 @@
                                     
                                     <div class="akcii">
                                         <h4 class="widget-title">Акция</h4>
-                                        <img src="<?=base_url()?>/img/iphone.jpg" >
+                                        <img src="" >
                                         <br/>
-                                        <span>Кнауф Ротбанд</span>
+                                        <span id="stock_name"></span>
                                         <br/>
-                                        <span class="akcost">Цена: 389 руб.</span>
+                                        <span class="akcost">Цена: <span class="stock_cost"></span> <span class="stock_curr"></span></span>
                                     </div>
                                     
                                     <div class="best">
                                         <h4 class="widget-title">Наш выбор</h4>
-                                        <img src="<?=base_url()?>/img/iphone.jpg" >
+                                        <img src="" >
                                         <br/>
-                                        <span>Кнауф Ротбанд</span>
+                                        <span id="bs_name"></span>
                                         <br/>
-                                        <span class="bscost">Цена: 389 руб.</span>
+                                         <span class="bscost">Цена: <span class="bs_cost"></span> <span class="bs_curr"></span></span>
                                     </div>
                                     
                                     

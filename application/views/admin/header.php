@@ -119,9 +119,7 @@
                     <li>
                         <a href="<?= base_url(); ?>admin/about_us" class="dropped"><i class="fa fa-fw fa-info-circle"></i> О нас</a>
                     </li>
-                    <li>
-                        <a href="<?= base_url(); ?>admin/about_us" class="dropped"><i class="fa fa-fw fa-info-circle"></i> О нас</a>
-                    </li>
+                    
                 </ul>
             </li>  
             <li>
@@ -138,6 +136,9 @@
                     </li>
                     <li>
                         <a href="<?= base_url(); ?>admin/products" data-ajax="products" class="dropped"><i class="fa fa-fw fa-shopping-cart"></i> Товары</a>
+                    </li>
+                     <li>
+                        <a href="<?= base_url(); ?>admin/stock" data-ajax="products" class="dropped"><i class="fa fa-fw fa-shopping-cart"></i> Aкции и Рекомендации</a>
                     </li>
 
                 </ul>

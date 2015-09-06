@@ -1,4 +1,5 @@
 <div class="col-sm-4 col-md-3 col-lg-3 hidden-xs tabs-category-container">
+    <input type="hidden" value="<?=base_url()?>" id="url_site">
                         <section class="widget-product-categories">
                             <div class="widget-product-search">                       
                                 <form role="search" method="POST" action="<?= base_url(); ?>search">
@@ -45,35 +46,29 @@
                                 ?>                   
                             </ul>
                             <div class="statii">
-        <h5><img src="<?=base_url()?>/images/book1.jpg" ><a href="/blog">Статьи</a></h5>
-        <p>Электрическая ленточная пила – 
-советы по выбору и применению
-</p>
-<p>Электрическая ленточная пила – 
-советы по выбору и применению
-</p>
-<p>Электрическая ленточная пила – 
-советы по выбору и применению
-</p>
-<p>Электрическая ленточная пила – 
-советы по выбору и применению
-</p>
-    </div>
+                                <h3><img src="<?=base_url()?>/images/book1.jpg" ><a href="/blog">Статьи</a></h3>
+                                <?php 
+                                if(count($recent_post)<5){
+                                    $count=count($recent_post);
+                                }else{
+                                    $count=5;
+                                }
+                                for ($i=0; $i<$count; $i++) { ?>
+                                    <a href="<?=base_url()?>single-post/<?=$recent_post[$i]['id']?>"><?=$recent_post[$i]['name']?></a><br>
+                                <?php  }?> 
+                            </div>
                             <div class="newsc">
-        <h5><img src="<?=base_url()?>/images/glob1.jpg" ><a href="/news">Новости</a></h5>
-        <p>Новый закон «О платежной дисцип-
-лине собственников жилья»
-</p>
-<p>Новый закон «О платежной дисцип-
-лине собственников жилья»
-</p>
-<p>Новый закон «О платежной дисцип-
-лине собственников жилья»
-</p>
-<p>Новый закон «О платежной дисцип-
-лине собственников жилья»
-</p>
-    </div>
+                                <h3><img src="<?=base_url()?>/images/glob1.jpg" ><a href="/news">Новости</a></h3>
+                                <?php 
+                                if(count($recent_news)<5){
+                                    $count=count($recent_news);
+                                }else{
+                                    $count=5;
+                                }
+                                for ($i=0; $i<$count; $i++) { ?>
+                                    <a href="<?=base_url()?>news/<?=$recent_news[$i]['id']?>"><?=$recent_news[$i]['name']?></a><br>
+                                <?php  }?> 
+                            </div>
                         </section>
     
                     </div>
@@ -83,7 +78,7 @@
                             <h4 class="widget-title bock"><img src="<?=base_url()?>images/dom.png">Каталог продукции</h4>
                             <ul class="teg-cat">                        
                                 <?php 
-                                // print_r($cat_list);                    
+                                                  
                                 foreach ($cat_list as $cat => $subcategory) {
                                     foreach ($subcategory as $k => $v) {
                                         ?>                        
