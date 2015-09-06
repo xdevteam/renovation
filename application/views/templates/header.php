@@ -55,7 +55,10 @@
                         <div class="topbl2 text-center col-lg-3 col-md-3 col-sm-4 col-xs-4">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cart_info">
                                 <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 cart-overlay">
-                                    <span class="num badge pull-right" id="cart-amount">0</span>
+                                    <span class=" num badge pull-right" id="cart-amount">0</span>
+                                    <span class="hidden-sm hidden-xs cart_info_text" id="cart_info_text">Ваша  </span><br>
+                                    <span class="hidden-sm hidden-xs cart_info_text" id="cart_info_text">корзина</span><br>
+                                    <span class="hidden-sm hidden-xs cart_info_text" id="cart_info_text">пуста</span><br>
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 cart-icons">
                                     <img src="<?=base_url()?>images/cart-icon.png" alt="cart-icon" title="cart-icon" width='100'>
@@ -64,11 +67,11 @@
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <a href="#" class="submit btn btn-default cart_button" data-toggle="modal" data-target="#modalCart" id="topBarCartLink">                                 
                                     <i class="fa fa-shopping-cart"></i>
-                                    <span class="top-bar-icon-text">Оформить Заказ</span>                                                                                         
+                                    <span class="top-bar-icon-text" id="cart_button">Оформить Заказ</span>                                                                                         
                                 </a>
                                 <a href="#" class="submit btn btn-default cart_button_mini" data-toggle="modal" data-target="#modalCart" id="topBarCartLink_mini">                                 
                                     <i class="fa fa-shopping-cart"></i><span class="num badge pull-right" id="cart-amount">0</span>
-                                    <span class="top-bar-icon-text"><br>Оформить<br>Заказ</span>                                                                                         
+                                    <span class="top-bar-icon-text" id="cart_button_mini"><br>Оформить<br>Заказ</span>                                                                                         
                                 </a>
                             </div>
                         </div>
