@@ -361,6 +361,7 @@ textarea {
 }
 
 .akcii {
+    display: none;
     background-color: #fae2cc;
     min-height: 180px;
     padding-bottom: 10px;
@@ -413,12 +414,12 @@ textarea {
     color:#249d10 ;
 }
 
-.statii a{
-    color: #df5c26;
+.statii p{
+    color: #888;
     font-size: 16px;
 }
 
-.statii a,p:hover {
+.statii a:hover {
    color: #df5c26; 
    cursor: pointer;
 }
@@ -427,12 +428,12 @@ textarea {
    color: #df5c26; 
 }
 
-.newsc a{
-    color: #df5c26;
+.newsc p{
+    color: #888;
     font-size: 16px;
 }
 
-.newsc a,p:hover {
+.newsc a:hover {
    color: #df5c26; 
    cursor: pointer;
 }

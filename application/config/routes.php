@@ -50,7 +50,10 @@ $route['ajax/filter_by_categories'] = 'ajax/filter_by_categories/$1';
 $route['(:any)/ajax/change_location'] = 'ajax/change_location';
 $route['ajax/change_location'] = 'ajax/change_location';
 $route['ajax/change_role'] = 'ajax/change_role';
-
+$route['ajax/stock_widget']='ajax/stock_widget';
+$route['(:any)/ajax/stock_widget']='ajax/stock_widget';
+$route['ajax/recomend']='ajax/recomend';
+$route['(:any)/ajax/recomend']='ajax/recomend';
 $route['admin/ajax/add_menu_item'] = 'ajax/change_item_menu';
 $route['admin/ajax/filter_by_categories'] = 'ajax/filter_by_categories/$1';
 $route['admin/ajax/filter_by_group'] = 'ajax/filter_by_group/$1';
@@ -101,6 +104,7 @@ $route['admin/edit_gallery_del_hide']='admin/admin/edit_gallery';
 $route['admin/gallery_editor/(:any)']='admin/admin/gallery_editor/$1';
 $route['admin/update_gallery_img']='admin/admin/update_gallery_img';
 $route['admin/gallery']='admin/admin/get_gallery_data';
+$route['admin/stock']='admin/product/stock_parametr';
 // $route['add_query']
 $route['admin/(:any)'] = 'admin/admin/admin_pages/$1';
 

@@ -327,4 +327,53 @@ class Product extends CI_Controller {
     /*
      * FILTER PRODUCT END
      */
+
+    /*
+    * STOCK OPTIONS START
+    */
+    function stock_parametr(){
+        $this->load->view("admin/stock", $this->data);      
+        $this->load->view("admin/footer");
+        // unset($this->data);
+        if(isset($_POST['add_stock'])){ 
+            unset($this->data);          
+            foreach ($this->input->post('add_stock') as $id=>$v) {
+                 $stock=$this->input->post('stock_price');
+                 foreach ($stock as $key => $value) {
+                    if($key==$id)
+                     $this->data['stock_price']=$value;
+                }
+                 $this->admin_m->update_data($id, $this->data, 'id', 'product');
+            }
+            redirect(base_url('admin/stock'));
+        } 
+        if(isset($_POST['delete_stock'])){ 
+            unset($this->data);          
+            foreach ($this->input->post('delete_stock') as $id=>$v) {
+                 $stock=$this->input->post('delete_stock');
+                 foreach ($stock as $key => $value) {
+                    if($key==$id)
+                     $this->data['stock_price']=$value;
+                }
+                 $this->admin_m->update_data($id, $this->data, 'id', 'product');
+            }
+            redirect(base_url('admin/stock'));
+        } 
+        if(isset($_POST['recomend'])){ 
+            unset($this->data);          
+            foreach ($this->input->post('recomend') as $id=>$v) {
+                 $stock=$this->input->post('recomend');
+                 foreach ($stock as $key => $value) {
+                    if($key==$id)
+                     $this->data['recomendation']=$value;
+                }
+                 $this->admin_m->update_data($id, $this->data, 'id', 'product');
+            }
+            redirect(base_url('admin/stock'));
+        } 
+        
+    }
+    /*
+    * STOCK OPTIONS END
+    */
 }

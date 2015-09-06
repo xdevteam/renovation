@@ -31,6 +31,9 @@ class Main extends CI_Controller {
         $this->data['prep_popular'] = $this->product_m->get_popular();
         $this->data['gallery'] = $this->main_m->get_gallery_data();
         $this->data['about_us'] = $this->about_us_m->about_us_data();
+        $this->data['recent_post']=$this->main_m->get_recent_post();  
+        $this->data['recent_news']=$this->main_m->get_recent_news();  
+        
         foreach ($this->data['prep_popular'] as $k => $v) {
             foreach ($v as $key => $val) {
                 if ($key == 'name') {

@@ -38,6 +38,8 @@ class Search extends CI_Controller {
         $this->data['inst_link'] = $this->settings_m->get_set('inst_link');
         $this->data['fb_link'] = $this->settings_m->get_set('fb_link');
         $this->data['vk_link'] = $this->settings_m->get_set('vk_link');
+        $this->data['recent_post']=$this->main_m->get_recent_post();
+        $this->data['recent_news']=$this->main_m->get_recent_news(); 
         /* load header */
         $this->data['menu'] = $this->main_m->get_menu_item();
         $this->data['partner'] = $this->main_m->get_partners();

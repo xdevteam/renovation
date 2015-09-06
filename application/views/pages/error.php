@@ -26,7 +26,7 @@
                 <div  class="col-lg-3"></div>
                 <div  class="col-lg-6">
                     <img src="../../../img/error3.png" class="col-lg-12" alt=""/>
-                    <h3><?= $error; ?></h3> 
+                    <h3 class="pull-right"><?= $error; ?></h3> 
                 </div>
                 <div  class="col-lg-3"></div>
             </div>

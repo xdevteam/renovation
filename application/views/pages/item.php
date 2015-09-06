@@ -74,6 +74,19 @@
                 </div>
 
                 <div class="summary">
+                    <p>
+                    <?php 
+                    if(strlen($item['description'])>700){
+                        $prestring=strip_tags(substr($item['description'], 0 , 700));
+                        $pos=strripos($prestring, '.');
+                        $string=substr($prestring, 0, $pos);
+                        echo  $string;
+                    ?>... <button class="btn-xs read_more_item">Читать далее</button>
+                    <?php }else{
+                        echo $item['description'];
+                    } ?>
+                    </p>
+                    <hr>
                     <? if(!empty($item['power'])) {?>
                     <p><strong>Мощность: <small><?=$item['power']?></small></strong></p>
                     <? } ?>
@@ -83,11 +96,19 @@
                     <? if(!empty($item['size'])) {?>
                     <p><strong>Размер: <small><?=$item['size']?></small></strong></p>
                     <? } ?>
-                    <p class="item_price text-right">
-                        <span class="price"><?= $item['price'] ?></span>
+                    <p class="item_price text-right">                        
+                        <? if(!empty($item['stock_price'])){ ?>
+                        <span class="price_regular" style="text-decoration: line-through;"><?=$item['price']?><?= $item['currency'] ?></span>
+                        <span class="price"><?=$item['stock_price']?></span>
+                        <? 
+                        }else{ ?> 
+                        <span class="price"><?=$item['price']?></span>
+                        <?
+                    }?>
                         <span class="currency"><?= $item['currency'] ?></span>
                         <span class="separator">за</span>
                         <span class="quantity"><?= $item['prod_quantity'] ?></span>
+                        <span class="separator">шт.</span>
                     </p>
                     <? if(!empty($item['prod_min_order'])) {?>
                     <p class="order">
@@ -116,7 +137,7 @@
                     <?php if (!empty($item['pdf_path'])){ ?>
                     <div>
                         <span class="pdf">                           
-                            <a href="<?= base_url();?>/<?= $item['pdf_path'] ?>" class="pdf"><img src="../../../images/pdf.png" width="45"> <strong style="color: #3B3946;">Скачать PDF документацию</strong></span>
+                            <a href="<?= base_url();?>/<?= $item['pdf_path'] ?>" target="blank" class="pdf"><img src="../../../images/pdf.png" width="45"> <strong style="color: #3B3946;">Скачать PDF документацию</strong></span>
                         </span>
                     </div>
                     <? } ?>
@@ -124,7 +145,7 @@
             <?php } ?>
 
             <div class="product-tabs hidden-sm hidden-xs">
-                <ul class="tabs clearfix">
+                <ul class="tabs clearfix prod_tabs_button">
                     <li class="description_tab active">
                         <a href="#">Описание</a>
                     </li>
@@ -142,46 +163,76 @@
                     <table class="project-charasteristics table table-responsive table-striped table-bordered">
                                 <tbody>
                                     <?php $param = unserialize($item['parametr']) ?>
+                                     <?                                    
+                                    if($param[0]!='-' || $param[1]!='-'){?>
                                     <tr>
                                         <td><?= $param[0] ?></td>
                                         <td><?= $param[1] ?></td>
                                     </tr>
+                                     <?
+                                    }
+                                    if($param[2]!='-' || $param[3]!='-'){?>
                                     <tr>
                                         <td><?= $param[2] ?></td>
                                         <td><?= $param[3] ?></td>
                                     </tr>
+                                     <?
+                                    }
+                                    if($param[5]!='-' || $param[4]!='-'){?>
                                     <tr>
                                         <td><?= $param[4] ?></td>
                                         <td><?= $param[5] ?></td>
                                     </tr>
+                                     <?
+                                    }
+                                    if($param[6]!='-' || $param[7]!='-'){?>
                                     <tr>
                                         <td><?= $param[6] ?></td>
                                         <td><?= $param[7] ?></td>
                                     </tr>
+                                     <?
+                                    }
+                                    if($param[9]!='-' || $param[8]!='-'){?>
                                     <tr>
                                         <td><?= $param[8] ?></td>
                                         <td><?= $param[9] ?></td>
                                     </tr>
+                                    <?
+                                    }
+                                    if($param[10]!='-' || $param[11]!='-'){?>
                                     <tr>
                                         <td><?= $param[10] ?></td>
                                         <td><?= $param[11] ?></td>
                                     </tr>
+                                     <?
+                                    }
+                                    if($param[12]!='-' || $param[13]!='-'){?>
                                     <tr>
                                         <td><?= $param[12] ?></td>
                                         <td><?= $param[13] ?></td>
                                     </tr>
+                                     <?
+                                    }
+                                    if($param[14]!='-' || $param[15]!='-'){?>
                                     <tr>
                                         <td><?= $param[14] ?></td>
                                         <td><?= $param[15] ?></td>
                                     </tr>
+                                    <?
+                                    }
+                                    if($param[16]!='-' || $param[17]!='-'){?>
                                     <tr>
                                         <td><?= $param[16] ?></td>
                                         <td><?= $param[17] ?></td>
                                     </tr>
+                                    <?
+                                    }
+                                    if($param[18]!='-' || $param[19]!='-'){?>
                                     <tr>
                                         <td><?= $param[18] ?></td>
                                         <td><?= $param[19] ?></td>
                                     </tr>
+                                    <? } ?>
 
                                 </tbody>
                             </table>

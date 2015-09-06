@@ -41,6 +41,8 @@ class User extends CI_Controller {
         $this->data['inst_link'] = $this->settings_m->get_set('inst_link');
         $this->data['fb_link'] = $this->settings_m->get_set('fb_link');
         $this->data['vk_link'] = $this->settings_m->get_set('vk_link');
+        $this->data['recent_post']=$this->main_m->get_recent_post();
+        $this->data['recent_news']=$this->main_m->get_recent_news(); 
         $this->script['location'] = $this->main_m->get_location();
         $this->data['location'] = $this->main_m->get_location();
         $this->data['city'] = $this->main_m->get_city();

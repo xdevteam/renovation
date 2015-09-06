@@ -34,6 +34,8 @@ class Blog extends CI_Controller{
         $this->data['fb_link'] = $this->settings_m->get_set('fb_link');
         $this->data['vk_link'] = $this->settings_m->get_set('vk_link');
          $this->data['menu'] = $this->main_m->get_menu_item();
+         $this->data['recent_post']=$this->main_m->get_recent_post();
+         $this->data['recent_news']=$this->main_m->get_recent_news(); 
         $this->load->view("templates/header", $this->data);
     }
     /* get_blog START */
@@ -59,6 +61,7 @@ class Blog extends CI_Controller{
         $this->load->model('main_m');
         $this->data['post'] = $this->main_m->get_blog($config['per_page'], $this->uri->segment(3));
         $this->pagination->initialize($config);
+        $this->data['recent_post']=$this->main_m->get_recent_post();
         $this->load->view("pages/blog", $this->data);
         $this->load->view("templates/footer", $this->data);
 
@@ -69,6 +72,7 @@ class Blog extends CI_Controller{
 
     function get_post($id) {
         $this->load->model('main_m');
+        $this->data['recent_post']=$this->main_m->get_recent_post();
         $this->data['post_view'] = $this->main_m->get_blog_by_id($id);
         $this->load->view('pages/single-post', $this->data);
         $this->load->view('templates/footer');

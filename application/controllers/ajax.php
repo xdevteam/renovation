@@ -170,18 +170,29 @@ class Ajax extends CI_Controller {
         </div>
 
         <?php
-        // print_r($this->data['subcategories_img']);
-        // $json = array();
-        // foreach ($subcat_list as $num => $column) {
-        //     foreach ($column as $name => $value) {
-        //         if ($name == 'id') {
-        //             $name = 'link';
-        //         }
-        //         $json[$name][$num] = $value;
-        //     }
-        // }
-        // echo json_encode($json);
-        // unset($subcat_list, $json, $num, $column, $name, $value);
+        
+    }
+    function stock_widget(){
+        unset($this->data);
+        $this->data['stock']=$this->main_m->get_stock();
+        if(!empty($this->data['stock'])){
+            $stock=array_rand($this->data['stock'], 1);                
+            echo json_encode($this->data['stock'][$stock]);
+        }
+        else{
+            echo "empty";
+        }
+    }
+    function recomend(){
+        unset($this->data);
+        $this->data['stock']=$this->main_m->get_recomend();
+        if(!empty($this->data['stock'])){
+            $stock=array_rand($this->data['stock'], 1);                
+            echo json_encode($this->data['stock'][$stock]);
+        }
+        else{
+            echo "empty";
+        }
     }
 
    

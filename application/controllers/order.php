@@ -38,8 +38,10 @@ class Order extends CI_Controller {
         $this->data['vk_link'] = $this->settings_m->get_set('vk_link');
         $this->data_user['user'] = @$this->session->userdata('user');
         $session = $this->session->userdata('user');
+        $this->data['recent_post']=$this->main_m->get_recent_post();
         $this->data['slider'] = $this->main_m->get_slider_item();
         $this->data['menu'] = $this->main_m->get_menu_item();
+        $this->data['recent_news']=$this->main_m->get_recent_news(); 
         if (!empty($session)) {
             $this->data['user'] = @$this->session->userdata('user');
             $this->data['user_category'] = $this->user_model->get_usercat_byID($this->data['user']['id']);
