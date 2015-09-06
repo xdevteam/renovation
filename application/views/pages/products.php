@@ -92,6 +92,7 @@
                                                 <span class="currency"><?= $item['currency'] ?></span>
                                                 <span class="separator"> за </span>
                                                 <span class="quantity"><?= $item['prod_quantity'] ?></span>
+                                                <span class="separator"> шт </span>
                                             </span>
                                         </a>
                                     </div>

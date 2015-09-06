@@ -170,7 +170,7 @@
 
 
 header .cart_button {
-    background: linear-gradient(to top, #919191, #c0c0c0)!important;
+    background: linear-gradient(to top, #919191, #c0c0c0);
 }
 
 .sidebar-content {
@@ -392,6 +392,7 @@ textarea {
 }
 
 .best {
+    display: none;
     background-color: #b4dead;
     min-height: 180px;
     padding-bottom: 10px;

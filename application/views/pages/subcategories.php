@@ -59,8 +59,7 @@
                                 <div class="cat-item-title">
                                     <a href="<?= base_url(); ?>products/<?= $item['link'] ?>">
                                         <h3>
-            <?= $item['name'] ?>
-                                            <mark class="count">(<?= $count[$item['id']] ?>)</mark>
+                                            <?= $item['name'] ?>
                                         </h3>
                                     </a>
                                 </div>

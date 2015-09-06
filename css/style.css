@@ -3240,6 +3240,7 @@ body .navbar{
     max-height: 282px!important;
 }
 body .navbar .container-fluid {
+    margin-top: 281px;
     max-height: 50px;
     background: url('../images/menu.jpg') no-repeat;
     background-size: cover;
@@ -3350,6 +3351,7 @@ header .navbar-nav > li:nth-child(9) {
     color: #fff;
 }
 #cart-amount{
+    display: none;
     font-size: 30px;
 }
 .cart-overlay {
@@ -3359,7 +3361,9 @@ header .navbar-nav > li:nth-child(9) {
     /* padding: 24px 0 0!important; */
     /* margin-top: 35%; */
 }
-
+#cart_info_text{
+    margin-left: 25px;
+}
 .cart-icons{
     position: relative;
     right: 10px;
@@ -3565,4 +3569,10 @@ ul.pagination-list li a.active {
     border: none;
     border-radius: 4px;
     color: #fff;
+}
+.green{
+    background: green!important;
+}
+.disable{
+    opacity: 1!important;
 }
