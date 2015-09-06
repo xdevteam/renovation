@@ -106,6 +106,7 @@ class Main extends CI_Controller {
                 $this->data['map_shops']= $this->settings_m->get_set('map_shop');  
                 $this->data['inn']= $this->settings_m->get_set('inn');
                 $this->data['ogrn']= $this->settings_m->get_set('ogrn'); 
+                $this->script['script'] = "<script src='../../../js/validation_user_message.js'></script>";
                 break;
             case'registration':
                 $this->script['script'] = "<script src='../../../js/validation.js'></script>"
@@ -131,6 +132,8 @@ class Main extends CI_Controller {
                         . "<script src='../../../js/main_nav.js'></script>"
                         . "<script src='../../../js/switcher.js'></script>"
                         . "<script src='../../../js/products.js'></script>";
+                        break;
+           
             default:
                 $this->script['script'] = ""
                         . "<script src='../../../js/sidebar.js'></script>"
@@ -418,4 +421,7 @@ class Main extends CI_Controller {
         $this->load->view('pages/single-post', $this->data);
         $this->load->view('templates/footer');
     }
+    // function add_query(){
+    //     if(isset($_POST['sdgs'])){
+    // }
 }

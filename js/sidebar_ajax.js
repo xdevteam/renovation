@@ -53,12 +53,14 @@ jQuery(document).ready(function () {
             url: 'ajax/stock_widget',
             
             success: function( data ) {
-                $(".akcii").show();
-                var arr=JSON.parse(data);                
-                $(".akcii").find('img').each( function(){ this.src = arr.image_path } );
-                $("#stock_name").html(arr.name);
-                $(".stock_cost").html(arr.stock_price);
-                $(".stock_curr").html(arr.currency);
+                if(data!="empty"){
+                    $(".akcii").show();
+                    var arr=JSON.parse(data);                
+                    $(".akcii").find('img').each( function(){ this.src = arr.image_path } );
+                    $("#stock_name").html(arr.name);
+                    $(".stock_cost").html(arr.stock_price);
+                    $(".stock_curr").html(arr.currency);
+                }
             }
         });
         }, 10000);
@@ -85,12 +87,14 @@ jQuery(document).ready(function () {
             url: 'ajax/recomend',
             
             success: function( data ) {
-                $(".best").show();
-                var arr=JSON.parse(data);                
-                $(".best").find('img').each( function(){ this.src = arr.image_path } );
-                $("#bs_name").html(arr.name);
-                $(".bs_cost").html(arr.stock_price);
-                $(".bs_curr").html(arr.currency);
+                if(data!="empty"){
+                    $(".best").show();
+                    var arr=JSON.parse(data);                
+                    $(".best").find('img').each( function(){ this.src = arr.image_path } );
+                    $("#bs_name").html(arr.name);
+                    $(".bs_cost").html(arr.stock_price);
+                    $(".bs_curr").html(arr.currency);
+                }
             }
         });
         }, 10000);
