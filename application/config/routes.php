@@ -60,6 +60,7 @@ $route['admin/ajax/filter_by_group'] = 'ajax/filter_by_group/$1';
 $route['account/ajax/change_location'] = 'ajax/change_location';
 $route['ajax/category_info'] = 'ajax/main_page_content';
 $route['(:any)/ajax/change_role'] = 'ajax/change_role';
+$route['ajax/add_query'] = 'ajax/add_message';
 
 $route['admin'] = 'admin/admin/get_admin';
 $route['admin/edit_category/(:any)'] = 'admin/category/edit_category/$1';
@@ -134,6 +135,7 @@ $route['cabinet'] = 'cabinet/user_data';
 $route['add_product'] = 'cabinet/add_product';
 $route['edit_item'] = 'product/edit_item';
 $route['set_item'] = 'product/set_item';
+
 $route['products'] = 'product/get_products/$1';
 $route['prod/all']='product/get_all_product/$1';
 $route['prod/all/(:any)']='product/get_all_product/$1';

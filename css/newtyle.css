@@ -421,13 +421,21 @@ textarea {
     font-size: 16px;
 }
 
+.statii a, .newsc a {
+    color: #3a3946; 
+}
+
+.statii h3 a, .newsc h3 a  {
+    color: #df5c26; 
+}
+
 .statii a:hover {
    color: #df5c26; 
    cursor: pointer;
 }
 
 .statii a:visited {
-   color: #df5c26; 
+   
 }
 
 .newsc p{
@@ -441,7 +449,7 @@ textarea {
 }
 
 .newsc a:visited {
-   color: #df5c26; 
+ 
 }
 
 .buttright {
@@ -452,6 +460,7 @@ textarea {
     right: 0px;
     top: 70px;
    z-index: 5;
+   cursor: pointer;
 }
 
 .statii img, .newsc img{
