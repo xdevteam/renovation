@@ -257,6 +257,19 @@
         </div>
     </div>
 
+    <!-- Modal Forgot -->
+
+    <div class="modal fade" id="forgotModalMassege" aria-hidden="true" role="dialog" style="margin-top:5%;">
+        <div class="modal-dialog">
+            <div class="modal-content">                
+                <div class="modal-body">
+                    <h2>Сообщение отправлено!</h2>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <!-- Overlay -->
 
     <div id="overlay"></div>
@@ -276,7 +289,7 @@
 
 <script src="../../../js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript">
-    
+  
 </script>
 <script src="../../../js/jquery-ui.js"></script> 
 <script src="../../../js/bootstrap.js"></script>

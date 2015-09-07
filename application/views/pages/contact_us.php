@@ -30,8 +30,7 @@
         <div class="row">
         <?php include_once'application/views/templates/category-sidebar.php'; ?>
         <div class="col-lg-7 col-md-7 col-sm-8 col-xs-12" >
-            <div id="content" class="content"> 
-
+            <div id="content" class="content">
 
                 <div class="row cat-row trty2">
                     <h1>Контактная информация:</h1>
@@ -101,29 +100,29 @@
                     </div> -->
                     
                     <h2>Отправить Запрос:</h2>
-                    <form action="<?=base_url()?>add_query" method="POST">
+                    <form action="" id="query_user" method="POST">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email адрес:</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                            <input type="email" class="form-control" id="InputEmail" placeholder="Email">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputName">Имя:</label>
-                            <input type="text" class="form-control" id="exampleInputName" placeholder="Имя">
+                            <input type="text" class="form-control" id="InputName" placeholder="Имя">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputName">Телефон:</label>
-                            <input type="text" class="form-control" id="exampleInputPhone" placeholder="Телефон">
+                            <input type="text" class="form-control" id="InputPhone" placeholder="Телефон">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputName">Тема:</label>
-                            <input type="text" class="form-control" id="exampleInputThemed" placeholder="Тема">
+                            <input type="text" class="form-control" id="InputThemed" placeholder="Тема">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputName">Ваше сообщение:</label>
-                            <textarea class="form-control" rows="3"></textarea>
+                            <textarea class="form-control" id="message" rows="3"></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-default">Отправить</button>
+                        <button type="button" id="send_message"  class="btn btn-default">Отправить</button>
                     </form>
 
 

@@ -194,6 +194,50 @@ class Ajax extends CI_Controller {
             echo "empty";
         }
     }
+    function add_message(){
 
-   
+        if(isset($_POST['name'])){
+            $name=$_POST['name'];
+        }
+        if(isset($_POST['mail'])){
+            $email=$_POST['mail'];
+        }
+        if(isset($_POST['theme'])){
+            $theme=$_POST['theme'];
+        }
+        if(isset($_POST['phone'])){
+            $phone=$_POST['phone'];
+        }
+        if(isset($_POST['message'])){
+            $message=$_POST['message'];
+        }
+        if (!file_exists(APPPATH . 'controllers/mailer/PHPMailerAutoload.php')) {
+            echo "ERROR MAIL LIBRARY";
+        } else {
+            require_once 'application/controllers/mailer/PHPMailerAutoload.php';
+        }
+        $mail = new PHPMailer();
+        $mail->isSMTP();
+        $mail->Encoding = '7bit';
+        $mail->CharSet = 'utf-8';
+        $mail->setLanguage('ru', 'mailer/language');
+        $mail->Host = 'smtp.gmail.com';
+        $mail->Port = 587;
+        $mail->SMTPSecure = 'tls';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'messengerrenovation@gmail.com';
+        $mail->Password = 'messengerRenovation_2015';
+        $mail->FromName = "САЙТ ЕВРОРЕМОНТ";
+        $mail->setFrom("САЙТ ЕВРОРЕМОНТ", "САЙТ ЕВРОРЕМОНТ");
+        $mail->addReplyTo('PROM_ILLIQUID', '');
+        $mail->addAddress("mprihodko92@gmail.com", '');
+        $mail->Subject = $theme;
+        $mail->Body = $message."<br> <strong>Контакты: </strong><br> <b>Email:</b>".$email."<br> <b>Телефон:</b>".$phone." <br><strong>Прислал: </strong> ".$name." ";
+        $mail->AltBody = $message;
+        $mail->addAttachment('fgd');
+        if($mail->send()) {
+          echo "success";
+        }
+        }
+  
 }

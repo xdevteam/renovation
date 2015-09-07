@@ -106,7 +106,6 @@ $(document).ready(function () {
             }
 
             switch (page) {
-		case '/admin/stock':
                 case '/admin/products':
                 case '/admin/subcat':
                     callAjax('products/filter_by_category', data);
