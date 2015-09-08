@@ -22,42 +22,29 @@ class Order extends CI_Controller {
         $this->load->model('user_model');
         $this->load->model('product_m');
         $this->load->model('main_m');
-                $this->load->model('settings_m');
+        $this->load->model('settings_m');
         $this->script['city'] = $this->settings_m->get_set('city');
         $this->script['street_build'] = $this->settings_m->get_set('street/build');
         $this->script['phone1'] = $this->settings_m->get_set('phone1');
         $this->script['phone2'] = $this->settings_m->get_set('phone2');
+         $this->data['phone1'] = $this->script['phone1'];
+        $this->data['phone2'] =  $this->script['phone2'];
         $this->script['email'] = $this->settings_m->get_set('email');
         $this->script['tw_link'] = $this->settings_m->get_set('tw_link');
         $this->script['inst_link'] = $this->settings_m->get_set('inst_link');
         $this->script['fb_link'] = $this->settings_m->get_set('fb_link');
         $this->script['vk_link'] = $this->settings_m->get_set('vk_link');
-               $this->data['tw_link'] = $this->settings_m->get_set('tw_link');
+        $this->data['tw_link'] = $this->settings_m->get_set('tw_link');
         $this->data['inst_link'] = $this->settings_m->get_set('inst_link');
         $this->data['fb_link'] = $this->settings_m->get_set('fb_link');
         $this->data['vk_link'] = $this->settings_m->get_set('vk_link');
-        $this->data_user['user'] = @$this->session->userdata('user');
-        $session = $this->session->userdata('user');
-        $this->data['recent_post']=$this->main_m->get_recent_post();
+        
+        
         $this->data['slider'] = $this->main_m->get_slider_item();
         $this->data['menu'] = $this->main_m->get_menu_item();
         $this->data['recent_news']=$this->main_m->get_recent_news(); 
-        if (!empty($session)) {
-            $this->data['user'] = @$this->session->userdata('user');
-            $this->data['user_category'] = $this->user_model->get_usercat_byID($this->data['user']['id']);
-            if ($this->data['user']['usercat'] == "seller") {
-                $num = 1;
-            } else {
-                $num = 2;
-            }
-            $this->script['location'] = $this->main_m->get_location();
-            $this->data['location'] = $this->main_m->get_location();
-            $this->data['city'] = $this->main_m->get_city();
-            $this->data['menu'] = $this->main_m->get_menu_front($num);            
-            $this->load->view("templates/header_user", $this->data);
-        } else {
-            $this->load->view("templates/header",  $this->data);
-        }
+        $this->load->view("templates/header",  $this->data);
+        
     }
 
     function add_order() {
@@ -75,6 +62,10 @@ class Order extends CI_Controller {
             if(!empty($this->input->post('phone'))){ $this->prep['buyer']['phone'] = $this->input->post('phone'); } else{ $err+=1; }   
             if(!empty($this->input->post('location'))){ $this->prep['adr']['location'] = $this->input->post('location'); } else{ $err+=1; }   
             if(!empty($this->input->post('city'))){ $this->prep['adr']['city'] = $this->input->post('city'); }  else{ $err+=1; } 
+            if(!empty($this->input->post('street'))){ $this->prep['adr']['street'] = $this->input->post('street'); }  else{ $err+=1; } 
+            if(!empty($this->input->post('home'))){ $this->prep['adr']['home'] = $this->input->post('home'); }  else{ $err+=1; } 
+            if(!empty($this->input->post('flat'))){ $this->prep['adr']['flat'] = $this->input->post('flat'); }  else{ $err+=1; } 
+            if(!empty($this->input->post('commit'))){ $this->prep['adr']['commit'] = $this->input->post('commit'); }  else{ $err+=1; } 
             if($err==0){
                 foreach ($this->data_db['item_id'] as $id) {
                     $a[] = $this->user_model->get_user_by_id($this->product_m->get_user_by_product($id));

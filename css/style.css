@@ -157,6 +157,7 @@ body.no-bg {
     position: relative;
     display: table;
     width: 100%;
+    top:-50px;
 }
 
 .wf-td {
@@ -240,7 +241,9 @@ body.no-bg {
 #footer .soc-ico a[title="Vk"] {
     padding: 6px 5px;
 }
-
+#modal_header_close {
+        margin-top: -8px!important;
+    }
 #top-bar .soc-ico a:hover,
 #footer .soc-ico a:hover {
     background: #2578e9;
@@ -850,7 +853,7 @@ body.no-bg {
 }
 
 .page-title {
-    min-height: 90px;
+    height: 90px!important;
     background-color: rgba(136,136,136,0.04);
     border-bottom: 1px solid rgba(136,136,136,0.15);
     margin-bottom: 50px;
@@ -1151,7 +1154,7 @@ p .form-submit {
 }
 
 .tabs-grid-item .inner-item:hover {
-    border-color: #777;
+    border-color: #FBEDA8;
 }
 
 .tabs-grid-item .inner-item .item-link {
@@ -2113,8 +2116,11 @@ section .add-review input[type="submit"]:hover {
 	border: 0;
 	text-align: center;
 }
-
+.carousel-img{
+    border: 4px solid #F4D5B8;
+}
 .marketing-carousel .carou-fred-sel li .carousel-img a img {
+   
 	max-width: 100%;
 	height: auto;
 	max-height: 170px;
@@ -2307,10 +2313,10 @@ section .add-review input[type="submit"]:hover {
     background: #E7E6E4!important;
 }
 .widget-top-rated .widget-cart-list li img {
-       
+    padding: 5px;  
     float: left;
-    /*height: auto;*/   
-    max-width: 100%;
+    max-height: 52px!important;
+    max-width: 166px!important;
     border: 0;
 }
 
@@ -3121,7 +3127,7 @@ a.button-one {
         /* width: 195px; */
         position: relative;
         top: 25px!important;
-        z-index: 1050;
+        z-index: 950;
     }
     .cart-overlay {
         position: relative;
@@ -3194,6 +3200,7 @@ a.button-one {
         display: none;
        
     }
+    
     .topbl1 img {
         left: -20px;
         position: absolute;
@@ -3337,7 +3344,7 @@ header .navbar-nav > li:nth-child(9) {
     /* width: 195px; */
     position: relative;
     top: 45px;
-    z-index: 1050;
+    z-index: 950;
    
 }
 .cart-icons img {
@@ -3384,6 +3391,10 @@ header .navbar-nav > li:nth-child(9) {
     width: 100%;
     margin: 0;
 }
+#brands li{
+    border-bottom: 1px solid #ccc;
+    
+}
 #most-popular h3{
     text-align: center;
 }
@@ -3391,7 +3402,9 @@ header .navbar-nav > li:nth-child(9) {
     /*background-color: rgba(136, 136, 136, 0.2);*/
 }
 .link_brand {
-    border-bottom: 1px solid #ccc;   
+    max-height: 57px!important;
+    max-width: 166px!important;
+    
 }
 .link_brand img{
     height: 57px;

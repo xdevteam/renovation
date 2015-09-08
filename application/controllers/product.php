@@ -14,10 +14,16 @@ class Product extends CI_Controller {
         $this->load->model('main_m');
         $this->load->model('user_model');
         $this->load->model('settings_m');
+        $this->load->model('subcategories_m');
+        $this->load->model('category_m');
+        $this->load->model('product_m');
+        
         $this->script['city'] = $this->settings_m->get_set('city');
         $this->script['street_build'] = $this->settings_m->get_set('street/build');
         $this->script['phone1'] = $this->settings_m->get_set('phone1');
         $this->script['phone2'] = $this->settings_m->get_set('phone2');
+         $this->data['phone1'] = $this->script['phone1'];
+        $this->data['phone2'] =  $this->script['phone2'];
         $this->script['email'] = $this->settings_m->get_set('email');
         $this->script['tw_link'] = $this->settings_m->get_set('tw_link');
         $this->script['inst_link'] = $this->settings_m->get_set('inst_link');
@@ -29,29 +35,15 @@ class Product extends CI_Controller {
         $this->data['vk_link'] = $this->settings_m->get_set('vk_link');
         $this->data['recent_news']=$this->main_m->get_recent_news(); 
         /* load header */
-        $session = $this->session->userdata('user');
-        $this->data['slider'] = $this->main_m->get_slider_item();
+       
+        
         $this->data['recent_post']=$this->main_m->get_recent_post();
         $this->data['menu'] = $this->main_m->get_menu_item();
         $this->data['partner'] = $this->main_m->get_partners();
-        if (!empty($session)) {
-            $this->data['user'] = @$this->session->userdata('user');
-            $this->data['user_category'] = $this->user_model->get_usercat_byID($this->data['user']['id']);
-            if ($this->data['user']['usercat'] == "seller") {
-                $num = 1;
-            } else {
-                $num = 2;
-            }
-            $this->data['menu'] = $this->main_m->get_menu_item();            
-            $this->load->view("templates/header_user", $this->data);
-        } else {
-            $this->load->view("templates/header", $this->data);
-        }
+        $this->load->view("templates/header", $this->data);
+        
 
-        $this->load->model('subcategories_m');
-        $this->load->model('category_m');
-        $this->load->model('product_m');
-        $this->load->model('user_model');
+        
        
         /* load sidebar_data */
         $this->data_db['subcat'] = $this->subcategories_m->get_subcategories_list();

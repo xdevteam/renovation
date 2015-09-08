@@ -145,7 +145,7 @@ class Admin extends CI_Controller {
             $geodata=unserialize($v['adress']);           
             $city=$this->admin_m->get_table_where('city', 'id', $geodata['location'], 'name');
             $location=$this->admin_m->get_table_where('locality', 'id', $geodata['city'], 'name');           
-            $arr=array('location'=>$city, 'city'=>$location);           
+            $arr=$geodata;      
             $this->data['order'][$v['id']]['adress']=serialize($arr);
             $this->data['order'][$v['id']]['image'] = $this->admin_m->get_order_img($v['item_id']);
         }          
