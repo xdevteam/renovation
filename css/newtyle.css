@@ -473,3 +473,12 @@ textarea {
        padding-right: 5px;
 }
 
+body .navbar .container-fluid {
+    margin-top: 0!important;
+}
+
+.nav .navbar-nav .main-nav  {
+    background: url('../images/menu.jpg') no-repeat;
+}
+
+
