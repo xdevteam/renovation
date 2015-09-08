@@ -12,8 +12,12 @@ class Product extends CI_Controller {
 
 
         $this->load->model('main_m');
-        $this->load->model('user_model');
+        
         $this->load->model('settings_m');
+        $this->load->model('subcategories_m');
+        $this->load->model('category_m');
+        $this->load->model('product_m');
+        
         $this->script['city'] = $this->settings_m->get_set('city');
         $this->script['street_build'] = $this->settings_m->get_set('street/build');
         $this->script['phone1'] = $this->settings_m->get_set('phone1');
@@ -29,29 +33,15 @@ class Product extends CI_Controller {
         $this->data['vk_link'] = $this->settings_m->get_set('vk_link');
         $this->data['recent_news']=$this->main_m->get_recent_news(); 
         /* load header */
-        $session = $this->session->userdata('user');
-        $this->data['slider'] = $this->main_m->get_slider_item();
+       
+        
         $this->data['recent_post']=$this->main_m->get_recent_post();
         $this->data['menu'] = $this->main_m->get_menu_item();
         $this->data['partner'] = $this->main_m->get_partners();
-        if (!empty($session)) {
-            $this->data['user'] = @$this->session->userdata('user');
-            $this->data['user_category'] = $this->user_model->get_usercat_byID($this->data['user']['id']);
-            if ($this->data['user']['usercat'] == "seller") {
-                $num = 1;
-            } else {
-                $num = 2;
-            }
-            $this->data['menu'] = $this->main_m->get_menu_item();            
-            $this->load->view("templates/header_user", $this->data);
-        } else {
-            $this->load->view("templates/header", $this->data);
-        }
+        $this->load->view("templates/header", $this->data);
+        
 
-        $this->load->model('subcategories_m');
-        $this->load->model('category_m');
-        $this->load->model('product_m');
-        $this->load->model('user_model');
+        
        
         /* load sidebar_data */
         $this->data_db['subcat'] = $this->subcategories_m->get_subcategories_list();
@@ -247,12 +237,12 @@ class Product extends CI_Controller {
         }
         $this->data_db['cat_name'] = $this->product_m->get_product_cat($this->data_db['product']['0']['subcat_id']);
         $this->data_db['subcat_name'] = $this->product_m->get_cat_name($this->data_db['cat_name']['0']['link']);
-        $this->data_db['prepare_data'] = $this->user_model->get_user_by_id($this->data_db['product']['0']['id_user']);
-        foreach ($this->data_db['prepare_data'] as $key => $value) {
-            foreach ($value as $k => $v) {
-                $this->data_db['user_data'][$k] = $v;
-            }
-        }
+        // $this->data_db['prepare_data'] = $this->user_model->get_user_by_id($this->data_db['product']['0']['id_user']);
+        // foreach ($this->data_db['prepare_data'] as $key => $value) {
+        //     foreach ($value as $k => $v) {
+        //         $this->data_db['user_data'][$k] = $v;
+        //     }
+        // }
         $this->data_db['prep_other'] = $this->product_m->get_item_by_userid($this->data_db['product']['0']['id_user'], $this->data_db['product']['0']['id']);
         foreach ($this->data_db['prep_other'] as $k => $v) {
             foreach ($v as $key => $val) {

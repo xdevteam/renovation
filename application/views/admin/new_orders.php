@@ -109,20 +109,17 @@
                                         echo '<label>Имя: </label>  '.$buyer_data['name'].'<br>';
                                         echo '<label>Фамилия: </label> '.$buyer_data['surname'].'<br>';
                                         echo '<label>Em@il: </label>  '.$buyer_data['email'].'<br>';                                   
-                                        echo '<label>Телефон:</label> '.$buyer_data['phone'].'<br>';
-                                        echo '<label>Область:</label> '.$adress['location'].'<br>';
-                                        echo '<label>Город:</label> '.$adress['city'].'<br>';                                    
+                                        echo '<label>Телефон:</label> '.$buyer_data['phone'].'<br>';                                                                       
                                         ?>
                                         <hr>
-                                        <h4>Продавец:</h4>
+                                        <h4>Адрес:</h4>
                                         <?
-                                        echo '<label>Имя: </label>  '.$seller_data['name'].'<br>';
-                                        echo '<label>Фамилия: </label> '.$seller_data['surname'].'<br>';
-                                        echo '<label>Em@il: </label>  '.$seller_data['email'].'<br>';                                   
-                                        echo '<label>Телефон:</label> '.$seller_data['phone'].'<br>';
-                                        echo '<label>Cтрана:</label> '.$seller_data['country'].'<br>';
-                                        echo '<label>Город:</label> '.$seller_data['city'].'<br>';  
-                                        echo '<label>Улица:</label> '.$seller_data['street'].' <label>Дом</label> '.$seller_data['building'].'<br>'; 
+                                        echo '<label>Область:</label> '.$adress['location'].'<br>';
+                                        echo '<label>Город:</label> '.$adress['city'].'<br>';     
+                                        echo '<label>Улица: </label>  '.$adress['street'].'<br>';
+                                        echo '<label>Дом: </label> '.$adress['home'].'<br>';
+                                        echo '<label>Квартира: </label>  '.$adress['flat'].'<br>';                                   
+                                        echo '<label>Комментарий:</label> '.$adress['commit'].'<br>';                                        
                                         ?>
 
                                     </td>                                
@@ -132,7 +129,6 @@
                                         <div class="btn-group-vertical">
                                             <button class = "btn btn-info"type = 'submit' name = "status[<?= $item['id'] ?>]"  value = "<?= $item['a_status'] ?>"><?= $btn_name ?></button>
                                             <button class = "btn btn-danger"type = 'submit' name = "del[<?= $item['id'] ?>]"  value = "<?= $item['id'] ?>"><i class="fa fa-trash-o"></i></button>
-                                            <button class = "btn btn-success"type = 'submit' name = "edit[<?= $item['id'] ?>]"  value = "<?= $item['id'] ?>"><i class="fa fa-pencil"></i></button>
                                         </div>
                                     </td>
 

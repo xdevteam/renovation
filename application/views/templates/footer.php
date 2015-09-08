@@ -133,8 +133,7 @@
                                     <label for="type_of_order">Форма заказа</label>
                                     <select class="cabinet-form-input" name="type_of_order" id="type_of_order">
                                         <option value="Наличные">Наличные</option>
-                                        <option value="Наложенный платеж">Наложенный платеж</option>
-                                        <option value="Кредитная карточка">Кредитная карточка</option>
+                                        <option value="Наложенный платеж">Наложенный платеж</option>                                        
                                     </select>
                                 </p>
 
@@ -142,8 +141,7 @@
                                     <label for="type_of_deliverance">Тип доставки</label>
                                     <select class="cabinet-form-input" name="type_of_deliverance" id="type_of_deliverance">
                                         <option value="Нова Пошта">Нова Пошта</option>
-                                        <option value="Самовывоз">Самовывоз</option>
-                                        <option value="Интайм">Интайм</option>
+                                        <option value="Самовывоз">Самовывоз</option>                                        
                                     </select>
                                 </p>
 
@@ -163,7 +161,7 @@
 
                                 <p>
                                     <label for="location">Область</label>
-                                    <select class="cabinet-form-input" name="location" id="location" data-ajax="region" rel="cart">
+                                    <!-- <select class="cabinet-form-input" name="location" id="location" data-ajax="region" rel="cart">
                                         <option value="<?= @$user['location'] ?>"><?= @$user['location'] ?></option>
                                         <? foreach ($location as $item){
                                         ?>
@@ -171,15 +169,17 @@
                                         <?
                                         }
                                         ?>
-                                    </select>
+                                    </select> -->
+                                    <input class="cabinet-form-input" name="location" id="location" data-ajax="region" rel="cart">
                                 </p>
 
                                 <p>
                                     <label for="city">Город</label>
-                                    <select class="cabinet-form-input" name="city" id="city" rel="cart-city">
+                                    <!-- <select class="cabinet-form-input" name="city" id="city" rel="cart-city">
                                         <option value="<?= @$user['city'] ?>"><?= @$user['city'] ?></option>
                                         <!-- ajax -->
-                                    </select>
+                                    <!-- </select> --> 
+                                    <input class="cabinet-form-input" name="city" id="city" rel="cart-city">
                                 </p>
 
                                 <p class="form-name">
@@ -191,6 +191,30 @@
 
                                 <p class="form-name">
                                     <input type="text" class="validate" data-validate="p" placeholder="Телефон *" value="<?= @$user['phone'] ?>" name="phone">
+                                    <span class="form-icon">
+                                        <i class="fa"></i>
+                                    </span>
+                                </p>
+                                <p class="form-name">
+                                    <input type="text" class="validate"  placeholder="Улица *" value="<?= @$user['phone'] ?>" name="street">
+                                    <span class="form-icon">
+                                        <i class="fa"></i>
+                                    </span>
+                                </p>
+                                <p class="form-name">
+                                    <input type="text" class="validate"  placeholder="Дом *" value="<?= @$user['phone'] ?>" name="home">
+                                    <span class="form-icon">
+                                        <i class="fa"></i>
+                                    </span>
+                                </p>
+                                 <p class="form-name">
+                                    <input type="text" class="validate"  placeholder="Квартира *" value="<?= @$user['phone'] ?>" name="flat">
+                                    <span class="form-icon">
+                                        <i class="fa"></i>
+                                    </span>
+                                </p>
+                                <p class="form-name">
+                                    <textarea type="text" class="form-control" placeholder="Комментарий к заказу" value="<?= @$user['phone'] ?>" name="commit"></textarea>
                                     <span class="form-icon">
                                         <i class="fa"></i>
                                     </span>
@@ -233,7 +257,9 @@
         </div>
     </div>
 
-
+<?php 
+// print_r($_SERVER);
+if($_SERVER['REQUEST_URI']!='/contact_us'){?>
     <!-- Modal Forgot -->
 
     <div class="modal fade" id="forgotModal" aria-hidden="true" role="dialog">
@@ -241,22 +267,41 @@
             <div class="modal-content">
 
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="close" id="modal_header_close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <form method="POST" name="forgotForm">
+                   <h2>Отправить Запрос:</h2>
+                    <form action="" id="query_user" method="POST">
                         <div class="form-group">
-                            <label for="forgotModalEmail">Введите свой Email и мы пришлем вам Ваш пароль</label>
-                            <input type="text" class="form-control" id="forgotModalEmail" name="forgotModalEmail">
+                            <label for="exampleInputEmail1">Email адрес:</label>
+                            <input type="email" class="form-control" id="InputEmail" placeholder="Email">
                         </div>
-                        <button type="submit" class="btn btn-success">Отправить</button>
+                        <div class="form-group">
+                            <label for="exampleInputName">Имя:</label>
+                            <input type="text" class="form-control" id="InputName" placeholder="Имя">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName">Телефон:</label>
+                            <input type="text" class="form-control" id="InputPhone" placeholder="Телефон">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName">Тема:</label>
+                            <input type="text" class="form-control" id="InputThemed" placeholder="Тема">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName">Ваше сообщение:</label>
+                            <textarea class="form-control" id="message" rows="3"></textarea>
+                        </div>
+
+                        <button type="button" id="send_message"   class="btn btn-default">Отправить</button>
                     </form>
                 </div>
 
             </div>
         </div>
     </div>
-
+        <!-- Modal Forgot -->
+ <?php } ?>                   
     <!-- Modal Forgot -->
 
     <div class="modal fade" id="forgotModalMassege" aria-hidden="true" role="dialog" style="margin-top:5%;">
@@ -288,6 +333,7 @@
 
 
 <script src="../../../js/jquery-1.11.0.min.js"></script>
+<script src='../../../js/validation_user_message.js'></script>
 <script type="text/javascript">
   
 </script>

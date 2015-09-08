@@ -10,11 +10,12 @@ class Main extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->load->model('user_model');
+        
         $this->load->model('main_m');
-        $this->load->model('settings_m');
-        $this->load->model('product_m');
-        $this->load->model('about_us_m');        
+        $this->load->model('settings_m');        
+        $this->load->model('category_m');
+        $this->load->model('subcategories_m');
+        $this->load->model('product_m');            
         $this->script['city'] = $this->settings_m->get_set('city');
         $this->script['street_build'] = $this->settings_m->get_set('street/build');
         $this->script['phone1'] = $this->settings_m->get_set('phone1');
@@ -23,17 +24,10 @@ class Main extends CI_Controller {
         $this->script['tw_link'] = $this->settings_m->get_set('tw_link');
         $this->script['inst_link'] = $this->settings_m->get_set('inst_link');
         $this->script['fb_link'] = $this->settings_m->get_set('fb_link');
-        $this->script['vk_link'] = $this->settings_m->get_set('vk_link');
-        $this->data['tw_link'] = $this->settings_m->get_set('tw_link');
-        $this->data['inst_link'] = $this->settings_m->get_set('inst_link');
-        $this->data['fb_link'] = $this->settings_m->get_set('fb_link');
-        $this->data['vk_link'] = $this->settings_m->get_set('vk_link');
+        $this->script['vk_link'] = $this->settings_m->get_set('vk_link');        
         $this->data['prep_popular'] = $this->product_m->get_popular();
-        $this->data['gallery'] = $this->main_m->get_gallery_data();
-        $this->data['about_us'] = $this->about_us_m->about_us_data();
         $this->data['recent_post']=$this->main_m->get_recent_post();  
-        $this->data['recent_news']=$this->main_m->get_recent_news();  
-        
+        $this->data['recent_news']=$this->main_m->get_recent_news();        
         foreach ($this->data['prep_popular'] as $k => $v) {
             foreach ($v as $key => $val) {
                 if ($key == 'name') {
@@ -42,31 +36,14 @@ class Main extends CI_Controller {
                 $this->data['popular'][$k][$key] = $val;
             }
         }
-
-        /* load header */
-        $this->data['slider'] = $this->main_m->get_slider_item();
-        $session = $this->session->userdata('user');
-        $this->data['menu'] = $this->main_m->get_menu_item();
-        $this->load->view("templates/header", $this->data);
-        
-        /* load category_m */
-
-        $this->load->model('main_m');
-        $this->load->model('category_m');
-        $this->load->model('subcategories_m');
-        $this->data['list'] = $this->subcategories_m->get_subcategories_list();
-
-        $this->data['subcategory_img'] = $this->subcategories_m->get_subcategories_limit12();
-
-        $this->data['partner'] = $this->main_m->get_partners();
-        $this->data['group_list'] = $this->category_m->focus_product_list();
+        $this->data['partner'] = $this->main_m->get_partners();        
         $this->data['location'] = $this->main_m->get_location();
-        $this->script['location'] = $this->main_m->get_location();
+        $this->script['location'] = $this->data['location'];
         $this->data['city'] = $this->main_m->get_city();
-        $this->data['fake'] = $this->main_m->get_enable_fake();
-        $this->data['fake_one'] = $this->main_m->get_fake_one();
-
-        /* load subcategories_m */
+        /* load header */       
+        $this->data['menu'] = $this->main_m->get_menu_item();
+        $this->load->view("templates/header", $this->data);       
+        
     }
 
     function translit($str) {
@@ -88,10 +65,14 @@ class Main extends CI_Controller {
                     }
                 }
             }
-            $this->data['slider'] = $this->main_m->get_slider_item();
+            
 
        
         switch ($page) {
+            case'about_us':
+                $this->load->model('about_us_m'); 
+                $this->data['about_us'] = $this->about_us_m->about_us_data();   
+                break;
             case'contact_us':
                 $this->data['city'] = $this->settings_m->get_set('city');
                 $this->data['street_build'] = $this->settings_m->get_set('street/build');
@@ -105,35 +86,14 @@ class Main extends CI_Controller {
                 $this->data['map_office'] = $this->settings_m->get_set('map_office');
                 $this->data['map_shops']= $this->settings_m->get_set('map_shop');  
                 $this->data['inn']= $this->settings_m->get_set('inn');
-                $this->data['ogrn']= $this->settings_m->get_set('ogrn'); 
-                $this->script['script'] = "<script src='../../../js/validation_user_message.js'></script>";
+                $this->data['ogrn']= $this->settings_m->get_set('ogrn');                
                 break;
-            case'registration':
-                $this->script['script'] = "<script src='../../../js/validation.js'></script>"
-                        . "<script src='../../../js/ajax_select.js'></script>"
-                        . "<script src='../../../js/perfect-scrollbar.jquery.js'></script>"
-                        . "<script src='../../../js/autoComplete.js'></script>"
-                        . "<script src='../../../js/main.js'></script>"
-                        . "<script src='../../../js/cart.js'></script>"
-                        . "<script src='../../../js/ajax_select.js'></script>"
-                        . "<script src='../../../js/bootstrap-switch.js'></script>"
-                        . "<script src='../../../js/main_nav.js'></script>"
-                        . "<script src='../../../js/switcher.js'></script>";
+            case'default':
+                $this->data['slider'] = $this->main_m->get_slider_item();
                 break;
-            case'edit_item':
-                $this->script['script'] = "<script src='../../../js/validation.js'></script>"
-                        . "<script src='../../../js/ajax_select.js'></script>"
-                        . "<script src='../../../js/perfect-scrollbar.jquery.js'></script>"
-                        . "<script src='../../../js/autoComplete.js'></script>"
-                        . "<script src='../../../js/main.js'></script>"
-                        . "<script src='../../../js/cart.js'></script>"
-                        . "<script src='../../../js/ajax_select.js'></script>"
-                        . "<script src='../../../js/bootstrap-switch.js'></script>"
-                        . "<script src='../../../js/main_nav.js'></script>"
-                        . "<script src='../../../js/switcher.js'></script>"
-                        . "<script src='../../../js/products.js'></script>";
-                        break;
-           
+            case'gallery':
+                 $this->data['gallery'] = $this->main_m->get_gallery_data();
+                 break;           
             default:
                 $this->script['script'] = ""
                         . "<script src='../../../js/sidebar.js'></script>"
@@ -149,7 +109,18 @@ class Main extends CI_Controller {
 
                 break;
         }
-         if (file_exists(APPPATH . '/views/pages/' . $page . '.php')) {
+        $this->script['script'] = ""
+                        . "<script src='../../../js/sidebar.js'></script>"
+                        . "<script src='../../../js/perfect-scrollbar.jquery.js'></script>"
+                        . "<script src='../../../js/autoComplete.js'></script>"
+                        . "<script src='../../../js/main.js'></script>"
+                        . "<script src='../../../js/cart.js'></script>"
+                        . "<script src='../../../js/ajax_select.js'></script>"
+                        . "<script src='../../../js/bootstrap-switch.js'></script>"
+                        . "<script src='../../../js/main_nav.js'></script>"
+                        . "<script src='../../../js/switcher.js'></script>"
+                        . "<script src='../../../js/main_tabs.js'></script>";
+        if (file_exists(APPPATH . '/views/pages/' . $page . '.php')) {
             $this->load->view("pages/$page", $this->data);
         }elseif (file_exists(APPPATH . '/views/userpages/' . $page . '.php')) {
             $this->data['user_cont']=$this->main_m->get_page_item($page);
@@ -222,6 +193,7 @@ class Main extends CI_Controller {
 
          
         $this->load->view("templates/footer", $this->data);
+        unset($this->script, $this->data);
 
     }
 
@@ -267,7 +239,9 @@ class Main extends CI_Controller {
                         . "<script src='../../../js/main_tabs.js'></script>";
         $this->load->view('pages/single-post', $this->data);
         $this->load->view('templates/footer');
-//         
+//      
+    unset($this->script, $this->data);
+
     }
 
     /* get_post END */
@@ -330,6 +304,7 @@ class Main extends CI_Controller {
 
          
         $this->load->view("templates/footer", $this->data);
+        unset($this->script, $this->data);
 
     }
 
@@ -375,7 +350,9 @@ class Main extends CI_Controller {
                         . "<script src='../../../js/main_tabs.js'></script>";
         $this->load->view('pages/single-post', $this->data);
         $this->load->view('templates/footer');
-//         
+//      
+    unset($this->script, $this->data);
+
     }
 
     /* get_post END */
@@ -420,6 +397,8 @@ class Main extends CI_Controller {
                         . "<script src='../../../js/main_tabs.js'></script>";
         $this->load->view('pages/single-post', $this->data);
         $this->load->view('templates/footer');
+        unset($this->script, $this->data);
+
     }
     // function add_query(){
     //     if(isset($_POST['sdgs'])){

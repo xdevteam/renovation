@@ -123,7 +123,9 @@
                      </div>
                      <!-- .container -->
                     </nav>
-            <div class="buttright hidden-xs hidden-sm">
+                  <? if($_SERVER['REQUEST_URI']!='/contact_us'){?>
+            <div class="buttright hidden-xs hidden-sm" data-toggle="modal" data-target="#forgotModal">
                 
             </div>
                 <!-- Navbar End -->
+                <? } ?>

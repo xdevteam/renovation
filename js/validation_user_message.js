@@ -1,6 +1,7 @@
 jQuery(document).ready(function(){
 	
 	$("#send_message").click(function(){
+		
 		var err=0;
 		var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 		var email=$("#InputEmail").val();		
@@ -40,7 +41,10 @@ jQuery(document).ready(function(){
 		}
 		if(err<1 || err==0){
 			$('#query_user')[0].reset();
-
+			$("#forgotModal").removeClass('in');
+			$("#forgotModal").hide();
+			$(".modal-backdrop").removeClass('in');
+			$(".modal-backdrop").hide();
 			$.ajax({
 				type: 'POST',
 				url: 'ajax/add_query',
@@ -57,7 +61,7 @@ jQuery(document).ready(function(){
 					$("#forgotModalMassege").show();
 					setTimeout(function(){
 						$("#overlay").hide();
-						$("#forgotModalMassege").removeClass("disable");
+						$("#forgotModalMassege").removeClass("disable");					
 					$("#forgotModalMassege").hide();
 					}, 3000);
 					
@@ -65,5 +69,6 @@ jQuery(document).ready(function(){
 				}
 			});
 		}
-	});	
+	});
+
 });
