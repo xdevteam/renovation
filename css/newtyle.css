@@ -299,6 +299,9 @@ textarea {
     .trty3 {
         margin-left: 5px;
     }
+    .page-title .wf-table {
+   margin-top: 0px!important;
+} 
 }
 
 .trty2 {
@@ -459,7 +462,7 @@ textarea {
     height: 177px;
     right: 0px;
     top: 70px;
-   z-index: 5;
+   z-index: 30;
    cursor: pointer;
 }
 
@@ -489,3 +492,25 @@ body .navbar .container-fluid {
 }*/
 
 
+.navbar li, .navbar li:active, .navbar li:target {
+    background: none!important;
+    
+}
+
+
+.page-title .wf-table {
+  
+    top:0px!important;
+     z-index: 5;
+    margin-top: -30px;
+} 
+
+#page .page-title {
+        height: auto!important; 
+}
+
+.navbar {
+    z-index: 10;
+}
+
+ 
