@@ -20,6 +20,8 @@ class Main extends CI_Controller {
         $this->script['street_build'] = $this->settings_m->get_set('street/build');
         $this->script['phone1'] = $this->settings_m->get_set('phone1');
         $this->script['phone2'] = $this->settings_m->get_set('phone2');
+        $this->data['phone1'] = $this->script['phone1'];
+        $this->data['phone2'] =  $this->script['phone2'];
         $this->script['email'] = $this->settings_m->get_set('email');
         $this->script['tw_link'] = $this->settings_m->get_set('tw_link');
         $this->script['inst_link'] = $this->settings_m->get_set('inst_link');
@@ -105,6 +107,7 @@ class Main extends CI_Controller {
                         . "<script src='../../../js/bootstrap-switch.js'></script>"
                         . "<script src='../../../js/main_nav.js'></script>"
                         . "<script src='../../../js/switcher.js'></script>"
+                        . "<script src='../../../js/product_settings.js'></script>"
                         . "<script src='../../../js/main_tabs.js'></script>";
 
                 break;
@@ -118,7 +121,8 @@ class Main extends CI_Controller {
                         . "<script src='../../../js/ajax_select.js'></script>"
                         . "<script src='../../../js/bootstrap-switch.js'></script>"
                         . "<script src='../../../js/main_nav.js'></script>"
-                        . "<script src='../../../js/switcher.js'></script>"
+                        . "<script src='../../../js/product_settings.js'></script>"
+                        . "<script src='../../../js/switcher.js'></script>"                        
                         . "<script src='../../../js/main_tabs.js'></script>";
         if (file_exists(APPPATH . '/views/pages/' . $page . '.php')) {
             $this->load->view("pages/$page", $this->data);

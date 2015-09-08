@@ -89,16 +89,11 @@
                         <? if (!empty($route_path)){ ?>
                         <p><?=$route_path?></p>
                         <? } ?> 
-                        
+                    <? if (!empty($map_shops)){?>  
                     <h2 >Наши магазины:</h2>
                     <?=$map_shops;?>
-                    <!-- <div class="map02 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d201892.21830307692!2d132.34098221350666!3d61.059477865561554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5bf88b42df2a3a2b%3A0x62b72ca5054674c9!2z0JDQsdCw0LPQsCwg0KDQtdGB0L8uINCh0LDRhdCwICjQr9C60YPRgtC40Y8pLCDQoNC-0YHRgdC40Y8sIDY3ODYwNA!5e0!3m2!1sru!2sua!4v1440954062043" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-                    </div>
-                    <div class="map02 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14601.0684447597!2d148.14149784999995!3d62.77746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x59616511393e9b2f%3A0x4124bfff0ff513ab!2z0KHRg9GB0YPQvNCw0L0sINCc0LDQs9Cw0LTQsNC90YHQutCw0Y8g0L7QsdC7Liwg0KDQvtGB0YHQuNGPLCA2ODYzMTQ!5e0!3m2!1sru!2sua!4v1440954139153" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-                    </div> -->
-                    
+                    <? } ?>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <h2>Отправить Запрос:</h2>
                     <form action="" id="query_user" method="POST">
                         <div class="form-group">
@@ -124,6 +119,7 @@
 
                         <button type="button" id="send_message"  class="btn btn-default">Отправить</button>
                     </form>
+                </div>
 
 
 

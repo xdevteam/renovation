@@ -15,10 +15,37 @@
                     <div class="col-sm-8 col-md-7 col-lg-7 col-xs-12 clearfix tabs-content-grid home-tab-grid">
                         <div id="category_content">                       
                             <?php include_once'application/views/templates/slider.php'; ?>
-                        </div>
-                        <?php //}
-                        ?>
-                        <!-- </div> -->
+                        
+                        <?php if (!empty($popular)) { ?>
+
+                <div class="marketing-carousel  hidden-sm hidden-xs " id="others">
+                       <h1 style="text-align: left; color: #FB740D;">Хиты продаж</h1>
+
+                    <ul class="carou-fred-sel clearfix ">
+                        <?php foreach ($popular as $oth_item) {
+                            ?>
+                            <li class="hidden-sm hidden-xs " style="width: 33%!important;">
+                                <div class="carousel-img">
+                                    <a href="<?= base_url(); ?>products/item/<?= $oth_item['id'] ?>-<?= $oth_item['trans'] ?>" title="<?= $oth_item['name'] ?>">
+                                        <img src="<?= $oth_item['image_path'] ?>" alt="<?= $oth_item['name'] ?>">
+                                    </a>
+                                </div>
+                                <div class="carousel-info" >
+                                    <a href="<?= base_url(); ?>products/item/<?= $oth_item['id'] ?>-<?= $oth_item['trans'] ?>" title="<?= $oth_item['name'] ?>">
+                                        <span class="product-title"><?= $oth_item['name'] ?></span>
+                                        <span class="amount"><?= $oth_item['price'] ?> <?= $oth_item['currency'] ?></span>
+                                    </a>
+                                </div>
+                            </li>
+                        <?php } ?>
+
+                    </ul>
+
+                    
+                </div>
+            <?php }  ?>
+                </div>
+                     
                     </div>
                     <!-- Home tab grid End -->                   
                      <!-- Brands List-->

@@ -47,8 +47,8 @@
                             <a href="<?=base_url()?>" class="home_icon_mini">
                                 <img src="<?=base_url()?>images/logo_euro.png" alt="" title="Logo">
                             </a>
-                            <span class="tel1 col-lg-6 col-md-6 col-sm-6 col-xs-6">8 (47396) 5-33-44</span>
-                            <span class="tel2 col-lg-6 col-md-6 col-sm-6 col-xs-6">8 (47396) 5-33-44</span>
+                            <span class="tel1 col-lg-6 col-md-6 col-sm-6 col-xs-6"><?=$phone1?></span>
+                            <span class="tel2 col-lg-6 col-md-6 col-sm-6 col-xs-6"><?=$phone2?></span>
                             <img src="<?=base_url()?>images/girlffuut.png" style="left: 80%;
     top:-70px;"alt="" title="Logo" class="hidden-xs hidden-sm">
                         </div>

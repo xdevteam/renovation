@@ -29,6 +29,8 @@ class Search extends CI_Controller {
         $this->script['street_build'] = $this->settings_m->get_set('street/build');
         $this->script['phone1'] = $this->settings_m->get_set('phone1');
         $this->script['phone2'] = $this->settings_m->get_set('phone2');
+         $this->data['phone1'] = $this->script['phone1'];
+        $this->data['phone2'] =  $this->script['phone2'];
         $this->script['email'] = $this->settings_m->get_set('email');
         $this->script['tw_link'] = $this->settings_m->get_set('tw_link');
         $this->script['inst_link'] = $this->settings_m->get_set('inst_link');
@@ -70,7 +72,6 @@ class Search extends CI_Controller {
             $name1 = $this->input->post('name');
             $city_sess[] = $this->input->post('certainCity');
             $this->session->set_userdata(array('city_sess' => $city_sess));
-//            print_r($city_sess);
             if (empty($name1)) {
                 redirect(base_url('search/prod'));
             } else {

@@ -40,6 +40,7 @@ jQuery(document).ready(function () {
                     $(".akcii").show('slow');
                     var arr=JSON.parse(data);
                     $(".akcii").find('img').each( function(){ this.src = arr.image_path } );
+                    $(".akcii").find('a').each( function(){ this.href = "/products/item/"+arr.id } );
                     $("#stock_name").html(arr.name);
                     $(".stock_cost").html(arr.stock_price);
                     $(".stock_curr").html(arr.currency);   
@@ -57,6 +58,7 @@ jQuery(document).ready(function () {
                     $(".akcii").show();
                     var arr=JSON.parse(data);                
                     $(".akcii").find('img').each( function(){ this.src = arr.image_path } );
+                    $(".akcii").find('a').each( function(){ this.href = "/products/item/"+arr.id } );
                     $("#stock_name").html(arr.name);
                     $(".stock_cost").html(arr.stock_price);
                     $(".stock_curr").html(arr.currency);
@@ -74,6 +76,7 @@ jQuery(document).ready(function () {
                     $(".best").show();
                 var arr=JSON.parse(data);                
                 $(".best").find('img').each( function(){ this.src = arr.image_path } );
+                $(".best").find('a').each( function(){ this.href = "/products/item/"+arr.id } );
                 $("#bs_name").html(arr.name);
                 $(".bs_cost").html(arr.stock_price);
                 $(".bs_curr").html(arr.currency);   
@@ -91,6 +94,7 @@ jQuery(document).ready(function () {
                     $(".best").show();
                     var arr=JSON.parse(data);                
                     $(".best").find('img').each( function(){ this.src = arr.image_path } );
+                    $(".best").find('a').each( function(){ this.href = "/products/item/"+arr.id } );
                     $("#bs_name").html(arr.name);
                     $(".bs_cost").html(arr.stock_price);
                     $(".bs_curr").html(arr.currency);
