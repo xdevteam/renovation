@@ -237,12 +237,12 @@ class Product extends CI_Controller {
         }
         $this->data_db['cat_name'] = $this->product_m->get_product_cat($this->data_db['product']['0']['subcat_id']);
         $this->data_db['subcat_name'] = $this->product_m->get_cat_name($this->data_db['cat_name']['0']['link']);
-        // $this->data_db['prepare_data'] = $this->user_model->get_user_by_id($this->data_db['product']['0']['id_user']);
-        // foreach ($this->data_db['prepare_data'] as $key => $value) {
-        //     foreach ($value as $k => $v) {
-        //         $this->data_db['user_data'][$k] = $v;
-        //     }
-        // }
+        $this->data_db['prepare_data'] = $this->user_model->get_user_by_id($this->data_db['product']['0']['id_user']);
+        foreach ($this->data_db['prepare_data'] as $key => $value) {
+            foreach ($value as $k => $v) {
+                $this->data_db['user_data'][$k] = $v;
+            }
+        }
         $this->data_db['prep_other'] = $this->product_m->get_item_by_userid($this->data_db['product']['0']['id_user'], $this->data_db['product']['0']['id']);
         foreach ($this->data_db['prep_other'] as $k => $v) {
             foreach ($v as $key => $val) {

@@ -43,22 +43,10 @@ class Search extends CI_Controller {
         /* load header */
         $this->data['menu'] = $this->main_m->get_menu_item();
         $this->data['partner'] = $this->main_m->get_partners();
-        $session = $this->session->userdata('user');
-        $this->data['slider'] = $this->main_m->get_slider_item();
-        if (!empty($session)) {
-            $this->data['user'] = @$this->session->userdata('user');
-            $this->data['user_category'] = $this->user_model->get_usercat_byID($this->data['user']['id']);
-            if ($this->data['user']['usercat'] == "seller") {
-                $num = 1;
-            } else {
-                $num = 2;
-            }
-            $this->data['menu'] = $this->main_m->get_menu_front($num);
-
-            $this->load->view("templates/header_user", $this->data);
-        } else {
-            $this->load->view("templates/header", $this->data);
-        }
+      
+      
+        $this->load->view("templates/header", $this->data);
+       
         /* load sidebar_data */
         $this->data['subcat_side'] = $this->subcategories_m->get_subcategories_sidebar();
         $this->data['prepare'] = $this->category_m->get_category_sidebar();
@@ -72,11 +60,9 @@ class Search extends CI_Controller {
         /* load category_m */
         $this->data['location'] = $this->main_m->get_location();
         $this->script['location'] = $this->main_m->get_location();
-        $this->data['city'] = $this->main_m->get_city();
-        $this->load->model('category_m');
-        $this->load->model('subcategories_m');
+        $this->data['city'] = $this->main_m->get_city();        
         $this->data['list'] = $this->subcategories_m->get_subcategories_list();
-        $this->data['group_list'] = $this->category_m->focus_product_list();
+        
     }
 
     function search_name() {
